@@ -105,8 +105,8 @@ def analysis_and_recommendation():
     }
     
     
-    print(json.dumps(modified_response, indent=2))
-    #return json.dumps(modified_response, indent=2)
+    #print(json.dumps(modified_response, indent=2))
+    return json.dumps(modified_response, indent=2)
 # Call the main function
 analysis_and_recommendation()
 

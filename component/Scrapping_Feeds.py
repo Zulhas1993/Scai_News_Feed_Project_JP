@@ -45,8 +45,9 @@ def getLinksWithTitle(content):
         obj = LinkWithTitle(title=_title,link=_link, description=_description,tagDict = _tagDict)
         linkWithTitle[countItem]=obj.toJson()
         countItem = countItem+1
+        print(linkWithTitle)
     return linkWithTitle
-
+SystemExit
 
 
 def fillDictionaryWithData():
