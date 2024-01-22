@@ -1,4 +1,6 @@
 import os
+import re
+import json
 from langchain.callbacks.manager import get_openai_callback
 from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
@@ -25,14 +27,16 @@ def format_questionnaire_json(questionnaire_content: str) -> dict:
             question_lines = question_and_options.strip().split('\n', 1)
             if len(question_lines) == 2:
                 question_number, question_text = question_lines[0].split('.', 1)
-                options = [line.strip()[3:] for line in question_lines[1].split('\n')]
-                if options:
-                    # Remove prefix ')' from each option
-                    options = [opt[2:] for opt in options]
-                    formatted_data["questions"].append({
-                        "question": question_text.strip(),
-                        "options": options
-                    })
+                options = [re.sub(r'^[a-d]\)\s*', '', opt) for opt in re.split(r'[)\n]', question_lines[1])]
+                options = [opt.strip('- ') for opt in options if opt]  # Remove empty options
+                options = [opt.strip('"a", ') for opt in options if opt] 
+                options = [opt.strip('"b", ') for opt in options if opt] 
+                options = [opt.strip('"c", ') for opt in options if opt] 
+                options = [opt.strip('"d", ') for opt in options if opt] 
+                formatted_data["questions"].append({
+                    "question": question_text.strip(),
+                    "options": options
+                })
             else:
                 # Handle the case where there is no dot ('.') on the first line
                 question_text = question_lines[0]
@@ -43,6 +47,7 @@ def format_questionnaire_json(questionnaire_content: str) -> dict:
         return formatted_data
     else:
         raise ValueError("Invalid content type. Expected string.")
+
 
 def analysis_and_recommendation():
     request_messages = [
@@ -100,7 +105,10 @@ def analysis_and_recommendation():
     }
     
     
-    print(modified_response)
-
+    print(json.dumps(modified_response, indent=2))
+    #return json.dumps(modified_response, indent=2)
 # Call the main function
 analysis_and_recommendation()
+
+
+
