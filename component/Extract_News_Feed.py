@@ -30,29 +30,6 @@ def extract_news_info(data):
 
     return news_list
 
-
-
-
-# def get_news_details(link):
-#     try:
-#         # You can customize this function to fetch news details from the provided link
-#         response = requests.get(link)
-#         response.raise_for_status()  # Raise an HTTPError for bad responses (4xx and 5xx)
-        
-#         soup = BeautifulSoup(response.text, 'html.parser')        
-#         # Extract text content from the webpage
-#         details_text = soup.get_text()
-#         max_document_size = 5120  # Maximum allowed text elements
-#         if len(details_text) > max_document_size:
-#             details_text = details_text[:max_document_size]
-            
-#         # Return the news details
-#         return {'content': details_text}
-#     except requests.RequestException as e:
-#         raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
-
-
-
 def get_news_details(link):
     try:
         # You can customize this function to fetch news details from the provided link

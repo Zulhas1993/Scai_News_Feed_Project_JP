@@ -2,9 +2,9 @@ import os
 import re
 import json
 from langchain.callbacks.manager import get_openai_callback
-from langchain.chat_models.azure_openai import AzureChatOpenAI
+#from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-#from langchain_openai import AzureChatOpenAI
+from langchain_openai import AzureChatOpenAI
 
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
@@ -16,39 +16,6 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
     )
     with get_openai_callback():
         return model(messages)
-
-def format_questionnaire_json(questionnaire_content: str) -> dict:
-    if isinstance(questionnaire_content, str):
-        questions_and_options = [line.strip() for line in questionnaire_content.split('\n\n') if line.strip()]
-        formatted_data = {"questions": []}
-
-        for question_and_options in questions_and_options[1:]:
-            # Skip the first line as it contains a sample introduction
-            question_lines = question_and_options.strip().split('\n', 1)
-            if len(question_lines) == 2:
-                question_number, question_text = question_lines[0].split('.', 1)
-                options = [re.sub(r'^[a-d]\)\s*', '', opt) for opt in re.split(r'[)\n]', question_lines[1])]
-                options = [opt.strip('- ') for opt in options if opt]  # Remove empty options
-                options = [opt.strip('"a", ') for opt in options if opt] 
-                options = [opt.strip('"b", ') for opt in options if opt] 
-                options = [opt.strip('"c", ') for opt in options if opt] 
-                options = [opt.strip('"d", ') for opt in options if opt] 
-                formatted_data["questions"].append({
-                    "question": question_text.strip(),
-                    "options": options
-                })
-            else:
-                # Handle the case where there is no dot ('.') on the first line
-                question_text = question_lines[0]
-                formatted_data["questions"].append({
-                    "question": question_text.strip(),
-                    "options": []
-                })
-        return formatted_data
-    else:
-        raise ValueError("Invalid content type. Expected string.")
-
-
 def analysis_and_recommendation():
     request_messages = [
         SystemMessage(content="Please answer in English"),
@@ -68,10 +35,7 @@ def analysis_and_recommendation():
     """
 
     request_messages.extend([
-        HumanMessage(content=f"""
-        If you are looking for information about a trip, please list 20 things you need
-        """
-        )
+        HumanMessage(content=f"If you are looking for information about a trip, please list 20 things you need")
     ])
 
     # Make the API call
@@ -83,32 +47,18 @@ def analysis_and_recommendation():
 
     request_messages.extend([
         AIMessage(content=f"{content_str}"),
-        HumanMessage(content="""
-                     make a questionnaire based on the above things with 4 options
-                     """)
+        HumanMessage(content="make a questionnaire based on the above things with 4 options as json format where key will be question and value will be options and remove from start side ```json and remove from end side ``` ")
     ])
 
+    request_messages.extend([
+        AIMessage(content=content_str),
+        HumanMessage(content="make an answer based on the above questionnaire and make a paragraph based on the answer ")
+    ])
     # Make another API call with updated messages
     response = __call_chat_api(request_messages).content
-    #print(response)
-    # Ensure response is a string
     response_content = response.content if isinstance(response, AIMessage) else str(response)
+    #response_paragraph = response.content if isinstance(response, AIMessage) else str(response)
+    print(response_content)
+    #print(response_paragraph)
 
-    formatted_response = format_questionnaire_json(response_content)
-    
-    # Remove questions with empty options
-    formatted_response["questions"] = [q for q in formatted_response["questions"] if q["options"]]
-    
-    # Modify the formatted response to match the expected result format
-    modified_response = {
-        "questions": formatted_response["questions"]
-    }
-    
-    
-    #print(json.dumps(modified_response, indent=2))
-    return json.dumps(modified_response, indent=2)
-# Call the main function
 analysis_and_recommendation()
-
-
-

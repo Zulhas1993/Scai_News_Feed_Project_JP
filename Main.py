@@ -1,4 +1,4 @@
-from component.OpenAI_Create_Questionnaire_And_Formatig import analysis_and_recommendation
+from component.OpenAI_Create_Questionnaire import analysis_and_recommendation
 from component.Scrapping_Feeds import analysis_and_recommendation
 
 # Call the function and print the result
