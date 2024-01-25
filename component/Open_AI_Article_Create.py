@@ -1,9 +1,10 @@
 import json
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
-from Details_News import generate_news_details_list
-from bs4 import BeautifulSoup
-from docx import Document
+from Details_News import generate_news_feed_list
+
+class FetchDetailsError(Exception):
+    pass
 
 def read_json(file_path):
     with open(file_path, 'r', encoding='utf-16') as file:
@@ -15,61 +16,85 @@ def authenticate_client():
     key = "09b7c88cfff44bac95c83a2256f31907"
     return TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
 
-def generate_abstractive_summary(text_analytics_client, document_to_summarize):
+class NewsFeed:
+    def __init__(self, id, title, tags, ex_link, description, details_news, keywords, article, date):
+        self.id = id
+        self.title = title
+        self.tags = tags
+        self.ex_link = ex_link
+        self.description = description
+        self.details_news = details_news
+        self.keywords = keywords
+        self.article = article
+        self.date = date
+
+def generate_abstractive_summaries(text_analytics_client):
     try:
-        # Begin abstractive summarization
-        poller = text_analytics_client.begin_abstractive_summarization(documents=[{"id": "1", "text": document_to_summarize}])
-        abstract_summary_results = poller.result()
+        # Initialize a list to store the summaries
+        all_summaries = []
 
-        summaries = []
-        for result in abstract_summary_results:
-            if result.kind == "AbstractiveSummarization":
-                summaries.append(result.summaries)
+        news_details_list = generate_news_feed_list()
 
-        return summaries
+        for idx, news_feed in enumerate(news_details_list, start=1):
+            # Accessing details_news attribute
+            details = news_feed.details_news if hasattr(news_feed, 'details_news') else ''
+            # Generate abstractive summaries for each news article
+            summaries = generate_abstractive_summary(text_analytics_client, details)
+
+            # Append the summaries to the list
+            all_summaries.append({
+                'article_number': idx,
+                'title': news_feed.title,
+                'link': news_feed.ex_link,
+                'details': details,
+                'summaries': summaries
+            })
+
+        return all_summaries
 
     except Exception as e:
         print(f"An error occurred during abstractive summarization: {e}")
         return None
 
-def generate_and_save_summary_docx(text_analytics_client):
+
+def generate_abstractive_summary(text_analytics_client, document_to_summarize):
     try:
-        # Generate news details list
-        news_details_list = generate_news_details_list()
+        # Check if document text is empty
+        if not document_to_summarize.strip():
+            print("Document text is empty.")
+            return []
 
-        # Create a DOCX document
-        doc = Document()
+        # Begin abstractive summarization
+        poller = text_analytics_client.begin_abstract_summary(documents=[{"id": "1", "text": document_to_summarize}])
+        abstract_summary_results = poller.result()
 
-        for news_details in news_details_list:
-            title = news_details.get('title', '')
-            link = news_details.get('link', '')
-            details = news_details.get('details', {}).get('content', '')
+        summaries = []
+        for result in abstract_summary_results:
+            if result.kind == "AbstractiveSummarization":
+                summaries.extend([summary.text for summary in result.summaries])
+            elif result.is_error is True:
+                print("An error occurred with code '{}' and message '{}'".format(
+                    result.error.code, result.error.message
+                ))
 
-            # Generate abstractive summary
-            summaries = generate_abstractive_summary(text_analytics_client, details)
-
-            # Add news details and summaries to the document
-            doc.add_heading(title, level=1)
-            doc.add_paragraph(f"Link: {link}")
-            doc.add_paragraph("Details:")
-            doc.add_paragraph(details)
-
-            if summaries:
-                doc.add_paragraph("Abstractive Summary:")
-                for summary in summaries:
-                    doc.add_paragraph(summary.text)
-
-            doc.add_page_break()
-
-        # Save the document
-        doc.save('news_summaries.docx')
-        print("News summaries saved to news_summaries.docx")
+        return summaries
 
     except Exception as e:
-        print(f"An error occurred while generating and saving the summary DOCX: {e}")
+        print(f"An error occurred during abstractive summarization: {e}")
+        return []
 
 # Authenticate the Text Analytics client
 text_analytics_client = authenticate_client()
 
-# Generate and save abstractive summaries in DOCX
-generate_and_save_summary_docx(text_analytics_client)
+# Generate abstractive summaries
+all_summaries = generate_abstractive_summaries(text_analytics_client)
+
+# Print the summaries
+for summary in all_summaries:
+    print(f"Article {summary['article_number']} - {summary['title']} - {summary['link']}")
+    if summary['summaries']:
+        for idx, s in enumerate(summary['summaries'], start=1):
+            print(f"Summary {idx}: {s}")
+    else:
+        print("No summaries available.")
+    print("\n")

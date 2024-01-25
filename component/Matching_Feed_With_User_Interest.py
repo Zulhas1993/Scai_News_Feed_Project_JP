@@ -2,6 +2,9 @@ import os
 from langchain.callbacks.manager import get_openai_callback
 from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
+from Details_News import generate_news_feed_list
+
+
 
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f" # シークレット情報の扱いを考える
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
@@ -57,7 +60,7 @@ def analysis_and_recommendation():
         "Feed-06" : "Artificial Intelligence (AI) is being increasingly used in cybersecurity to identify and prevent cyber threats. AI-powered solutions can help security teams detect and respond to threats more quickly and accurately, while also reducing the risk of human error. AI can be used to monitor network traffic and identify patterns that may indicate a cyber attack. It can also be used to analyze user behavior and detect anomalies that may indicate a security breach. AI can help automate incident response, reducing the time it takes to detect and remediate security issues. AI can also be used to identify vulnerabilities in software and hardware, and to develop more effective security protocols. However, AI technology is not without its risks. Hackers can use AI to develop more sophisticated attacks, and AI systems can be vulnerable to cyber attacks themselves. It is important for organizations to implement strong security measures to protect their AI systems, including encryption, access controls, and regular security audits. Organizations should also ensure that their employees are trained in cybersecurity best practices to reduce the risk of human error",
         "Feed-07" : "The next parliamentary election in Bangladesh is scheduled to take place on January 7, 2024 1. The election will be held to elect all 300 members of the Jatiya Sangsad, the unicameral national legislature of Bangladesh 2. The current ruling party, the Awami League, led by Sheikh Hasina, won the previous election in 2018 with a landslide victory 1. The party has been in power since 2009 and is seeking a fourth consecutive term in office 3. The opposition parties have accused the government of suppressing dissent and rigging the election in their favor 3. The election has been described as a “sham” by some observers, and the opposition parties have called for a boycott of the election 3. The election is expected to be closely watched by international observers, who will be monitoring the fairness and transparency of the electoral process 1. The outcome of the election will have significant implications for the future of Bangladesh, both domestically and internationally",
     }
-
+    details_feed_list=generate_news_feed_list()
 
     # personal_interest="""
     #     ("Relaxation and adventure motivate me to travel, adventure and budget traveller, beaches and mountains are my travel destinations, travel agent will plan for my travel, planning for international travel",
@@ -93,17 +96,28 @@ def analysis_and_recommendation():
 
     # content_from_api = __call_chat_api(request_messages)
 
+    # request_messages.extend([
+    #     AIMessage(content="""
+    #               {content_from_api}
+    #               """),
+    #     HumanMessage(content=f"""
+    #                  Match this below paragraph list according to the above user interest and categorized this list to best match, average match and no match:
+    #                  {details_feed}
+    #                  Also exclude the paragragph which is not directly related to user interest  and return only the id of the list.
+    #                  """)
+    # ])
+
+
     request_messages.extend([
         AIMessage(content="""
                   {content_from_api}
                   """),
         HumanMessage(content=f"""
                      Match this below paragraph list according to the above user interest and categorized this list to best match, average match and no match:
-                     {details_feed}
+                     {details_feed_list}
                      Also exclude the paragragph which is not directly related to user interest  and return only the id of the list.
                      """)
     ])
-
     response = __call_chat_api(request_messages).content
 
 
