@@ -30,8 +30,8 @@ class NewsFeed:
 
 def generate_abstractive_summaries(text_analytics_client):
     try:
-        # Initialize a list to store the summaries
-        all_summaries = []
+        # Initialize a dictionary to store the summaries
+        all_summaries_dict = {}
 
         news_details_list = generate_news_feed_list()
 
@@ -40,61 +40,45 @@ def generate_abstractive_summaries(text_analytics_client):
             details = news_feed.details_news if hasattr(news_feed, 'details_news') else ''
             # Generate abstractive summaries for each news article
             summaries = generate_abstractive_summary(text_analytics_client, details)
-
-            # Append the summaries to the list
-            all_summaries.append({
-                'article_number': idx,
+            #current_date = datetime.now().strftime("%Y-%m-%d")
+            # Append the summaries to the dictionary
+            all_summaries_dict[news_feed.date] = {
+                'id': news_feed.id,
                 'title': news_feed.title,
                 'link': news_feed.ex_link,
                 'details': details,
                 'summaries': summaries
-            })
+            }
 
-        return all_summaries
+        return all_summaries_dict
 
     except Exception as e:
         print(f"An error occurred during abstractive summarization: {e}")
         return None
 
+def generate_abstractive_summary(text_analytics_client, document, language='en'):
+   
+    poller = text_analytics_client.begin_abstract_summary(document)
+    abstract_summary_results = poller.result()
+    for result in abstract_summary_results:
+        if result.kind == "AbstractiveSummarization":
+            print("Summaries abstracted:")
+            [print(f"{summary.text}\n") for summary in result.summaries]
+        elif result.is_error is True:
+            print("...Is an error with code '{}' and message '{}'".format(
+                result.error.code, result.error.message
+            ))
 
-def generate_abstractive_summary(text_analytics_client, document_to_summarize):
-    try:
-        # Check if document text is empty
-        if not document_to_summarize.strip():
-            print("Document text is empty.")
-            return []
-
-        # Begin abstractive summarization
-        poller = text_analytics_client.begin_abstract_summary(documents=[{"id": "1", "text": document_to_summarize}])
-        abstract_summary_results = poller.result()
-
-        summaries = []
-        for result in abstract_summary_results:
-            if result.kind == "AbstractiveSummarization":
-                summaries.extend([summary.text for summary in result.summaries])
-            elif result.is_error is True:
-                print("An error occurred with code '{}' and message '{}'".format(
-                    result.error.code, result.error.message
-                ))
-
-        return summaries
-
-    except Exception as e:
-        print(f"An error occurred during abstractive summarization: {e}")
-        return []
 
 # Authenticate the Text Analytics client
 text_analytics_client = authenticate_client()
 
 # Generate abstractive summaries
-all_summaries = generate_abstractive_summaries(text_analytics_client)
+all_summaries_dict = generate_abstractive_summaries(text_analytics_client)
 
-# Print the summaries
-for summary in all_summaries:
-    print(f"Article {summary['article_number']} - {summary['title']} - {summary['link']}")
-    if summary['summaries']:
-        for idx, s in enumerate(summary['summaries'], start=1):
-            print(f"Summary {idx}: {s}")
-    else:
-        print("No summaries available.")
-    print("\n")
+# Write the dictionary to a JSON file
+output_file_path = 'summaries_output.json'
+with open(output_file_path, 'w', encoding='utf-16') as json_file:
+    json.dump(all_summaries_dict, json_file, ensure_ascii=False, indent=4)
+
+print(f"Summaries have been written to {output_file_path}")

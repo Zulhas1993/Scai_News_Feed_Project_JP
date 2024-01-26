@@ -7,8 +7,16 @@ import traceback
 from datetime import datetime
 from html import unescape
 import html2text
+from azure.ai.textanalytics import TextAnalyticsClient
+from azure.core.credentials import AzureKeyCredential
 class FetchDetailsError(Exception):
     pass
+
+
+def authenticate_client():
+    endpoint = "https://laboblogtextanalytics.cognitiveservices.azure.com/"
+    key = "09b7c88cfff44bac95c83a2256f31907"
+    return TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
 
 def read_json(file_path):
     with open(file_path, 'r', encoding='utf-16') as file:
@@ -68,6 +76,29 @@ def get_news_details(link):
     except requests.RequestException as e:
         raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
 
+ 
+def generate_abstractive_summary(text_analytics_client, document):
+    # Ensure the document is a list
+    if not isinstance(document, list):
+        document = [document]
+
+    poller = text_analytics_client.begin_abstract_summary(document)
+    abstract_summary_results = poller.result()
+    summaries = []
+
+    for result in abstract_summary_results:
+        if result.kind == "AbstractiveSummarization":
+            print("Summaries abstracted:")
+            [print(f"{summary.text}\n") for summary in result.summaries]
+            summaries.extend([summary.text for summary in result.summaries])
+        elif result.is_error is True:
+            print("...Is an error with code '{}' and message '{}'".format(
+                result.error.code, result.error.message
+            ))
+
+    return summaries
+
+import json
 
 def generate_news_feed_list():
     try:
@@ -88,8 +119,13 @@ def generate_news_feed_list():
             try:
                 # Fetch details for each link
                 news_details = get_news_details(link)
+                details_news = news_details.get('content', '')
 
                 if news_details:
+                    # Generate abstractive summaries
+                    text_analytics_client = authenticate_client()
+                    summaries = generate_abstractive_summary(text_analytics_client, details_news)
+
                     # Create an instance of NewsFeed with a unique ID and append it to the list
                     news_feed = NewsFeed(
                         id=current_id,
@@ -97,9 +133,9 @@ def generate_news_feed_list():
                         tags=[],
                         ex_link=link,
                         description=news.get('description', ''),
-                        details_news=news_details.get('content', ''),
+                        details_news=details_news,
                         keywords=[],
-                        article=None,
+                        article=summaries,  # Update the 'article' attribute with generated summaries
                         date=None
                     )
                     news_feed_list.append(news_feed)
@@ -109,17 +145,20 @@ def generate_news_feed_list():
 
             except FetchDetailsError as e:
                 print(f"An error occurred while fetching details for link: {link}. {str(e)}")
-                #traceback.print_exc()  # Print the traceback for the exception
-
-        # Serialize the list of NewsFeed instances to JSON
-        #news_feed_json = json.dumps([news_feed.__dict__ for news_feed in news_feed_list], indent=2)
-        print(news_feed_list)
-        return news_feed_list
+                # traceback.print_exc()  # Print the traceback for the exception
+            print(news_feed_list)
+        # Convert news_feed_list to JSON format
+        generated_news_feed_json = json.dumps([news_feed.__dict__ for news_feed in news_feed_list], default=str, ensure_ascii=False, indent=4)
+        print(generated_news_feed_json)
+        return generated_news_feed_json
 
     except Exception as e:
         print(f"An error occurred during news feed generation: {e}")
-        #traceback.print_exc()  # Print the traceback for the exception
+        # traceback.print_exc()  # Print the traceback for the exception
         return None
+
+
+
 
 # Generate news feed list in JSON format
 generated_news_feed_json = generate_news_feed_list()
@@ -177,31 +216,31 @@ def generate_date_wise_news_feed_list():
 generated_date_wise_news_feed_json = generate_date_wise_news_feed_list()
 #print(generated_date_wise_news_feed_json)
 
-def save_date_wise_news_feed_to_docx(news_feed_json):
-    try:
-        doc = Document()
+# def save_date_wise_news_feed_to_docx(news_feed_json):
+#     try:
+#         doc = Document()
 
-        # Load the JSON data
-        news_feed_data = json.loads(news_feed_json)
+#         # Load the JSON data
+#         news_feed_data = json.loads(news_feed_json)
 
-        for date, news_list in news_feed_data.items():
-            doc.add_heading(f"Date: {date}", level=1)
-            for news_feed in news_list:
-                doc.add_paragraph(f"ID: {news_feed['Id']}")
-                doc.add_paragraph(f"Title: {news_feed['Title']}")
-                doc.add_paragraph(f"Link: {news_feed['Link']}")
-                doc.add_paragraph(f"Description: {news_feed['Description']}")
-                doc.add_page_break()
+#         for date, news_list in news_feed_data.items():
+#             doc.add_heading(f"Date: {date}", level=1)
+#             for news_feed in news_list:
+#                 doc.add_paragraph(f"ID: {news_feed['Id']}")
+#                 doc.add_paragraph(f"Title: {news_feed['Title']}")
+#                 doc.add_paragraph(f"Link: {news_feed['Link']}")
+#                 doc.add_paragraph(f"Description: {news_feed['Description']}")
+#                 doc.add_page_break()
 
-        doc.save('date_wise_news_feed.docx')
-        print("News feed details saved to date_wise_news_feed.docx")
+#         doc.save('date_wise_news_feed.docx')
+#         print("News feed details saved to date_wise_news_feed.docx")
 
-    except Exception as e:
-        print(f"An error occurred while saving news feed to DOCX: {e}")
+#     except Exception as e:
+#         print(f"An error occurred while saving news feed to DOCX: {e}")
 
-# Call the function and pass the generated JSON
-if generated_date_wise_news_feed_json:
-    save_date_wise_news_feed_to_docx(generated_date_wise_news_feed_json)
+# # Call the function and pass the generated JSON
+# if generated_date_wise_news_feed_json:
+#     save_date_wise_news_feed_to_docx(generated_date_wise_news_feed_json)
 
 
 
