@@ -46,7 +46,7 @@ def generate_abstractive_summaries(text_analytics_client):
                 'id': news_feed.id,
                 'title': news_feed.title,
                 'link': news_feed.ex_link,
-                'details': details,
+                #'details': details,
                 'summaries': summaries
             }
 
@@ -57,17 +57,21 @@ def generate_abstractive_summaries(text_analytics_client):
         return None
 
 def generate_abstractive_summary(text_analytics_client, document, language='en'):
-   
-    poller = text_analytics_client.begin_abstract_summary(document)
-    abstract_summary_results = poller.result()
-    for result in abstract_summary_results:
-        if result.kind == "AbstractiveSummarization":
-            print("Summaries abstracted:")
-            [print(f"{summary.text}\n") for summary in result.summaries]
-        elif result.is_error is True:
-            print("...Is an error with code '{}' and message '{}'".format(
-                result.error.code, result.error.message
-            ))
+    try:
+        poller = text_analytics_client.begin_abstract_summary([document])  # Pass document as a list
+        abstract_summary_results = poller.result()
+        for result in abstract_summary_results:
+            if result.kind == "AbstractiveSummarization":
+                print("Summaries abstracted:")
+                [print(f"{summary.text}\n") for summary in result.summaries]
+            elif result.is_error is True:
+                print("...Is an error with code '{}' and message '{}'".format(
+                    result.error.code, result.error.message
+                ))
+
+    except Exception as e:
+        print(f"An error occurred during abstractive summarization: {e}")
+        raise  # Re-raise the exception to provide more information in the main exception handler
 
 
 # Authenticate the Text Analytics client
@@ -79,6 +83,6 @@ all_summaries_dict = generate_abstractive_summaries(text_analytics_client)
 # Write the dictionary to a JSON file
 output_file_path = 'summaries_output.json'
 with open(output_file_path, 'w', encoding='utf-16') as json_file:
-    json.dump(all_summaries_dict, json_file, ensure_ascii=False, indent=4)
+    json.dump(all_summaries_dict, json_file, ensure_ascii=False, indent=2)
 
 print(f"Summaries have been written to {output_file_path}")

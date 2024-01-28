@@ -76,29 +76,41 @@ def get_news_details(link):
     except requests.RequestException as e:
         raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
 
- 
-def generate_abstractive_summary(text_analytics_client, document):
-    # Ensure the document is a list
-    if not isinstance(document, list):
-        document = [document]
+def get_news_details_list():
+    try:
+        file_path = 'object_list.json'
 
-    poller = text_analytics_client.begin_abstract_summary(document)
-    abstract_summary_results = poller.result()
-    summaries = []
+        # Read JSON file
+        data = read_json(file_path)
 
-    for result in abstract_summary_results:
-        if result.kind == "AbstractiveSummarization":
-            print("Summaries abstracted:")
-            [print(f"{summary.text}\n") for summary in result.summaries]
-            summaries.extend([summary.text for summary in result.summaries])
-        elif result.is_error is True:
-            print("...Is an error with code '{}' and message '{}'".format(
-                result.error.code, result.error.message
-            ))
+        # Extract news information
+        news_list = extract_news_info(data)
+        news_details_list = []
 
-    return summaries
+        for news in news_list:
+            link = news.get('link', '')
+            try:
+                # Fetch details for each link
+                news_details = get_news_details(link)
+                details_news = news_details.get('content', '')
 
-import json
+                if details_news:
+                    # Append news details to the list
+                    news_details_list.append(details_news)
+
+            except FetchDetailsError as e:
+                print(f"An error occurred while fetching details for link: {link}. {str(e)}")
+                # traceback.print_exc()  # Print the traceback for the exception
+
+        return news_details_list
+
+    except Exception as e:
+        print(f"An error occurred during news details retrieval: {e}")
+        # traceback.print_exc()  # Print the traceback for the exception
+        return None
+
+
+
 
 def generate_news_feed_list():
     try:
@@ -124,8 +136,7 @@ def generate_news_feed_list():
                 if news_details:
                     # Generate abstractive summaries
                     text_analytics_client = authenticate_client()
-                    summaries = generate_abstractive_summary(text_analytics_client, details_news)
-
+                   
                     # Create an instance of NewsFeed with a unique ID and append it to the list
                     news_feed = NewsFeed(
                         id=current_id,
@@ -135,7 +146,7 @@ def generate_news_feed_list():
                         description=news.get('description', ''),
                         details_news=details_news,
                         keywords=[],
-                        article=summaries,  # Update the 'article' attribute with generated summaries
+                        article=None,  # Update the 'article' attribute with generated summaries
                         date=None
                     )
                     news_feed_list.append(news_feed)

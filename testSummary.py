@@ -1,63 +1,177 @@
+import os
 import json
-from azure.ai.textanalytics import TextAnalyticsClient
-from azure.core.credentials import AzureKeyCredential
+from datetime import datetime
+import requests
+from html import unescape
+import html2text
+import re
+from bs4 import BeautifulSoup
+from langchain.callbacks.manager import get_openai_callback
+from langchain_openai import AzureChatOpenAI
+from langchain.schema import AIMessage, HumanMessage, SystemMessage
+#from component.Details_News import get_news_details_list
 
-def authenticate_client():
-    endpoint = "https://laboblogtextanalytics.cognitiveservices.azure.com/"
-    key = "09b7c88cfff44bac95c83a2256f31907"
-    return TextAnalyticsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
+class FetchDetailsError(Exception):
+    pass
 
-def generate_abstractive_summary(text_analytics_client, document):
-    poller = text_analytics_client.begin_abstract_summary(document)
-    abstract_summary_results = poller.result()
-    for result in abstract_summary_results:
-        if result.kind == "AbstractiveSummarization":
-            print("Summaries abstracted:")
-            [print(f"{summary.text}\n") for summary in result.summaries]
-        elif result.is_error is True:
-            print("...Is an error with code '{}' and message '{}'".format(
-                result.error.code, result.error.message
-            ))
+os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
+os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
 
-if __name__ == "__main__":
-    # Authenticate the Text Analytics client
-    text_analytics_client = authenticate_client()
+def __call_chat_api(messages: list) -> AzureChatOpenAI:
+    model = AzureChatOpenAI(
+        openai_api_version="2023-05-15",
+        azure_deployment="labo-azure-openai-gpt-4-turbo",
+    )
+    with get_openai_callback():
+        return model(messages)
+    
+def read_json(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-16') as file:
+            data = json.load(file)
+        return data
+    except Exception as e:
+        print(f"Error reading JSON file: {e}")
+        return None
 
-    # Define your documents
-    document = [
-        "At Microsoft, we have been on a quest to advance AI beyond existing techniques, by taking a more holistic, "
-        "human-centric approach to learning and understanding. As Chief Technology Officer of Azure AI Cognitive "
-        "Services, I have been working with a team of amazing scientists and engineers to turn this quest into a "
-        "reality. In my role, I enjoy a unique perspective in viewing the relationship among three attributes of "
-        "human cognition: monolingual text (X), audio or visual sensory signals, (Y) and multilingual (Z). At the "
-        "intersection of all three, there's magic-what we call XYZ-code as illustrated in Figure 1-a joint "
-        "representation to create more powerful AI that can speak, hear, see, and understand humans better. "
-        "We believe XYZ-code will enable us to fulfill our long-term vision: cross-domain transfer learning, "
-        "spanning modalities and languages. The goal is to have pretrained models that can jointly learn "
-        "representations to support a broad range of downstream AI tasks, much in the way humans do today. "
-        "Over the past five years, we have achieved human performance on benchmarks in conversational speech "
-        "recognition, machine translation, conversational question answering, machine reading comprehension, "
-        "and image captioning. These five breakthroughs provided us with strong signals toward our more ambitious "
-        "aspiration to produce a leap in AI capabilities, achieving multisensory and multilingual learning that "
-        "is closer in line with how humans learn and understand. I believe the joint XYZ-code is a foundational "
-        "component of this aspiration, if grounded with external knowledge sources in the downstream AI tasks."
+def extract_news_info(data):
+    news_list = []
+    unique_links = set()  
+
+    for key, value in data.items():
+        for entry in value.values():
+            entry_data = json.loads(entry)
+            title = entry_data.get('title', '')
+            link = entry_data.get('link', '')
+            description = entry_data.get('description', '')
+            subjectList = entry_data.get('subjectList', [])
+
+            # Check if the link is not a duplicate and has details
+            if link not in unique_links and description:
+                news_list.append({'title': title, 'link': link, 'description': description, 'subjectList': subjectList})
+                unique_links.add(link)
+               
+    return news_list
+
+def get_news_details(link):
+    try:
+        # You can customize this function to fetch news details from the provided link
+        response = requests.get(link)
+        # print(f"Response Status Code: {response.status_code}")
+        # response.raise_for_status()  
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Use html2text to convert HTML content to plain text
+        details_text = html2text.html2text(soup.get_text())
+
+        # Check if the details_text is not empty or contains only whitespace
+        if details_text and not details_text.isspace():
+            # Return the news details
+            return {'content': details_text.strip()}
+        else:
+            # Return None if there are no details
+            return None
+    except requests.RequestException as e:
+        raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
+
+
+def get_news_details_list():
+    try:
+        file_path = 'object_list.json'
+
+        # Read JSON file
+        data = read_json(file_path)
+
+        # Extract news information
+        news_list = extract_news_info(data)
+        news_details_list = []
+
+        for news in news_list:
+            link = news.get('link', '')
+            try:
+                # Fetch details for each link
+                news_details = get_news_details(link)
+                details_news = news_details.get('content', '')
+
+                if details_news:
+                    # Append news details to the list
+                    news_details_list.append(details_news)
+
+            except FetchDetailsError as e:
+                print(f"An error occurred while fetching details for link: {link}. {str(e)}")
+                # traceback.print_exc()  # Print the traceback for the exception
+
+        return news_details_list
+
+    except Exception as e:
+        print(f"An error occurred during news details retrieval: {e}")
+        # traceback.print_exc()  # Print the traceback for the exception
+        return None
+
+
+
+def remove_unnecessary_text(details_feed):
+    # Remove HTML tags
+    cleaned_details_feed = re.sub(r'<.*?>', '', details_feed)
+    
+    # Remove any other specific patterns or text you want to exclude
+   # Remove lines starting with specific keywords
+    cleaned_details_feed = re.sub(r'^\s*(?:unwanted1|unwanted2|unwanted3).*$', '', cleaned_details_feed, flags=re.MULTILINE)
+     # Remove lines that seem like image captions
+    cleaned_details_feed = re.sub(r'\b(?:image|picture|photo)\b.*$', '', cleaned_details_feed, flags=re.IGNORECASE | re.MULTILINE)
+    # Remove extra whitespace
+    cleaned_details_feed = re.sub(r'\s+', ' ', cleaned_details_feed).strip()
+    
+    return cleaned_details_feed
+def format_news_details(details_feed):
+    # Remove HTML tags using BeautifulSoup
+    soup = BeautifulSoup(details_feed, 'html.parser')
+    cleaned_details_feed = soup.get_text(separator=' ')
+
+    # Remove extra whitespace
+    cleaned_details_feed = ' '.join(cleaned_details_feed.split())
+
+    return cleaned_details_feed
+
+def create_article(formatted_details_feed, source_link):
+    # Generate an article from the cleaned and formatted news details
+    article = f"Article for News Details:\n\n{formatted_details_feed}\n\nRead more at the source link: {source_link}"
+    return article
+
+def analysis_and_recommendation():
+    request_messages = [
+        SystemMessage(content="Please answer in English"),
     ]
+    
+    # Obtain the list of news details
+    news_details_list = get_news_details_list()
 
+    for details_feed in news_details_list:
+        # Step 1: Remove unnecessary text
+        cleaned_details_feed = remove_unnecessary_text(details_feed)
 
-    # Initialize a dictionary to store the summaries
-    all_summaries_dict = {}
+        # Step 2: Format news details
+        formatted_details_feed = format_news_details(cleaned_details_feed)
 
-    # Generate abstractive summaries for each document
-    for idx, document in enumerate(document, start=1):
-        summaries = generate_abstractive_summary(text_analytics_client, document)
-        all_summaries_dict[f"Document_{idx}"] = {
-            'text': document,
-            'summaries': summaries
-        }
+        # Step 3: Generate article
+        source_link = "your_original_news_link_here"  # Replace this with the actual link
+        article = create_article(formatted_details_feed, source_link)
 
-    # Write the dictionary to a JSON file
-    output_file_path = 'summaries_output.json'
-    with open(output_file_path, 'w', encoding='utf-16') as json_file:
-        json.dump(all_summaries_dict, json_file, ensure_ascii=False, indent=4)
+        # Make the API call to generate a response for each news detail
+        response = __call_chat_api(request_messages)
 
-    print(f"Summaries have been written to {output_file_path}")
+        # Convert content_from_api to string
+        content_from_api = response.content if isinstance(response, AIMessage) else str(response)
+
+        # Extend the request_messages with the content for further processing
+        request_messages.extend([
+            AIMessage(content=content_from_api),
+            HumanMessage(content=f"Create Summary article for news details:\n{article}")
+        ])
+
+        # Make another API call with updated messages to generate a summary
+        response_summary = __call_chat_api(request_messages).content
+        response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
+        print(response_summary_str)
+
+analysis_and_recommendation()
