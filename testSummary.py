@@ -117,7 +117,14 @@ def remove_unnecessary_text(details_feed):
     # Remove any other specific patterns or text you want to exclude
    # Remove lines starting with specific keywords
     cleaned_details_feed = re.sub(r'^\s*(?:unwanted1|unwanted2|unwanted3).*$', '', cleaned_details_feed, flags=re.MULTILINE)
-     # Remove lines that seem like image captions
+     # Remove lines containing specific keywords
+    keywords_to_remove = ['unwanted1', 'unwanted2', 'unwanted3', 'image', 'picture', 'photo']
+    for keyword in keywords_to_remove:
+        cleaned_details_feed = re.sub(fr'\b{keyword}\b.*$', '', cleaned_details_feed, flags=re.IGNORECASE | re.MULTILINE)
+
+    # Remove lines that seem like ads
+    cleaned_details_feed = re.sub(r'\b(?:ad|advertisement|promo)\b.*$', '', cleaned_details_feed, flags=re.IGNORECASE | re.MULTILINE)
+    # Remove lines that seem like image captions
     cleaned_details_feed = re.sub(r'\b(?:image|picture|photo)\b.*$', '', cleaned_details_feed, flags=re.IGNORECASE | re.MULTILINE)
     # Remove extra whitespace
     cleaned_details_feed = re.sub(r'\s+', ' ', cleaned_details_feed).strip()
@@ -154,7 +161,13 @@ def analysis_and_recommendation():
         formatted_details_feed = format_news_details(cleaned_details_feed)
 
         # Step 3: Generate article
-        source_link = "your_original_news_link_here"  # Replace this with the actual link
+        if isinstance(details_feed, dict):
+         source_link = details_feed.get('link', '')
+        else:
+    # Handle the case when details_feed is not a dictionary
+         source_link = ''  # or any other default value that makes sense in your context
+        print("Warning: details_feed is not a dictionary.")
+
         article = create_article(formatted_details_feed, source_link)
 
         # Make the API call to generate a response for each news detail
@@ -166,7 +179,7 @@ def analysis_and_recommendation():
         # Extend the request_messages with the content for further processing
         request_messages.extend([
             AIMessage(content=content_from_api),
-            HumanMessage(content=f"Create Summary article for news details:\n{article}")
+            HumanMessage(content=f"Create Summary article for news details return a json format where key will be date and value will be Id,title,link,article:\n{article}")
         ])
 
         # Make another API call with updated messages to generate a summary

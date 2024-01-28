@@ -92,11 +92,11 @@ def get_news_details_list():
             try:
                 # Fetch details for each link
                 news_details = get_news_details(link)
-                details_news = news_details.get('content', '')
+                details_content = news_details.get('content', '')
 
-                if details_news:
-                    # Append news details to the list
-                    news_details_list.append(details_news)
+                if details_content:
+                    # Append news details and link to the list
+                    news_details_list.append({'link': link, 'content': details_content})
 
             except FetchDetailsError as e:
                 print(f"An error occurred while fetching details for link: {link}. {str(e)}")
