@@ -5,10 +5,14 @@ import requests
 from html import unescape
 import html2text
 import re
+from typing import List, Optional, Dict
 from bs4 import BeautifulSoup
 from langchain.callbacks.manager import get_openai_callback
 from langchain_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
+#from httpx import URL, Proxy, Timeout, Response, ASGITransport, AsyncBaseTransport
+
+
 #from component.Details_News import get_news_details_list
 
 class FetchDetailsError(Exception):
@@ -73,7 +77,6 @@ def get_news_details(link):
             return None
     except requests.RequestException as e:
         raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
-
 
 def get_news_details_list():
     try:
