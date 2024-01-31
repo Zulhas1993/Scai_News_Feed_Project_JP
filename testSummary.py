@@ -21,41 +21,76 @@ class FetchDetailsError(Exception):
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
 
+# Function to call the Azure Chat API with a list of messages
 def __call_chat_api(messages: list) -> AzureChatOpenAI:
+    # Create an instance of the AzureChatOpenAI model
     model = AzureChatOpenAI(
         openai_api_version="2023-05-15",
         azure_deployment="labo-azure-openai-gpt-4-turbo",
     )
-    with get_openai_callback():
-        return model(messages)
     
+    # Use a context manager to handle OpenAI API callbacks
+    with get_openai_callback():
+        # Call the AzureChatOpenAI model with the provided messages
+        return model(messages)
+
+    
+# Function to read JSON data from a file
 def read_json(file_path):
     try:
+        # Open the JSON file in read mode using utf-16 encoding
         with open(file_path, 'r', encoding='utf-16') as file:
+            
+            # Load the JSON data from the file
             data = json.load(file)
+            
+        # Return the loaded data
         return data
+    
+    # Handle exceptions that may occur during file reading or JSON decoding
     except Exception as e:
+        
+        # Print an error message indicating the issue
         print(f"Error reading JSON file: {e}")
+        
+        # Return None to indicate an unsuccessful operation
         return None
 
+# Function to extract relevant information from a nested data structure
 def extract_news_info(data):
+    # Initialize an empty list to store extracted news information
     news_list = []
+    
+    # Use a set to keep track of unique links to avoid duplicates
     unique_links = set()  
 
+    # Iterate through the nested data structure
     for key, value in data.items():
         for entry in value.values():
+            # Parse the JSON data within each entry
             entry_data = json.loads(entry)
+            
+            # Extract relevant information from the parsed data
             title = entry_data.get('title', '')
             link = entry_data.get('link', '')
             description = entry_data.get('description', '')
             subjectList = entry_data.get('subjectList', [])
 
-            # Check if the link is not a duplicate and has details
+            # Check if the link is not a duplicate and has a description
             if link not in unique_links and description:
-                news_list.append({'title': title, 'link': link, 'description': description, 'subjectList': subjectList})
+                # Append a dictionary containing extracted information to the news_list
+                news_list.append({
+                    'title': title,
+                    'link': link,
+                    'description': description,
+                    'subjectList': subjectList
+                })
+                # Add the link to the set to track uniqueness
                 unique_links.add(link)
                
+    # Return the list of extracted news information
     return news_list
+
 
 def get_news_details(link):
     try:

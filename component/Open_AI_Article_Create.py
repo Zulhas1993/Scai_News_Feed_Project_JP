@@ -1,15 +1,13 @@
 import json
 import requests
-from datetime import datetime
-import html2text
+import re
+from bs4 import BeautifulSoup
+from typing import Dict
 from azure.ai.textanalytics import TextAnalyticsClient
 from azure.core.credentials import AzureKeyCredential
-from bs4 import BeautifulSoup
-import re
-from typing import List, Optional, Dict
+
 class FetchDetailsError(Exception):
     pass
-
 
 def authenticate_client():
     try:
@@ -20,101 +18,59 @@ def authenticate_client():
         print(f"Error during authentication: {e}")
         return None
 
+# Function to read JSON data from a file
 def read_json(file_path):
     try:
+        # Open the JSON file in read mode using utf-16 encoding
         with open(file_path, 'r', encoding='utf-16') as file:
+            
+            # Load the JSON data from the file
             data = json.load(file)
+            
+            # Print a message indicating successful loading of data
             print(f"Data loaded from {file_path}: {data}")
+            
+        # Return the loaded data
         return data
+    
+    # Handle exceptions that may occur during file reading or JSON decoding
     except Exception as e:
+        
+        # Print an error message indicating the issue
         print(f"Error reading JSON file: {e}")
+        
+        # Return None to indicate an unsuccessful operation
         return None
 
-class NewsFeed:
-    def __init__(self, id, title, tags, ex_link, description, details_news, keywords, article, date):
-        self.id = id
-        self.title = title
-        self.tags = tags
-        self.ex_link = ex_link
-        self.description = description
-        self.details_news = details_news
-        self.keywords = keywords
-        self.article = article
-        self.date = date
-
-
-def extract_news_info(data):
-    # Initialize an empty list to store extracted news information
-    news_list = []
-
-    # Create a set to track unique links and avoid duplicates
-    unique_links = set()
-
-    # Loop through categories and their entries in the provided data
-    for key, value in data.items():
-        # Loop through individual news entries in the current category
-        for entry in value.values():
-            # Parse the JSON data for the current news entry
-            entry_data = json.loads(entry)
-
-            # Extract relevant information from the news entry
-            title = entry_data.get('title', '')
-            link = entry_data.get('link', '')
-            description = entry_data.get('description', '')
-            subjectList = entry_data.get('subjectList', [])
-
-            # Check if the link is not a duplicate and the description is present
-            if link not in unique_links and description:
-                # Add the extracted information to the news_list
-                news_list.append({
-                    'title': title,
-                    'link': link,
-                    'description': description,
-                    'subjectList': subjectList
-                })
-
-                # Mark the link as processed to avoid duplicates
-                unique_links.add(link)
-
-    # Return the list of extracted news information
-    return news_list
-
-
+# Function to retrieve details from a news article given its link
 def get_news_details(link):
     try:
-        # Make a GET request to the provided link
+        # Send an HTTP GET request to the provided link
         response = requests.get(link)
-
-        # Parse the HTML content using BeautifulSoup
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # Use html2text to convert HTML to plain text
-        details_text = html2text.html2text(soup.get_text())
-
-        # Check if the extracted text is not empty or just whitespace
-        if details_text and not details_text.isspace():
-            # Return the details in a dictionary with 'content' key
-            return {'content': details_text.strip()}
-        else:
-            # If the extracted text is empty or just whitespace, return None
-            return None
-
-    except requests.RequestException as e:
-        # If an exception occurs during the request, raise a custom exception
-        raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
-
-def get_news_details_list() -> Dict[str, str]:
-    try:
-        # File path of the JSON file containing news data
-        file_path = 'object_list.json'
-
-        # Read JSON file
-        data = read_json(file_path)
         
-        # Dictionary to store news details
-        news_details_dict = {}
+        # Parse the HTML content of the page using BeautifulSoup
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Extract text content from the HTML and remove extra whitespaces
+        details_text = soup.get_text(separator=' ')
+        
+        # Return the extracted content as a dictionary
+        return {'content': details_text.strip()}
 
-        # Iterate through categories and news entries
+    # Handle exceptions related to the HTTP request
+    except requests.RequestException as e:
+        return {'error': f"Error fetching details for link: {link}. {str(e)}"}
+    
+    # Handle unexpected exceptions
+    except Exception as e:
+        return {'error': f"Unexpected error: {str(e)}"}
+
+def get_news_details_list() -> Dict:
+    try:
+        file_path = 'object_list.json'
+        data = read_json(file_path)
+        news_details_list = []
+
         for category, feed_entries in data.items():
             for index, news in feed_entries.items():
                 # Convert news to a dictionary if it's not already
@@ -123,45 +79,46 @@ def get_news_details_list() -> Dict[str, str]:
                         news = json.loads(news)
                         if not isinstance(news, dict):
                             raise ValueError("Converted news is not a dictionary.")
-                    except json.JSONDecodeError as json_error:
-                        print(f"Warning: Unable to convert news at index {index} in category {category} to a dictionary. JSON decoding error: {json_error}")
-                        continue
-                    except ValueError as value_error:
-                        print(f"Warning: Unable to convert news at index {index} in category {category} to a dictionary. {value_error}")
+                    except (json.JSONDecodeError, ValueError) as error:
+                        print(f"Warning: Unable to convert news at index {index} in category {category} to a dictionary. {error}")
                         continue
 
                 # Extract link from news entry
                 link = news.get('link', '')
+
                 try:
                     # Fetch details for each news
                     news_details = get_news_details(link)
-                    details_news = news_details.get('content', '')
 
-                    if details_news:
-                        # Check if details_news is a valid JSON string
-                        try:
-                            json.loads(details_news)
-                            news_details_dict[index] = details_news
-                        except json.JSONDecodeError as json_error:
-                            print(f"Warning: 'details_news' at index {index} is not a valid JSON string. Skipping. JSON decoding error: {json_error}")
-                            # Uncomment the following line to print the content of 'details_news'
-                            # print(f"Details News Content: {details_news}")
+                    # Check if the result is not None and is a dictionary with a 'content' key
+                    if news_details and isinstance(news_details, dict) and 'content' in news_details:
+                        # Extract 'details_news' if available, otherwise set it to an empty dictionary
+                        details_news = news_details.get('content', '')
+                    else:
+                        # Print a warning and skip if the result is not in the expected format
+                        print(f"Warning: Invalid format for news details at index {index} in category {category}. Skipping.")
+                        continue
 
-                except FetchDetailsError as e:
+                    # Ensure details_news is a string
+                    if not isinstance(details_news, str):
+                        print(f"Warning: 'details_news' at index {index} is not a valid string. Skipping.")
+                        continue
+
+                    news_details_list.append(details_news)
+
+                except Exception as e:
+                    # Print an error message if an exception occurs during fetching details
                     print(f"An error occurred while fetching details for news at index {index} in category {category}. {str(e)}")
 
-        return news_details_dict
+        return news_details_list
 
     except Exception as e:
         print(f"An error occurred during news details retrieval: {e}")
-        return {}
-
-
-
-
+        return []
 
 def remove_unnecessary_text(details_feed):
-    # Remove HTML tags
+    # Replace this function with your specific implementation
+    # Remove unwanted HTML tags, patterns, keywords, etc.
     cleaned_details_feed = re.sub(r'<.*?>', '', details_feed)
     
     # Remove lines starting with specified patterns
@@ -185,8 +142,8 @@ def remove_unnecessary_text(details_feed):
     
     return cleaned_details_feed
 
-
 def format_news_details(details_feed):
+    # Replace this function with your specific implementation
     # Create a BeautifulSoup object to parse HTML content
     soup = BeautifulSoup(details_feed, 'html.parser')
     
@@ -194,120 +151,82 @@ def format_news_details(details_feed):
     cleaned_details_feed = soup.get_text(separator=' ')
     
     # Join consecutive whitespaces into a single space
-    cleaned_details_feed = ' '.join(cleaned_details_feed.split())
+    cleaned_details_feed = " ".join(cleaned_details_feed.split())
     
-    return cleaned_details_feed
+    # Remove any trailing commas if present
+    cleaned_details_feed = cleaned_details_feed.rstrip(',')
+    
+    # Return the cleaned details within double quotes without single quotes
+    return f"{cleaned_details_feed}"
+    
 
 
-def generate_abstractive_summary(text_analytics_client, document):
-    # Start the abstractive summarization process
-    poller = text_analytics_client.begin_abstract_summary(document)
+
+
+
+
+# Function to generate abstractive summaries using Azure Text Analytics service
+def generate_abstractive_summary(text_analytics_client, documents):
+    # Begin the process of generating abstract summaries using the provided documents
+    poller = text_analytics_client.begin_abstract_summary(documents)
     
-    # Get the results of the summarization process
+    # Wait for the operation to complete and get the results
     abstract_summary_results = poller.result()
     
+    # Initialize an empty list to store the generated summaries
+    summaries = []
+
     # Iterate through the results
     for result in abstract_summary_results:
-        # Check if the result is an abstractive summarization
+        # Check if the result represents abstractive summarization
         if result.kind == "AbstractiveSummarization":
-            print("Summaries abstracted:")
-            # Print each generated summary
-            [print(f"{summary.text}\n") for summary in result.summaries]
-        # Check if there is an error
+            # Extract and append the summaries to the list
+            [summaries.append(summary.text) for summary in result.summaries]
+        # Check if there is an error in the result
         elif result.is_error is True:
-            print("An error occurred with code '{}' and message '{}'".format(
-                result.error.code, result.error.message
-            ))
+            # Print error details if an error is encountered
+           print("Error details - Code: {}, Message: {}".format(result.error.code, result.error.message))
 
 
-def make_details_news_valid(details_news):
-    # Check if details_news is a dictionary
-    if not isinstance(details_news, dict):
-        # If not, create an empty dictionary
-        details_news = {}
-
-    # Add necessary fields or perform other modifications to make it valid
-    if 'content' not in details_news:
-        # If 'content' is missing, add a default value
-        details_news['content'] = 'No content available.'
-
-    return details_news
-
-def create_article(formatted_details_feed, source_link):
-    # Generate an article from the cleaned and formatted news details
-    article = f"Article for News Details:\n\n{formatted_details_feed}\n\nRead more at the source link: {source_link}"
-    return article
-
+    # Return the generated summaries
+    return summaries
 
 
 def generate_abstractive_summaries(text_analytics_client):
     try:
-        # Initialize a dictionary to store all generated summaries
-        all_summaries_dict = {}
-        
-        # Retrieve news details as a dictionary
+        all_summaries = []
         news_details_list = get_news_details_list()
 
-        # Check if the retrieved news_details_list is a dictionary
-        if not isinstance(news_details_list, dict):
+        for news_details in news_details_list:
             try:
-                # Attempt to convert news_details_list to a dictionary
-                news_details_list = json.loads(news_details_list)
-                
-                # Check if the conversion was successful
-                if not isinstance(news_details_list, dict):
-                    raise ValueError("Converted news_details_list is not a dictionary.")
-            except json.JSONDecodeError as json_error:
-                print(f"Error: Unable to convert news_details_list to a dictionary. JSON decoding error: {json_error}")
-                return None
-            except ValueError as value_error:
-                print(f"Error: Unable to convert news_details_list to a dictionary. {value_error}")
-                return None
-
-        # Iterate through each news entry in the news_details_list
-        for news_date, news_details in news_details_list.items():
-            try:
-                # Check if news_details is a dictionary
-                if not isinstance(news_details, dict):
-                    news_details = json.loads(news_details)
-
-                # Extract 'details_news' from the news_details dictionary
-                details_news = news_details.get('details_news', {})
-
-                # Check if 'details_news' is a dictionary
-                if not isinstance(details_news, dict):
-                    print(f"Warning: 'details_news' is not a dictionary. Content: {details_news}")
+                # Ensure 'news_details' is a string
+                if not isinstance(news_details, str):
+                    print(f"Warning: 'news_details' is not a valid string. Skipping.")
                     continue
 
-                # Generate abstractive summaries using the Text Analytics client
-                summaries = generate_abstractive_summary(text_analytics_client, details_news)
+                # Remove unnecessary text
+                cleaned_details = remove_unnecessary_text(news_details)
 
-                # Check if summaries were successfully generated
-                if summaries is not None:
-                    # Store the generated summaries in the all_summaries_dict
-                    all_summaries_dict[news_date] = {
-                        'id': news_details.get('id', ''),
-                        'title': news_details.get('title', ''),
-                        'summaries': summaries
-                    }
-            except json.JSONDecodeError as json_error:
-                print(f"Error: Unable to convert news_details to a dictionary. JSON decoding error: {json_error}")
-            except ValueError as value_error:
-                print(f"Error: Unable to convert news_details to a dictionary. {value_error}")
+                # Format news details
+                formatted_details = format_news_details(cleaned_details)
+
+                # Generate abstractive summary
+                summaries = generate_abstractive_summary(text_analytics_client, [formatted_details])
+
+                if summaries:
+                    all_summaries.extend(summaries)
+
             except Exception as e:
+                # Print an error message if an exception occurs during summarization
                 print(f"An error occurred during abstractive summarization: {e}")
 
-        # Write the generated summaries to a JSON file
-        output_file_path = 'summaries_output.json'
-        with open(output_file_path, 'w', encoding='utf-8') as json_file:
-            json.dump(all_summaries_dict, json_file, ensure_ascii=False, indent=2)
-
-        print(f"Summaries have been written to {output_file_path}")
-        return all_summaries_dict
+        # Print or save the summaries as needed
+        print("Summaries:")
+        for summary in all_summaries:
+            print(summary)
 
     except Exception as e:
         print(f"An error occurred during abstractive summarization: {e}")
-        return None
 
 # Assume you have an implementation for authenticating the text_analytics_client
 
@@ -320,10 +239,3 @@ if text_analytics_client is not None:
     generate_abstractive_summaries(text_analytics_client)
 else:
     print("Authentication failed. Check your credentials.")
-
-
-
-
-
-
-
