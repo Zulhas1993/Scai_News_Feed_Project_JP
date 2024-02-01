@@ -143,7 +143,6 @@ def remove_unnecessary_text(details_feed):
     return cleaned_details_feed
 
 def format_news_details(details_feed):
-    # Replace this function with your specific implementation
     # Create a BeautifulSoup object to parse HTML content
     soup = BeautifulSoup(details_feed, 'html.parser')
     
@@ -156,48 +155,56 @@ def format_news_details(details_feed):
     # Remove any trailing commas if present
     cleaned_details_feed = cleaned_details_feed.rstrip(',')
     
-    # Return the cleaned details within double quotes without single quotes
-    return f"{cleaned_details_feed}"
-    
-
-
-
-
-
+    # Return the cleaned details within double quotes
+    return f'"{cleaned_details_feed}"'
 
 # Function to generate abstractive summaries using Azure Text Analytics service
-def generate_abstractive_summary(text_analytics_client, documents):
-    # Begin the process of generating abstract summaries using the provided documents
-    poller = text_analytics_client.begin_abstract_summary(documents)
-    
-    # Wait for the operation to complete and get the results
-    abstract_summary_results = poller.result()
-    
-    # Initialize an empty list to store the generated summaries
-    summaries = []
+def generate_abstractive_summary(text_analytics_client, documents, max_summary_words=150):
+    try:
+        # Begin the process of generating abstract summaries using the provided documents
+        poller = text_analytics_client.begin_abstract_summary(documents)
 
-    # Iterate through the results
-    for result in abstract_summary_results:
-        # Check if the result represents abstractive summarization
-        if result.kind == "AbstractiveSummarization":
-            # Extract and append the summaries to the list
-            [summaries.append(summary.text) for summary in result.summaries]
-        # Check if there is an error in the result
-        elif result.is_error is True:
-            # Print error details if an error is encountered
-           print("Error details - Code: {}, Message: {}".format(result.error.code, result.error.message))
+        # Wait for the operation to complete and get the results
+        abstract_summary_results = poller.result()
+
+        # Initialize an empty list to store the generated summaries
+        summaries = []
+
+        # Iterate through the results
+        for result in abstract_summary_results:
+            # Check if the result represents abstractive summarization
+            if result.kind == "AbstractiveSummarization":
+                # Iterate through each summary in the result
+                for summary in result.summaries:
+                    # Split the summary into words
+                    words = summary.text.split()
+
+                    # Check if the summary is within the desired word count
+                    if len(words) <= max_summary_words:
+                        # Append the summary to the list
+                        summaries.append(summary.text)
+                    else:
+                        # If the summary is too long, truncate it to the desired length
+                        summaries.append(' '.join(words[:max_summary_words]))
+
+        # Return the generated summaries
+        return summaries
+
+    except Exception as e:
+        print(f"An error occurred during abstractive summarization: {e}")
+        return []
+
+# Rest of your code...
 
 
-    # Return the generated summaries
-    return summaries
 
 
 def generate_abstractive_summaries(text_analytics_client):
     try:
-        all_summaries = []
+        all_summaries = {}
         news_details_list = get_news_details_list()
 
-        for news_details in news_details_list:
+        for index, news_details in enumerate(news_details_list, start=1):
             try:
                 # Ensure 'news_details' is a string
                 if not isinstance(news_details, str):
@@ -214,7 +221,11 @@ def generate_abstractive_summaries(text_analytics_client):
                 summaries = generate_abstractive_summary(text_analytics_client, [formatted_details])
 
                 if summaries:
-                    all_summaries.extend(summaries)
+                    # Generate article_key
+                    article_key = f"article_{index}"
+
+                    # Add the summaries to the dictionary
+                    all_summaries[article_key] = summaries
 
             except Exception as e:
                 # Print an error message if an exception occurs during summarization
@@ -222,11 +233,17 @@ def generate_abstractive_summaries(text_analytics_client):
 
         # Print or save the summaries as needed
         print("Summaries:")
-        for summary in all_summaries:
-            print(summary)
+        for article_key, summaries in all_summaries.items():
+            print(f"{article_key}:")
+            for summary in summaries:
+                print(f"  {summary}")
 
     except Exception as e:
         print(f"An error occurred during abstractive summarization: {e}")
+
+# Rest of your code...
+
+
 
 # Assume you have an implementation for authenticating the text_analytics_client
 

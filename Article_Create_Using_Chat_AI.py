@@ -1,27 +1,21 @@
 import os
 import json
-from datetime import datetime
 import requests
+import re,time,asyncio
+from bs4 import BeautifulSoup
 from html import unescape
 import html2text
-import re
 from typing import List, Optional, Dict
-from bs4 import BeautifulSoup
 from langchain.callbacks.manager import get_openai_callback
 from langchain_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-#from httpx import URL, Proxy, Timeout, Response, ASGITransport, AsyncBaseTransport
-
-
-#from component.Details_News import get_news_details_list
-
-class FetchDetailsError(Exception):
-    pass
 
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
 
-# Function to call the Azure Chat API with a list of messages
+class FetchDetailsError(Exception):
+    pass
+
 def __call_chat_api(messages: list) -> AzureChatOpenAI:
     # Create an instance of the AzureChatOpenAI model
     model = AzureChatOpenAI(
@@ -34,7 +28,18 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
         # Call the AzureChatOpenAI model with the provided messages
         return model(messages)
 
-    
+class NewsFeed:
+    def __init__(self, id, title, tags, ex_link, description, details_news, keywords, article, date):
+        self.id = id
+        self.title = title
+        self.tags = tags
+        self.ex_link = ex_link
+        self.description = description
+        self.details_news = details_news
+        self.keywords = keywords
+        self.article = article
+        self.date = date
+
 # Function to read JSON data from a file
 def read_json(file_path):
     try:
@@ -91,7 +96,6 @@ def extract_news_info(data):
     # Return the list of extracted news information
     return news_list
 
-
 def get_news_details(link):
     try:
         # You can customize this function to fetch news details from the provided link
@@ -112,8 +116,7 @@ def get_news_details(link):
             return None
     except requests.RequestException as e:
         raise FetchDetailsError(f"Error fetching details for link: {link}. {str(e)}")
-
-def get_news_details_list():
+def get_news_details_list(batch_size=10):
     try:
         file_path = 'object_list.json'
 
@@ -124,20 +127,35 @@ def get_news_details_list():
         news_list = extract_news_info(data)
         news_details_list = []
 
-        for news in news_list:
-            link = news.get('link', '')
-            try:
-                # Fetch details for each link
-                news_details = get_news_details(link)
-                details_news = news_details.get('content', '')
+        for i in range(0, len(news_list), batch_size):
+            batch = news_list[i:i + batch_size]
 
-                if details_news:
-                    # Append news details to the list
-                    news_details_list.append(details_news)
+            for news in batch:
+                link = news.get('link', '')
+                title = news.get('title', '')
+                description = news.get('description', '')
+                subjectList = news.get('subjectList', [])
+                tags = ""
 
-            except FetchDetailsError as e:
-                print(f"An error occurred while fetching details for link: {link}. {str(e)}")
-                # traceback.print_exc()  # Print the traceback for the exception
+                try:
+                    # Fetch details for each link
+                    news_details = get_news_details(link)
+                    details_news = news_details.get('content', '')
+
+                    if details_news:
+                        # Append news details to the list
+                        news_details_list.append({
+                            'title': title,
+                            'link': link,
+                            'tags': tags,
+                            'description': description,
+                            'subjectList': subjectList,
+                        })
+
+                except FetchDetailsError as e:
+                    print(f"An error occurred while fetching details for link: {link}. {str(e)}")
+                    # traceback.print_exc()  # Print the traceback for the exception
+                    continue
 
         return news_details_list
 
@@ -149,13 +167,17 @@ def get_news_details_list():
 
 
 def remove_unnecessary_text(details_feed):
+    if not isinstance(details_feed, str):
+        print(f"Warning: 'details_feed' is not a valid string. Skipping.")
+        return details_feed
+
     # Remove HTML tags
     cleaned_details_feed = re.sub(r'<.*?>', '', details_feed)
     
     # Remove any other specific patterns or text you want to exclude
-   # Remove lines starting with specific keywords
+    # Remove lines starting with specific keywords
     cleaned_details_feed = re.sub(r'^\s*(?:unwanted1|unwanted2|unwanted3).*$', '', cleaned_details_feed, flags=re.MULTILINE)
-     # Remove lines containing specific keywords
+    # Remove lines containing specific keywords
     keywords_to_remove = ['unwanted1', 'unwanted2', 'unwanted3', 'image', 'picture', 'photo']
     for keyword in keywords_to_remove:
         cleaned_details_feed = re.sub(fr'\b{keyword}\b.*$', '', cleaned_details_feed, flags=re.IGNORECASE | re.MULTILINE)
@@ -168,6 +190,7 @@ def remove_unnecessary_text(details_feed):
     cleaned_details_feed = re.sub(r'\s+', ' ', cleaned_details_feed).strip()
     
     return cleaned_details_feed
+
 def format_news_details(details_feed):
     # Remove HTML tags using BeautifulSoup
     soup = BeautifulSoup(details_feed, 'html.parser')
@@ -193,35 +216,52 @@ def analysis_and_recommendation():
 
     for details_feed in news_details_list:
         # Step 1: Remove unnecessary text
-        cleaned_details_feed = remove_unnecessary_text(details_feed)
+        #cleaned_details_feed = remove_unnecessary_text(details_feed)
 
         # Step 2: Format news details
-        formatted_details_feed = format_news_details(cleaned_details_feed)
+        #formatted_details_feed = format_news_details(cleaned_details_feed)
 
         # Step 3: Generate article
         if isinstance(details_feed, dict):
-         source_link = details_feed.get('link', '')
+            source_link = details_feed.get('link', '')
         else:
-    # Handle the case when details_feed is not a dictionary
-         source_link = ''  # or any other default value that makes sense in your context
-        print("Warning: details_feed is not a dictionary.")
+            # Handle the case when details_feed is not a dictionary
+            source_link = ''  # or any other default value that makes sense in your context
+            print("Warning: details_feed is not a dictionary.")
 
-        article = create_article(formatted_details_feed, source_link)
+        # Create an instance of NewsFeed
+        news_entry = NewsFeed(
+            id="",  # You may need to provide an appropriate id
+            title=details_feed.get('title', ''),
+            tags="",  # You may need to provide appropriate tags
+            ex_link=details_feed.get('link', ''),
+            description=details_feed.get('description', ''),
+            details_news=details_feed,
+            keywords="",  # You may need to provide appropriate keywords
+            article=create_article(details_feed, source_link),
+            date=""  # You may need to provide an appropriate date
+        )
 
-        # Make the API call to generate a response for each news detail
+        # Convert NewsFeed instance to dictionary
+        news_dict = news_entry.__dict__
+
         response = __call_chat_api(request_messages)
-
-        # Convert content_from_api to string
         content_from_api = response.content if isinstance(response, AIMessage) else str(response)
+        content_str = str(content_from_api)
 
-        # Extend the request_messages with the content for further processing
         request_messages.extend([
-            AIMessage(content=content_from_api),
-            HumanMessage(content=f"Create Summary article for each news details return a json format where key will be date and value will be Id,title,link,article:\n{article}")
+        AIMessage(content=f"{content_str}"),
+        HumanMessage(content=f"Create Summary article for each details news  :\n{news_dict}")
+       ])
+
+        request_messages.extend([
+        AIMessage(content=content_str),
+        HumanMessage(content=f"Create Summary article for each details news  :\n{news_dict}")
         ])
 
+        time.sleep(1)
         # Make another API call with updated messages to generate a summary
-        response_summary = __call_chat_api(request_messages).content
+        response_summary = __call_chat_api(request_messages)
         response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
         print(response_summary_str)
 

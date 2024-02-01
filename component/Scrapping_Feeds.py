@@ -1,7 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import docx
-from component.Categories import getCategories
+from Categories import getCategories
 import json
 
 url = 'https://b.hatena.ne.jp'
@@ -66,6 +66,7 @@ def getOnlyLinks():
             doc.add_paragraph(obj.link)
     doc.save('C:\\Users\\shekhar\\Downloads\\links.docx')
 
+
 def getLinks_Title():
     doc = docx.Document()
     for key,value in allLinksByCategoryDict.items():
@@ -73,7 +74,7 @@ def getLinks_Title():
         for obj in value:
             doc.add_paragraph('Title: {}'.format(obj.title))
             doc.add_paragraph('Link: {}'.format(obj.link))
-    doc.save('C:\\Users\\shekhar\\Downloads\\links_with_title.docx')
+    #doc.save('C:\\Users\\shekhar\\Downloads\\links_with_title.docx')
 
 
 
@@ -84,7 +85,8 @@ fillDictionaryWithData()
 #getLinks_Title()
 
 #saving data into a json file.
-jsonFile = open('C:\\Users\\shekhar\\Downloads\\object_list.json','w',encoding='utf-16')
+#jsonFile = open('C:\\Users\\shekhar\\Downloads\\object_list.json','w',encoding='utf-16')
+jsonFile = open('D:\\WebsiteSraping\\object_list.json','w',encoding='utf-16')
 json.dump(allLinksByCategoryDict,jsonFile,ensure_ascii=False)
 
 
