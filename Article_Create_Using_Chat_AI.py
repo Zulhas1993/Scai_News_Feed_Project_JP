@@ -1,8 +1,7 @@
 import os
 import json
 import requests
-import re
-import time
+from datetime import datetime
 from bs4 import BeautifulSoup
 import html2text
 from typing import Dict, List
@@ -26,7 +25,7 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
         return model(messages)
 
 class NewsFeed:
-    def __init__(self, id, title, tags, ex_link, description, details_news, keywords, article, date):
+    def __init__(self, id, title, tags, ex_link, description, details_news, keywords, article, date, created_at=None, updated_at=None, deleted_at=None):
         self.id = id
         self.title = title
         self.tags = tags
@@ -36,6 +35,9 @@ class NewsFeed:
         self.keywords = keywords
         self.article = article
         self.date = date
+        self.created_at = created_at
+        self.updated_at = updated_at
+        self.deleted_at = deleted_at
 
 # Function to read JSON data from a file
 def read_json(file_path):
@@ -63,7 +65,7 @@ def get_news_details(link):
 
 def get_news_details_list() -> List[Dict[str, str]]:
     try:
-        file_path = 'object_list.json'
+        file_path = 'object_list1.json'
         data = read_json(file_path)
         news_details_list = []
 
@@ -95,8 +97,10 @@ def get_news_details_list() -> List[Dict[str, str]]:
 
                     # Append a dictionary with Title, Link, and details_news to the news_details_list
                     news_details_list.append({
-                        'Title': news.get('title', ''),
-                        'Link': link,
+                        'Id': len(news_details_list) + 1,  # Auto-incrementing Id
+                        'CurrentDate': "",  # Add the current date logic here
+                        'title': news.get('title', ''),
+                        'link': link,
                         'details_news': details_news
                     })
 
@@ -109,45 +113,65 @@ def get_news_details_list() -> List[Dict[str, str]]:
         print(f"An error occurred during news details retrieval: {e}")
         return []
 
-def analysis_and_recommendation():
+
+def get_articles_list():
     request_messages = [SystemMessage(content="Please answer in English")]
+
+    articles_list = []  # To store the generated articles
+    current_id = 1000  # Starting Id
 
     news_details_list = get_news_details_list()
 
     for details_feed in news_details_list:
         try:
             if isinstance(details_feed, dict):
+                current_id += 1  # Increment Id for each article
+
                 news_entry = NewsFeed(
-                    id="",  
-                    title=details_feed.get('Title', ''),
-                    tags="",  
-                    ex_link=details_feed.get('Link', ''),
-                    description="",  
+                    id=current_id,
+                    title=details_feed.get('title', ''),
+                    tags="",
+                    ex_link=details_feed.get('link', ''),
+                    description="",
                     details_news=details_feed.get('details_news', ''),
-                    keywords="",  
-                    article="",  
-                    date=""  
+                    keywords="",
+                    article="",
+                    date=""
                 )
 
                 news_dict = news_entry.__dict__
 
+                # Generate article using Chat AI
                 response = __call_chat_api(request_messages)
                 content_from_api = response.content if isinstance(response, AIMessage) else str(response)
-                content_str = str(content_from_api)
+                created_article = str(content_from_api)
 
+                # Extend request_messages to include the message about creating an article
                 request_messages.extend([
-                    AIMessage(content=f"{content_str}"),
-                    HumanMessage(content=f"When generating this error: Azure has not provided the response due to a content filter being triggered. Skipping this and continuing to the next news entry")
+                    AIMessage(content=created_article),
+                    HumanMessage(content=f"Create Summary article for each details news , if any link or details news have a problem to creating article you skip the details news and continue for next details news and Create article one by one and all article will be within 150 words and response format is Title: , Link: ,Article  :\n{json.dumps(news_dict, ensure_ascii=False)}")
                 ])
 
-                request_messages.extend([
-                    AIMessage(content=content_str),
-                    HumanMessage(content=f"Create Summary article for each details news , if any link or details news have a problem to creating article you skip the  details news and continue for next details news and Create article one by one and all article will be within 150 words and response format is Title: , Link: ,Article  :\n{news_dict}")
-                ])
-
+                # Generate summary using Chat AI
                 response_summary = __call_chat_api(request_messages)
                 response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
-                print(response_summary_str)
+
+                # Extract the 'Article' part from response_summary_str
+                article_start_index = response_summary_str.find('Article:')
+                if article_start_index != -1:
+                    article_text = response_summary_str[article_start_index + len('Article:'):].strip()
+                else:
+                    article_text = ""
+
+                # Add Link, Title, Article, and Article ID to the list
+                current_date = datetime.now().strftime("%Y-%m-%d")
+                articles_list.append({
+                    'article_id': current_id,
+                    'Link': news_dict.get('ex_link', ''),
+                    'title': news_dict.get('title', ''),
+                    'article': article_text,
+                    'date':current_date
+                })
 
             else:
                 print("Warning: details_feed is not a dictionary.")
@@ -156,9 +180,103 @@ def analysis_and_recommendation():
             print(f"An error occurred: {e}")
             continue
 
-        finally:
-            request_messages = [SystemMessage(content="Please answer in English")]
-            time.sleep(1)
+    return articles_list
+
+# Example usage:
+articles_list = get_articles_list()
+print(articles_list)
+
+
+
+
+
+
+
+## It return a json for NewsFeed *******************************************
+
+
+# def analysis_and_recommendation():
+#     request_messages = [SystemMessage(content="Please answer in English")]
+
+#     articles_dict = {}  # To store the generated articles
+#     current_id = 1000  # Starting Id
+
+#     news_details_list = get_news_details_list()
+
+#     for details_feed in news_details_list:
+#         try:
+#             if isinstance(details_feed, dict):
+#                 current_id += 1  # Increment Id for each article
+
+#                 news_entry = NewsFeed(
+#                     id=current_id,  
+#                     title=details_feed.get('title', ''),
+#                     tags="",  
+#                     ex_link=details_feed.get('link', ''),
+#                     description="",  
+#                     details_news=details_feed.get('details_news', ''),
+#                     keywords="",  
+#                     article="",  
+#                     date=""  
+#                 )
+
+#                 news_dict = news_entry.__dict__
+
+#                 # Generate article using Chat AI
+#                 response = __call_chat_api(request_messages)
+#                 content_from_api = response.content if isinstance(response, AIMessage) else str(response)
+#                 created_article = str(content_from_api)
+
+#                 # Extend request_messages to include the message about creating an article
+#                 request_messages.extend([
+#                     AIMessage(content=created_article),
+#                     HumanMessage(content=f"Create Summary article for each details news , if any link or details news have a problem to creating article you skip the details news and continue for next details news and Create article one by one and all article will be within 150 words and response format is Title: , Link: ,Article  :\n{json.dumps(news_dict, ensure_ascii=False)}")
+#                 ])
+
+#                 # Generate summary using Chat AI
+#                 response_summary = __call_chat_api(request_messages)
+#                 response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
+
+#                 # Extract the 'Article' part from response_summary_str
+#                 article_start_index = response_summary_str.find('Article:')
+#                 if article_start_index != -1:
+#                     article_text = response_summary_str[article_start_index + len('Article:'):].strip()
+#                 else:
+#                     article_text = ""
+                
+#                 # Convert news_dict to a JSON-formatted dictionary with the extracted article
+#                 current_date = datetime.now().strftime("%Y-%m-%d")
+#                 article_dict = {
+#                     'CurrentDate': current_date,  
+#                     'title': news_dict.get('title', ''),
+#                     'link': news_dict.get('ex_link', ''),
+#                     'detailsNews': news_dict.get('details_news', ''),  # Corrected key
+#                     'article': article_text  # Use extracted article_text as the article content
+#                 }
+
+#                 # Add the article to the dictionary with the current_id as the key
+#                 articles_dict[current_id] = article_dict
+
+
+#             else:
+#                 print("Warning: details_feed is not a dictionary.")
+
+#         except Exception as e:
+#             print(f"An error occurred: {e}")
+#             continue
+
+#     # Print the response as JSON format
+#     print(json.dumps(articles_dict, ensure_ascii=False, indent=2))
+
 
 # Call the analysis_and_recommendation function
-analysis_and_recommendation()
+#analysis_and_recommendation()
+
+
+
+
+
+
+
+
+
