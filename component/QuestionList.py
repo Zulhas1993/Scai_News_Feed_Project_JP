@@ -1,8 +1,6 @@
 import os
-import re
 import json
 from langchain.callbacks.manager import get_openai_callback
-#from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain_openai import AzureChatOpenAI
 
@@ -16,7 +14,8 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
     )
     with get_openai_callback():
         return model(messages)
-def analysis_and_recommendation():
+
+def GetquestionnaireList():
     request_messages = [
         SystemMessage(content="Please answer in English"),
     ]
@@ -50,16 +49,21 @@ def analysis_and_recommendation():
         HumanMessage(content="make a questionnaire based on the above things with 4 options as json format where key will be question and value will be options and remove from start side ```json and remove from end side ``` ")
     ])
 
-    # request_messages.extend([
-    #     AIMessage(content=content_str),
-    #     HumanMessage(content="make an answer based on the above questionnaire and make a paragraph based on the answer ")
-    # ])
-    
     # Make another API call with updated messages
     response = __call_chat_api(request_messages).content
     response_content = response.content if isinstance(response, AIMessage) else str(response)
-    #response_paragraph = response.content if isinstance(response, AIMessage) else str(response)
-    print(response_content)
-    #print(response_paragraph)
 
-analysis_and_recommendation()
+    # Parse the response content to extract questions and options
+    questions_and_options = json.loads(response_content)
+
+    # Create a dictionary to hold the final response
+    final_response = {
+        "questionnaire": questions_and_options
+    }
+
+    # Convert the dictionary to JSON format
+    response_json = json.dumps(final_response, ensure_ascii=False, indent=2)
+
+    return response_json
+
+
