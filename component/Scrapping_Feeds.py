@@ -1,94 +1,90 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import docx
-from Categories import getCategories
 import json
+from component.Categories import getCategories
 
 url = 'https://b.hatena.ne.jp'
-allLinksByCategoryDict={}
-allLinksByCategoryWithTitleDict={}
+allLinksByCategoryDict = {}
 categories = getCategories(baseUrl=url)
 
-
 class LinkWithTitle:
-    def __init__(self,title,link,description,tagDict):
+    def __init__(self, title, link, description, tagDict):
         self.title = title
         self.link = link
         self.description = description
         self.tags = tagDict
 
-    def toJson(obj):
-        return json.dumps(obj, default=lambda obj: obj.__dict__,ensure_ascii=False)
+    def toJson(self):
+        return json.dumps(self, default=lambda obj: obj.__dict__, ensure_ascii=False)
 
-#get all links.
+
+
+
 def getLinksWithTitle(content):
-    linkWithTitle={}
+    linkWithTitle = {}
 
     soup = BeautifulSoup(content, 'xml')
     allFetchedElements = soup.find_all('item')
-    countItem=1
+    countItem = 1
     for element in allFetchedElements:
         _tagDict = {}
         _title = element.find_all('title')[0].contents[0]
         _link = element.find_all('link')[0].contents[0]
-        _description = ''
-        try:
-            _description = element.find_all('description')[0].contents[0]
-        except:
-            _description=''
+
+        # Check if 'description' elements exist and are not empty
+        description_elements = element.find_all('description')
+        _description = description_elements[0].contents[0].strip() if description_elements and description_elements[0].contents else ''
+
         _subjectWithTags = element.find_all('dc:subject')
-        countTag=1
+        countTag = 1
         for subjectElement in _subjectWithTags:
             _tagDict[countTag] = subjectElement.contents[0]
-            countTag = countTag+1
+            countTag = countTag + 1
 
-        obj = LinkWithTitle(title=_title,link=_link, description=_description,tagDict = _tagDict)
-        linkWithTitle[countItem]=obj.toJson()
-        countItem = countItem+1
+        obj = LinkWithTitle(title=_title, link=_link, description=_description, tagDict=_tagDict)
+        linkWithTitle[countItem] = obj.toJson()
+        countItem = countItem + 1
         print(linkWithTitle)
     return linkWithTitle
-SystemExit
+
+
 
 
 def fillDictionaryWithData():
     for category in categories:
-        content = urlopen(url+category).read()
+        content = urlopen(url + category).read()
         linksWithTitle = getLinksWithTitle(content)
         allLinksByCategoryDict[category] = linksWithTitle
 
 
 
-def getOnlyLinks():
-    doc = docx.Document()
-    for key,value in allLinksByCategoryDict.items():
-        doc.add_heading(key)
-        for obj in value:
-            doc.add_paragraph(obj.link)
-    doc.save('C:\\Users\\shekhar\\Downloads\\links.docx')
+def get_all_links():
+    all_links_list = []
 
+    try:
+        # Assuming you have already defined and filled the 'allLinksByCategoryDict' dictionary
+        for key, value in allLinksByCategoryDict.items():
+            for obj_id, obj in value.items():
+                if isinstance(obj, dict):  # Check if obj is a dictionary
+                    link_data = {
+                        'title': obj.get('title', ''),
+                        'link': obj.get('link', ''),
+                        'description': obj.get('description', ''),
+                        'tags': obj.get('tags', {})
+                    }
+                    all_links_list.append(link_data)
 
-def getLinks_Title():
-    doc = docx.Document()
-    for key,value in allLinksByCategoryDict.items():
-        doc.add_heading(key)
-        for obj in value:
-            doc.add_paragraph('Title: {}'.format(obj.title))
-            doc.add_paragraph('Link: {}'.format(obj.link))
-    #doc.save('C:\\Users\\shekhar\\Downloads\\links_with_title.docx')
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+    # Convert the list to JSON format
+    all_links_json = json.dumps(all_links_list, ensure_ascii=False, indent=2)
+
+    return all_links_json
+
 
 
 
 fillDictionaryWithData()
-
-#getOnlyLinks()
-
-#getLinks_Title()
-
-#saving data into a json file.
-#jsonFile = open('C:\\Users\\shekhar\\Downloads\\object_list.json','w',encoding='utf-16')
-jsonFile = open('D:\\WebsiteSraping\\object_list.json','w',encoding='utf-16')
-json.dump(allLinksByCategoryDict,jsonFile,ensure_ascii=False)
-
-
-
+# all_links_list = get_all_links()
 

@@ -1,7 +1,7 @@
 import azure.functions as func
 import json
-from scenario.test_scenario import test_scenario
-from scenario.ai_news_analysis_and_recommendation import ai_news_analysis_and_recommendation
+#from scenario.test_scenario import test_scenario
+#from scenario.ai_news_analysis_and_recommendation import ai_news_analysis_and_recommendation
 from component.Details_News import get_news_details_list,generate_news_feed_list,generate_date_wise_news_feed_list
 from component.Open_AI_Article_Create_Chat_API import get_articles_list
 from component.User_Article_Json import get_User_articles
