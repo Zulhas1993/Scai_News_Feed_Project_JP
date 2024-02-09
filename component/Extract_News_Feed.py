@@ -12,23 +12,25 @@ def read_json(file_path):
 
 
 def extract_news_info(data):
-    news_list = []
-    unique_links = set()  # Use a set to track unique links
+    news_list = []              # Initialize an empty list to store extracted news information
+    unique_links = set()        # Use a set to track unique links and avoid duplicates
 
     for key, value in data.items():
         for entry in value.values():
             entry_data = json.loads(entry)
-            title = entry_data.get('title', '')
-            link = entry_data.get('link', '')
-            description = entry_data.get('description', '')
-            subjectList = entry_data.get('subjectList', [])
+            title = entry_data.get('title', '')                 # Extract the 'title' from entry_data
+            link = entry_data.get('link', '')                   # Extract the 'link' from entry_data
+            description = entry_data.get('description', '')     # Extract the 'description' from entry_data
+            subjectList = entry_data.get('subjectList', [])     # Extract the 'subjectList' from entry_data
 
             # Check if the link is not a duplicate and has details
             if link not in unique_links and description:
+                # Append the extracted information to the news_list
                 news_list.append({'title': title, 'link': link, 'description': description, 'subjectList': subjectList})
-                unique_links.add(link)
+                unique_links.add(link)  # Add the link to the set to mark it as seen and avoid duplicates
 
-    return news_list
+    return news_list  # Return the list of extracted news information
+
 
 def get_news_details(link):
     try:

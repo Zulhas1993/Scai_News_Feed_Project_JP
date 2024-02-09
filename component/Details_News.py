@@ -36,23 +36,36 @@ class NewsFeed:
         self.date = date
 
 def extract_news_info(data):
+    # Initialize an empty list to store extracted news information
     news_list = []
-    unique_links = set()  
 
+    # Use a set to keep track of unique links to avoid duplicates
+    unique_links = set()
+
+    # Iterate through the input data, which is assumed to be a dictionary
     for key, value in data.items():
+        # Iterate through the values of the dictionary
         for entry in value.values():
+            # Parse the entry as JSON
             entry_data = json.loads(entry)
+            
+            # Extract relevant information from the entry data
             title = entry_data.get('title', '')
             link = entry_data.get('link', '')
             description = entry_data.get('description', '')
             subjectList = entry_data.get('subjectList', [])
 
-            # Check if the link is not a duplicate and has details
+            # Check if the link is not a duplicate and has a description
             if link not in unique_links and description:
+                # Append the extracted information to the news_list
                 news_list.append({'title': title, 'link': link, 'description': description, 'subjectList': subjectList})
+                
+                # Add the link to the set to mark it as seen
                 unique_links.add(link)
-               
+
+    # Return the list of extracted news information
     return news_list
+
 
 
 def get_news_details(link):
@@ -157,10 +170,10 @@ def generate_news_feed_list():
             except FetchDetailsError as e:
                 print(f"An error occurred while fetching details for link: {link}. {str(e)}")
                 # traceback.print_exc()  # Print the traceback for the exception
-            print(news_feed_list)
+            #print(news_feed_list)
         # Convert news_feed_list to JSON format
         generated_news_feed_json = json.dumps([news_feed.__dict__ for news_feed in news_feed_list], default=str, ensure_ascii=False, indent=4)
-        print(generated_news_feed_json)
+        #print(generated_news_feed_json)
         return generated_news_feed_json
 
     except Exception as e:
@@ -225,33 +238,7 @@ def generate_date_wise_news_feed_list():
 
 # Call the function and print the result
 generated_date_wise_news_feed_json = generate_date_wise_news_feed_list()
-#print(generated_date_wise_news_feed_json)
 
-# def save_date_wise_news_feed_to_docx(news_feed_json):
-#     try:
-#         doc = Document()
-
-#         # Load the JSON data
-#         news_feed_data = json.loads(news_feed_json)
-
-#         for date, news_list in news_feed_data.items():
-#             doc.add_heading(f"Date: {date}", level=1)
-#             for news_feed in news_list:
-#                 doc.add_paragraph(f"ID: {news_feed['Id']}")
-#                 doc.add_paragraph(f"Title: {news_feed['Title']}")
-#                 doc.add_paragraph(f"Link: {news_feed['Link']}")
-#                 doc.add_paragraph(f"Description: {news_feed['Description']}")
-#                 doc.add_page_break()
-
-#         doc.save('date_wise_news_feed.docx')
-#         print("News feed details saved to date_wise_news_feed.docx")
-
-#     except Exception as e:
-#         print(f"An error occurred while saving news feed to DOCX: {e}")
-
-# # Call the function and pass the generated JSON
-# if generated_date_wise_news_feed_json:
-#     save_date_wise_news_feed_to_docx(generated_date_wise_news_feed_json)
 
 
 

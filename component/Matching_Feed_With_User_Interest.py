@@ -36,9 +36,15 @@ def analysis_and_recommendation():
     }
 
     def extract_article_id_and_content():
+    # Obtain a list of articles using the get_articles_list function
         article_info = get_articles_list()
+
+    # Extract relevant information (Feed_id and article) from each article in the list
         extracted_info = [{"Feed_id": article["feed_id"], "article": article["article"]} for article in article_info]
+
+    # Return the extracted information
         return extracted_info
+
 
     details_feed = extract_article_id_and_content()
     personal_interest = GetquestionnaireList()

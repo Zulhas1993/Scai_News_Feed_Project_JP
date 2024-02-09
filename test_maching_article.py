@@ -3,7 +3,7 @@ import os
 from langchain.callbacks.manager import get_openai_callback
 from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-from component.Details_News import get_news_details_list
+#from component.Details_News import get_news_details_list
 from component.Open_AI_Article_Create_Chat_API import get_articles_list
 from component.QuestionList import GetquestionnaireList
 
