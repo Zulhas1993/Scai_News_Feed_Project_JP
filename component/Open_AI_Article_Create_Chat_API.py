@@ -26,19 +26,13 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
         return model(messages)
 
 class NewsFeed:
-    def __init__(self, id, title, tags, ex_link, description, details_news, keywords, article, date, created_at=None, updated_at=None, deleted_at=None):
-        self.id = id
+    def __init__(self, feed_id, title, ex_link, details_news):
+        self.feed_id = feed_id
         self.title = title
-        self.tags = tags
         self.ex_link = ex_link
-        self.description = description
         self.details_news = details_news
-        self.keywords = keywords
-        self.article = article
-        self.date = date
-        self.created_at = created_at
-        self.updated_at = updated_at
-        self.deleted_at = deleted_at
+
+
 
 # Function to read JSON data from a file
 def read_json(file_path):
@@ -152,14 +146,15 @@ def get_news_details_list() -> List[Dict[str, str]]:
         return []
 
 
-#******************** Article List ********************
+#****start**************** Article List ********************
 
 def get_articles_list():
     # Initialize a list to store the generated articles
     articles_list = []
 
     # Starting Id for articles
-    current_id = 1000
+    current_feed_id = 100
+    current_article_id = 1
 
     # Get news details list using the 'get_news_details_list' function
     news_details_list = get_news_details_list()
@@ -173,19 +168,15 @@ def get_articles_list():
             # Check if the entry is a dictionary
             if isinstance(details_feed, dict):
                 # Increment Id for each article
-                current_id += 1
+                current_feed_id += 1
+                current_article_id += 1
 
                 # Create a NewsFeed object from details_feed
                 news_entry = NewsFeed(
-                    id=current_id,
+                    feed_id=current_feed_id,
                     title=details_feed.get('title', ''),
-                    tags="",
                     ex_link=details_feed.get('link', ''),
-                    description="",
-                    details_news=details_feed.get('details_news', ''),
-                    keywords="",
-                    article="",
-                    date=""
+                    details_news=details_feed.get('details_news', '')
                 )
 
                 # Convert the NewsFeed object to a dictionary
@@ -199,7 +190,7 @@ def get_articles_list():
                 # Extend request_messages to include a message about creating an article
                 request_messages.extend([
                     AIMessage(content=created_article),
-                    HumanMessage(content=f"Create Summary article for each details news, if any link or details news have a problem creating an article, skip the details news and continue for the next details news. Create articles one by one, and all articles will be within 150 words. The response format is Title:, Link:, Article: \n{json.dumps(news_dict, ensure_ascii=False)}")
+                    HumanMessage(f"Create Summary article for each details news, if any link or details news have a problem creating an article, skip the details news and continue for the next details news. Create articles one by one, and all articles will be within 150 words. The response format is Title:, Link:, Article: \n{json.dumps(news_dict, ensure_ascii=False)}")
                 ])
 
                 # Generate summary using Chat AI
@@ -216,7 +207,8 @@ def get_articles_list():
                 # Add Link, Title, Article, and Article ID to the list
                 current_date = datetime.now().strftime("%Y-%m-%d")
                 articles_list.append({
-                    'article_id': current_id,
+                    'feed_id': news_entry.feed_id,
+                    'article_id': current_article_id,
                     'Link': news_dict.get('ex_link', ''),
                     'title': news_dict.get('title', ''),
                     'article': article_text,
@@ -235,17 +227,9 @@ def get_articles_list():
     return articles_list
 
 
-# Example usage:
-# articles_list = get_articles_list()
-# print(articles_list)
 
 
-
-
-
-
-
-## It return a json for NewsFeed *******************************************
+## *******************************It return a json for NewsFeed *******************************************
 
 
 # def analysis_and_recommendation():

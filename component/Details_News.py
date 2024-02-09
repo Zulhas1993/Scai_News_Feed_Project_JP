@@ -78,7 +78,7 @@ def get_news_details(link):
 
 def get_news_details_list():
     try:
-        file_path = 'object_list.json'
+        file_path = 'object_list1.json'
 
         # Read JSON file
         data = read_json(file_path)

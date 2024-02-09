@@ -6,8 +6,8 @@ from component.User_Article_Json import get_User_articles
 # Call the function and print the result
 #modified_response = analysis_and_recommendation()
 #print(modified_response)
-#links= get_all_links()
-#print(links)
-allArticles = get_articles_list()
-userArticles=get_User_articles(allArticles)
-print(userArticles)
+links= get_all_links()
+print(links)
+# allArticles = get_articles_list()
+# userArticles=get_User_articles(allArticles)
+# print(userArticles)

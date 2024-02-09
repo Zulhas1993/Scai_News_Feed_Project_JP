@@ -23,18 +23,18 @@ def GetquestionnaireList():
     personal_information = "I am adnan. I am 29 years old. I am Muslim. I have completed my graduation from CUET in 2017. I have 4 members in my family. I live in Dhaka, Bangladesh. I am working for a private software company as a Senior Software Engineer."
 
     personal_interest = """
-        ("Relaxation and adventure motivate me to travel, adventure and budget traveller, beaches and mountains are my travel destinations, travel agent will plan for my travel, planning for international travel",
-        "Artificial Intelligence. Recent news for AI. AI documentations. AI machines. Microsoft AI services")
+        ("Fascinated by the intricate history and evolution of games, I am drawn to narratives that uncover the origins and cultural nuances behind seemingly simple pastimes. The exploration of Othello's historical ties to Reversi captivates me, revealing a complex interplay of cultural influences, commercial motives, and the dynamic evolution of gaming traditions.",
+        "This essay sparks my curiosity about the intersection of creativity, national identity, and commercialization in the world of board games. It inspires me to delve deeper into unique stories that challenge conventional narratives, prompting a thoughtful reflection on the multifaceted aspects of innovation and cultural representation within the gaming industry.")
     """
 
     details_feed = """
-        ("Historic books are portals to bygone eras, preserving the collective wisdom and tales of civilizations past. Through the weathered pages, one glimpses the evolution of ideas, cultures, and societies. These literary treasures bridge the gap between epochs, offering timeless insights that illuminate the rich tapestry of human history.",
-        "Mobile phones have evolved from communication tools to indispensable companions. These pocket-sized marvels connect the world, offering instant communication, entertainment, and productivity. With sleek designs and powerful capabilities, they redefine daily life, providing access to information and connecting people across the globe in the palm of our hands.",
-        "Web development is the art of crafting digital experiences, seamlessly blending creativity and technology. It encompasses designing and coding websites, ensuring functionality and aesthetic appeal. From front-end interfaces to back-end databases, web developers navigate the ever-evolving landscape of programming languages and frameworks, shaping the online world's dynamic presence.")
+        ("The essay discusses the historical origins of the game Othello and its connection to the game Reversi. Despite claims that Othello is a Japanese game originating in Mito City, the author clarifies that it was developed by Goro Hasegawa and released by Tsukuda in 1973, drawing its name from Shakespeare's play.",
+        "The essay highlights that Reversi, a similar game, existed in England in the 1890s and was known as "Genpei Go" when introduced to Japan during the Meiji period. The commercialization of Reversi preceded Othello, and Hasegawa filed a patent in 1971, categorizing it as an improvement. ",
+        "The narrative explores Hasegawa's shift in attributing Othello to his invention called Pincer Go around 2000. The author criticizes Hasegawa and Megahouse for asserting Othello's uniqueness for brand value and financial gain. In essence, the essay challenges the narrative of Othello as a purely Japanese creation, emphasizing its historical ties to Reversi and underscoring the commercial motives behind asserting its distinctiveness.")
     """
 
     request_messages.extend([
-        HumanMessage(content=f"If you are looking for information about a trip, please list 20 things you need")
+        HumanMessage(content=f"If you are looking for information about Othello, please list 20 things you need")
     ])
 
     # Make the API call
@@ -57,13 +57,19 @@ def GetquestionnaireList():
     questions_and_options = json.loads(response_content)
 
     # Create a dictionary to hold the final response
-    final_response = {
-        "questionnaire": questions_and_options
-    }
+    final_response = {}
+
+    # Assign options directly to final_response[question]
+    for question, options in questions_and_options.items():
+        final_response[question] = options
+
+     # Create a dictionary for options
+        # option_dict = {opt: None for opt in options}
+        # final_response[question] = option_dict
 
     # Convert the dictionary to JSON format
     response_json = json.dumps(final_response, ensure_ascii=False, indent=2)
-
+    #print(response_json)
     return response_json
 
-
+GetquestionnaireList()

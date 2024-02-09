@@ -3,9 +3,9 @@ import os
 from langchain.callbacks.manager import get_openai_callback
 from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-#from Details_News import get_news_details_list
-from Open_AI_Article_Create_Chat_API import get_articles_list
-from QuestionList import GetquestionnaireList
+from component.Details_News import get_news_details_list
+from component.Open_AI_Article_Create_Chat_API import get_articles_list
+from component.QuestionList import GetquestionnaireList
 
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
