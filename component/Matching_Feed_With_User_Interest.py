@@ -18,7 +18,7 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
     with get_openai_callback():
         return model(messages)
 
-def analysis_and_recommendation():
+def Match_Feed_Or_Article_With_User_Interest():
     request_messages = [
         SystemMessage(content="Please answer in English"),
     ]
@@ -101,4 +101,4 @@ def analysis_and_recommendation():
     print(response)
 
 # Execute the analysis and recommendation
-analysis_and_recommendation()
+Match_Feed_Or_Article_With_User_Interest()

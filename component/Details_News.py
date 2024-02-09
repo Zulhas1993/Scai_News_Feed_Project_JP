@@ -103,7 +103,7 @@ def get_news_details_list():
         for news in news_list:
             link = news.get('link', '')
             try:
-                # Fetch details for each link
+                # Fetch details for each link ,m
                 news_details = get_news_details(link)
                 details_content = news_details.get('content', '')
 

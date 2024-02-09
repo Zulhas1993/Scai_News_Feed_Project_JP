@@ -35,7 +35,7 @@ class NewsFeed:
         self.date = date
 
 
-def analysis_and_recommendation():
+def News_Feed_Json_Return():
     request_messages = [SystemMessage(content="Please answer in English")]
 
     articles_dict = {}  # To store the generated articles
@@ -104,8 +104,13 @@ def analysis_and_recommendation():
             print(f"An error occurred: {e}")
             continue
 
-    # Print the response as JSON format
-    print(json.dumps(articles_dict, ensure_ascii=False, indent=2))
+    # Return the generated articles dictionary
+    return articles_dict
 
-# Call the analysis_and_recommendation function
-analysis_and_recommendation()
+# Call the analysis_and_recommendation function and capture the response
+generated_articles = News_Feed_Json_Return()
+
+# Print the response as JSON format
+print(json.dumps(generated_articles, ensure_ascii=False, indent=2))
+
+
