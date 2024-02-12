@@ -35,7 +35,7 @@ def get_articles_list():
 
     # Starting Id for articles
     current_feed_id = 100
-    current_article_id = 1
+    current_article_id = 0
 
     # Get news details list using the 'get_news_details_list' function
     news_details_list = get_news_details_list()
@@ -62,15 +62,9 @@ def get_articles_list():
 
                 # Convert the NewsFeed object to a dictionary
                 news_dict = news_entry.__dict__
-
-                # Generate article using Chat AI
-                response = __call_chat_api(request_messages)
-                content_from_api = response.content if isinstance(response, AIMessage) else str(response)
-                created_article = str(content_from_api)
-
                 # Extend request_messages to include a message about creating an article
                 request_messages.extend([
-                    AIMessage(content=created_article),
+                    #AIMessage(content=created_article),
                     HumanMessage(f"Create Summary article for each details news, if any link or details news have a problem creating an article, skip the details news and continue for the next details news. Create articles one by one, and all articles will be within 150 words. The response format is Title:, Link:, Article: \n{json.dumps(news_dict, ensure_ascii=False)}")
                 ])
 

@@ -35,12 +35,12 @@ def Match_Feed_Or_Article_With_User_Interest():
         "designation": "senior software engineer"
     }
 
-    def extract_article_id_and_content():
+    def extract_feed_id_and_content():
         article_info = get_articles_list()
         extracted_info = [{"Feed_id": article["feed_id"], "article": article["article"]} for article in article_info]
         return extracted_info
 
-    details_feed = extract_article_id_and_content()
+    details_feed = extract_feed_id_and_content()
     personal_interest = GetquestionnaireList()
    # Request to analyze user interest using Chat API
     request_messages.extend([
