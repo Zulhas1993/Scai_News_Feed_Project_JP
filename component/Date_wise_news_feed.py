@@ -56,7 +56,7 @@ def generate_date_wise_news_feed_list():
 
         # Serialize the news_feed_list dictionary to JSON with readable or decoded data
         news_feed_json = json.dumps(news_feed_list, ensure_ascii=False, indent=2)
-        print(news_feed_json)
+       # print(news_feed_json)
         return news_feed_json
 
     except Exception as e:

@@ -15,31 +15,14 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
     with get_openai_callback():
         return model(messages)
 
-def GetquestionnaireList():
+def GetquestionnaireList(tag="Othello"):
     request_messages = [
         SystemMessage(content="Please answer in English"),
+        HumanMessage(content=f"If you are looking for information about {tag}, please list 20 things you need")
     ]
-
-    personal_information = "I am adnan. I am 29 years old. I am Muslim. I have completed my graduation from CUET in 2017. I have 4 members in my family. I live in Dhaka, Bangladesh. I am working for a private software company as a Senior Software Engineer."
-
-    personal_interest = """
-        ("Fascinated by the intricate history and evolution of games, I am drawn to narratives that uncover the origins and cultural nuances behind seemingly simple pastimes. The exploration of Othello's historical ties to Reversi captivates me, revealing a complex interplay of cultural influences, commercial motives, and the dynamic evolution of gaming traditions.",
-        "This essay sparks my curiosity about the intersection of creativity, national identity, and commercialization in the world of board games. It inspires me to delve deeper into unique stories that challenge conventional narratives, prompting a thoughtful reflection on the multifaceted aspects of innovation and cultural representation within the gaming industry.")
-    """
-
-    details_feed = """
-        ("The essay discusses the historical origins of the game Othello and its connection to the game Reversi. Despite claims that Othello is a Japanese game originating in Mito City, the author clarifies that it was developed by Goro Hasegawa and released by Tsukuda in 1973, drawing its name from Shakespeare's play.",
-        "The essay highlights that Reversi, a similar game, existed in England in the 1890s and was known as "Genpei Go" when introduced to Japan during the Meiji period. The commercialization of Reversi preceded Othello, and Hasegawa filed a patent in 1971, categorizing it as an improvement. ",
-        "The narrative explores Hasegawa's shift in attributing Othello to his invention called Pincer Go around 2000. The author criticizes Hasegawa and Megahouse for asserting Othello's uniqueness for brand value and financial gain. In essence, the essay challenges the narrative of Othello as a purely Japanese creation, emphasizing its historical ties to Reversi and underscoring the commercial motives behind asserting its distinctiveness.")
-    """
-
-    request_messages.extend([
-        HumanMessage(content=f"If you are looking for information about Othello, please list 20 things you need")
-    ])
 
     # Make the API call
     response = __call_chat_api(request_messages)
-
     # Convert content_from_api to string
     content_from_api = response.content if isinstance(response, AIMessage) else str(response)
     content_str = str(content_from_api)
@@ -57,19 +40,16 @@ def GetquestionnaireList():
     questions_and_options = json.loads(response_content)
 
     # Create a dictionary to hold the final response
-    final_response = {}
+    final_response = {tag: {}}
 
-    # Assign options directly to final_response[question]
+    # Assign options directly to final_response[tag][question]
     for question, options in questions_and_options.items():
-        final_response[question] = options
-
-     # Create a dictionary for options
-        # option_dict = {opt: None for opt in options}
-        # final_response[question] = option_dict
+        final_response[tag][question] = options
 
     # Convert the dictionary to JSON format
     response_json = json.dumps(final_response, ensure_ascii=False, indent=2)
-    #print(response_json)
+    print(response_json)
     return response_json
 
+# Call the function and print the result
 GetquestionnaireList()
