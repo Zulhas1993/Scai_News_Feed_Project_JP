@@ -1,19 +1,7 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from Categories import getCategories
 import json
-
-
-def getCategories(baseUrl):
-    urlContent = str(urlopen(baseUrl).read())
-    allCategories = [];
-    soup = BeautifulSoup(urlContent, 'html.parser')
-    ulElement = soup.find_all('ul',class_='js-navi-category')
-    liFromUlElement = ulElement[0].find_all('li',class_='js-navi-category-item')
-    for item in liFromUlElement:
-        allAnchorElement = item.find_all("a", class_="navi-link-text")
-        allCategories.append(allAnchorElement[0].get('href')+'.rss')
-
-    return allCategories
 
 url = 'https://b.hatena.ne.jp'
 allLinksByCategoryDict = {}
@@ -28,9 +16,6 @@ class LinkWithTitle:
 
     def toJson(self):
         return json.dumps(self, default=lambda obj: obj.__dict__, ensure_ascii=False)
-
-
-
 
 def getLinksWithTitle(content):
     linkWithTitle = {}
@@ -56,11 +41,7 @@ def getLinksWithTitle(content):
         obj = LinkWithTitle(title=_title, link=_link, description=_description, tagDict=_tagDict)
         linkWithTitle[countItem] = obj.toJson()
         countItem = countItem + 1
-        print(linkWithTitle)
     return linkWithTitle
-
-
-
 
 def fillDictionaryWithData():
     for category in categories:
@@ -68,35 +49,36 @@ def fillDictionaryWithData():
         linksWithTitle = getLinksWithTitle(content)
         allLinksByCategoryDict[category] = linksWithTitle
 
-
-
 def get_all_links():
     all_links_list = []
 
     try:
-        # Assuming you have already defined and filled the 'allLinksByCategoryDict' dictionary
-        for key, value in allLinksByCategoryDict.items():
-            for obj_id, obj in value.items():
-                if isinstance(obj, dict):  # Check if obj is a dictionary
-                    link_data = {
-                        'title': obj.get('title', ''),
-                        'link': obj.get('link', ''),
-                        'description': obj.get('description', ''),
-                        'tags': obj.get('tags', {})
+        # Print debugging statement to check if allLinksByCategoryDict is not empty
+        print("allLinksByCategoryDict:", allLinksByCategoryDict)
+
+        # Iterate over keys of allLinksByCategoryDict
+        for category in allLinksByCategoryDict.keys():
+            # Print debugging statement to check if linksWithTitle is not empty
+            print(f"Category: {category}, linksWithTitle: {allLinksByCategoryDict[category]}")
+
+            # Iterate over values of a specific category
+            for link_id, link_data in allLinksByCategoryDict[category].items():
+                if isinstance(link_data, dict):
+                    link_info = {
+                        'title': link_data.get('title', ''),
+                        'link': link_data.get('link', ''),
+                        'description': link_data.get('description', ''),
+                        'tags': link_data.get('tags', {})
                     }
-                    all_links_list.append(link_data)
+                    all_links_list.append(link_info)
 
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
     # Convert the list to JSON format
     all_links_json = json.dumps(all_links_list, ensure_ascii=False, indent=2)
-    #print(all_links_json)
     return all_links_json
 
-
-
-
 fillDictionaryWithData()
-# all_links_list = get_all_links()
-
+response = get_all_links()
+print(response)
