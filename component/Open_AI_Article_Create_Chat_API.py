@@ -76,7 +76,7 @@ def get_news_details(link):
 def get_news_details_list() -> List[Dict[str, str]]:
     try:
         # Specify the file path containing the news data in JSON format
-        file_path = 'object_list1.json'
+        file_path = 'object_list.json'
 
         # Read the JSON data from the specified file
         data = read_json(file_path)

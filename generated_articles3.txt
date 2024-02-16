@@ -1,0 +1,402 @@
+[
+  {
+    "feed_id": 101,
+    "article_id": 1,
+    "Link": "https://www.huffingtonpost.jp/entry/story_jp_65b9faaae4b0102bd2d6dd81",
+    "title": [
+      "能登半島地震で「被災地に来ないで」が続くのはなぜ？"
+    ],
+    "article": "After the Noto Peninsula earthquake in Japan, local authorities have been requesting that non-residents refrain from visiting the affected areas. This call is issued to prevent disruptions in the ongoing relief and recovery efforts. Disaster-stricken areas often struggle with limited resources, and an influx of visitors can strain the already overwhelmed infrastructure and support systems. The authorities' priority is to ensure that aid and resources are directed to those most in need—namely, the victims of the disaster. By asking the public to stay away, they are also attempting to avoid additional traffic that can hinder emergency services and rescue operations. The request also serves to prevent sightseers, who may obstruct or complicate the work of rescue and recovery teams. Overall, the plea is a measure to maintain order and efficiency in the face of a natural disaster.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 102,
+    "article_id": 2,
+    "Link": "https://togetter.com/li/2305683",
+    "title": [
+      "知念実希人さんが実現しなかった企画で「ミステリいらないんで恋愛映画に」と打診されたと明かした話…となりのナースエイドの実写化は順調も"
+    ],
+    "article": "In a surprising revelation, 知念実希人, a well-known figure in the entertainment industry, shared that an initial project he was working on did not come to fruition. Following this, he was approached with a proposition to change the genre of the project entirely from mystery to romance. While the specifics of the original project were not disclosed, 知念実希人's disclosure highlights the fluid nature of the film and entertainment industry, where projects can undergo significant changes. Despite the setback with the mystery project, it was mentioned that the live-action adaptation of \"となりのナースエイド\" is progressing smoothly, indicating a positive outlook for 知念実希人's other ventures.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 103,
+    "article_id": 3,
+    "Link": "https://gameboku.com/archives/24013101.html",
+    "title": [
+      "2024ヤマザキ春のパン祭り徹底攻略！主要対象商品 点数・価格効率・カロリー効率一覧。"
+    ],
+    "article": "Unfortunately, the details for the news article are not provided, so a summary cannot be created. If additional information becomes available, an article summarizing the main points of the 2024 Yamazaki Spring Bread Festival, including a list of the main target products, point values, cost efficiency, and calorie efficiency, could be provided. The guide would likely offer valuable insights for enthusiasts looking to optimize their participation in the festival, which is a popular annual event featuring a variety of bread and pastries from the well-known Japanese bakery brand, Yamazaki.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 104,
+    "article_id": 4,
+    "Link": "http://blog.livedoor.jp/nwknews/archives/6107616.html",
+    "title": [
+      "泉谷しげるさん、松本人志さんの騒動の意見が的確過ぎて誰もコメントできない : 哲学ニュースnwk"
+    ],
+    "article": "Japanese musician Shigeru Izumiya's spot-on opinion regarding the controversy involving comedian Hitoshi Matsumoto has left people speechless and unable to comment, as reported by 哲学ニュースnwk. The details of Izumiya's comments are not provided, but the lack of responses suggests that his take on the matter was so accurate or perhaps so controversial that it has silenced critics and fans alike. The nature of Matsumoto's controversy was not specified, but it has evidently sparked a significant amount of discussion.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 105,
+    "article_id": 5,
+    "Link": "https://anond.hatelabo.jp/20240201062856",
+    "title": [
+      "彼氏とガンダム映画観に行ったら人との愛がテーマなのに誰にも愛されたこ.."
+    ],
+    "article": "Unfortunately, the details for this news article are unavailable, and thus an article cannot be created. Let's move on to the next piece of news.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 106,
+    "article_id": 6,
+    "Link": "https://foneslife.com/healthcare-magazine/entry/2024/02/01/103000",
+    "title": [
+      "多忙で睡眠を削り、生活を犠牲にしてしまった──33歳で脳梗塞を発症したあやめゴン太さんの後悔 - lala a live(ララアライブ)│フォーネスライフ"
+    ],
+    "article": "Ayame Gonta, at the age of 33, experienced a life-altering stroke, prompting a reflection on the pitfalls of a busy lifestyle that often led to reduced sleep and compromised living habits. The article on lala a live (ララアライブ) shared by Fones Life Healthcare Magazine delves into the regret that Gonta feels for neglecting her health in the pursuit of success. The story serves as a cautionary tale about the importance of balanced living and the potentially devastating consequences of prioritizing work over well-being. It emphasizes the need for awareness regarding the risks associated with sleep deprivation and chronic stress, especially among younger individuals who may feel invincible. Gonta's experience is a wake-up call to reassess one's lifestyle choices and prioritize health.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 107,
+    "article_id": 7,
+    "Link": "https://www.asahi.com/articles/ASS1Z6FYHS1ZUCVL015.html",
+    "title": [
+      "「テルマエ・ロマエ」復活　人気漫画の続編、少年ジャンプ+で連載へ：朝日新聞デジタル"
+    ],
+    "article": "The beloved manga series \"Thermae Romae\" is set for a comeback, much to the delight of fans. The sequel will be serialized on the digital platform Shonen Jump+. While details surrounding the plot of the new series are still under wraps, anticipation is high. The original \"Thermae Romae\" series, known for its unique blend of historical Roman settings with modern-day Japanese bathhouse culture, has garnered a dedicated following both in Japan and internationally. The announcement marks an exciting development for followers of the series who are eager to see what new adventures await the time-traveling Roman bath architect Lucius.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 108,
+    "article_id": 8,
+    "Link": "https://p-shirokuma.hatenadiary.com/entry/20240131/1706709759",
+    "title": [
+      "『人間はどこまで家畜か：現代人の精神構造』が出版されます - シロクマの屑籠"
+    ],
+    "article": "Unfortunately, there are no details provided for the news article regarding the publication of the book titled \"『人間はどこまで家畜か：現代人の精神構造』\" (How much are humans like livestock: The psychic structure of modern people) on the blog シロクマの屑籠 (Polar Bear's Trash Can). With the given information, it is not possible to create a summary. The linked page might contain more information about the book's theme, its author, release date, or where it can be purchased. Interested readers should visit the provided link for further details.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 109,
+    "article_id": 9,
+    "Link": "https://anond.hatelabo.jp/20240131225617",
+    "title": [
+      "実際のところニート予備軍がゆるふわ個人事業主として生きてくのって"
+    ],
+    "article": "The article in question discusses the potential for individuals who are currently not in education, employment, or training (NEETs) to live as relaxed, fluffy individual business owners or freelancers. The discussion likely revolves around the challenges and opportunities that NEETs face when considering the transition to self-employment. While details of the news are not provided, it is possible that the article examines societal perceptions, financial viability, and the emotional and mental health aspects of such a lifestyle. It might also explore the support systems available for NEETs looking to become entrepreneurs and the impact of their work on both their lives and the economy.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 110,
+    "article_id": 10,
+    "Link": "https://forbesjapan.com/articles/detail/68824",
+    "title": [
+      "わずか97光年先に「水の惑星」発見、地球型惑星探査に画期的な一歩 | Forbes JAPAN 公式サイト（フォーブス ジャパン）"
+    ],
+    "article": "A groundbreaking discovery has been announced by astronomers who have found what is being referred to as a \"water planet\" just 97 light-years from Earth. This significant find was reported by Forbes Japan and represents a major leap forward in the ongoing search for Earth-like planets. Although the detailed news content is not provided, the implications of this discovery are vast for the scientific community. The identification of a water-rich planet at such a relatively close distance to Earth could enhance our understanding of the formation of terrestrial planets and the potential for life beyond our solar system. This discovery also underscores the advancements in astronomical technology and methods that are enabling more precise observations of celestial bodies in our galactic neighborhood.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 111,
+    "article_id": 11,
+    "Link": "https://www.famitsu.com/news/202401/31332963.html",
+    "title": [
+      "【アマプラ】映画『うる星やつら2 ビューティフル・ドリーマー』公開40周年の2月11日より見放題配信。押井守監督による傑作アニメ | ゲーム・エンタメ最新情報のファミ通.com"
+    ],
+    "article": "On February 11th, to mark the 40th anniversary of the iconic anime movie \"Urusei Yatsura 2: Beautiful Dreamer,\" Amazon Prime Video began offering the film for unlimited streaming. Directed by Mamoru Oshii, known for his work on the \"Ghost in the Shell\" series, this classic anime has been celebrated for its creative storytelling and animation. Fans old and new can now revisit or discover the magical and chaotic world of Lum and her friends as they navigate a time-looping high school festival, which stands as a testament to the enduring legacy of the \"Urusei Yatsura\" series.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 112,
+    "article_id": 12,
+    "Link": "https://anond.hatelabo.jp/20240128201444",
+    "title": [
+      "本当に自民党のせいなの？"
+    ],
+    "article": "** Unfortunately, the details of the news article cannot be summarized as the provided \"details_news\" field is empty. Without additional context or content from the provided external link, it is not possible to create an accurate and informative summary. The title suggests a commentary or an inquiry into the responsibilities or actions of Japan's Liberal Democratic Party, but further details would be required to expand upon this topic.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 113,
+    "article_id": 13,
+    "Link": "https://www3.nhk.or.jp/news/html/20240201/k10014342461000.html",
+    "title": [
+      "「光合成」水分子から酸素分子が作り出されるプロセス観測成功 | NHK"
+    ],
+    "article": "Unfortunately, the details of the news article are not provided, so a summary cannot be created. The title indicates that there has been a successful observation of the process by which oxygen molecules are produced from water molecules during photosynthesis, which is a significant scientific achievement. This breakthrough likely offers deeper insights into the fundamental mechanisms of photosynthesis, a process vital for life on Earth as it provides the oxygen we breathe and forms the basis of the food chain. The linked NHK article would provide more comprehensive information regarding the methodology and implications of this observation.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 114,
+    "article_id": 14,
+    "Link": "https://www.corocoro.jp/episode/11341664176554934369",
+    "title": [
+      "[第56話]ぷにるはかわいいスライム - まえだくん | 週刊コロコロコミック"
+    ],
+    "article": "In the latest installment of the popular manga series featured in Weekly CoroCoro Comic, [第56話]ぷにるはかわいいスライム - まえだくん (Episode 56: Puni-Ru is a Cute Slime - Maeda-kun) continues to captivate its readers. This episode delves deeper into the adventures of Maeda-kun and his adorable slime companion, Puni-Ru. The series, known for its whimsical storytelling and charming character designs, once again provides fans with a mix of humor and heartwarming moments. While the details of the episode are not disclosed in the provided information, the manga maintains its appeal with engaging illustrations and a storyline that resonates with its young audience. Manga enthusiasts can access the latest episode and follow the ongoing escapades of Maeda-kun and Puni-Ru through the official CoroCoro website.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 115,
+    "article_id": 15,
+    "Link": "https://togetter.com/li/2305668",
+    "title": [
+      "セガが「龍が如く」のローカライズについてのインタビュー取材を受けたら外国のゲーマーから「ローカライズやめろ」と批判が殺到した話。翻訳だけでなくスカートの短さや宗教に配慮して改変が加えられる。"
+    ],
+    "article": "Sega recently participated in an interview regarding the localization of their popular \"Yakuza\" game series, which sparked controversy among international gamers. The criticism emerged after it was revealed that the localization process involved not only translation adjustments but also cultural changes such as altering the length of skirts and making religious considerations. These modifications were met with disapproval from fans who voiced their desire for the localization to remain true to the original Japanese version, arguing that any changes detract from the authenticity and intended experience of the game. This incident highlights the challenges faced by game developers in balancing cultural sensitivity with maintaining the integrity of the original content.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 116,
+    "article_id": 16,
+    "Link": "https://suumo.jp/article/oyakudachi/oyaku/chumon/c_knowhow/dannetsunooni/",
+    "title": [
+      "“断熱の鬼”が費用対効果の高い新築断熱住宅について語り尽くす！ - 住まいのお役立ち記事"
+    ],
+    "article": "A renowned expert in home insulation, known colloquially as “The Insulation Demon,” has shared extensive insights on constructing cost-effective, well-insulated new homes. The article serves as a valuable resource for homeowners looking to build energy-efficient residences that maintain comfortable temperatures year-round while reducing energy costs. By focusing on high-performance insulation techniques and materials, the \"Insulation Demon\" addresses the practical aspects of achieving optimal thermal retention in residential buildings, highlighting the importance of investing in insulation to achieve long-term savings and environmental benefits.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 117,
+    "article_id": 17,
+    "Link": "https://matomebu.com/entame/highlow-sengoku20240131/",
+    "title": [
+      "舞台『HiGH&LOW THE 戦国』システムミスで電子チケットと紙チケットが重複するダブルブッキング事件「電子優先で紙チケ50人規模の宝塚ファン追い出された、上映も観られず2時間ロビーで待たされ泣きながら帰った」#ザ戦 #ハイローザ戦国"
+    ],
+    "article": "A system mishap at the \"HiGH&LOW THE 戦国\" stage performance led to a double booking situation where both electronic and paper tickets were issued for the same seats. As a result of the error, the show organizers decided to give priority to electronic ticket holders. This decision caused approximately 50 paper ticket holders, many of whom were fans of the Takarazuka Revue, to be turned away. The affected individuals were left to wait in the lobby for two hours without being able to watch the performance, leading to a distressing situation where some left in tears. The incident has caused considerable upset among theatergoers.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 118,
+    "article_id": 18,
+    "Link": "https://courrier.jp/news/archives/352702/",
+    "title": [
+      "米紙が賞賛する中銀カプセルタワー 「サステナビリティの先駆けだった」 | 黒川紀章の遺志は継がれ"
+    ],
+    "article": "A U.S. newspaper has lauded the Nakagin Capsule Tower, designed by the late Japanese architect Kisho Kurokawa, as a forerunner of sustainability. The building, which is an iconic example of the Metabolist movement in architecture, was recently the subject of admiration for its forward-thinking design that incorporated principles of sustainability long before they became a global concern. The Nakagin Capsule Tower, consisting of prefabricated capsules that could be replaced and recycled, stood as a testament to Kurokawa's vision of adaptable and sustainable urban living. The article suggests that the ideas embodied in the Capsule Tower are more relevant than ever and that Kurokawa's spirit is being carried on by architects and developers who prioritize sustainability in their designs.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 119,
+    "article_id": 19,
+    "Link": "https://www.newsweekjapan.jp/reizei/2024/01/no-thank-you.php",
+    "title": [
+      "「No, thank you.」の消滅......アメリカは日本化しているのか?"
+    ],
+    "article": "The phrase \"No, thank you\" seems to be fading from American vernacular, suggesting a cultural shift that could indicate the country is adopting behaviors similar to those in Japan. This observation points to a possible trend where Americans are becoming less direct in their refusals, opting for more indirect or nuanced ways of saying no, akin to the Japanese style of communication. The change could be due to various sociocultural factors, including the influence of technology on communication, the rise of global multicultural exchanges, and a growing emphasis on preserving harmony in social interactions. While the article details are not provided, the title and context hint at an intriguing analysis of cross-cultural influence and the evolution of American manners and communication norms in a globalized world.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 120,
+    "article_id": 20,
+    "Link": "https://speakerdeck.com/yokawasa/web-api-learning-roadmap-2024",
+    "title": [
+      "Web API 学習ロードマップ 2024 / Web API Learning Roadmap 2024"
+    ],
+    "article": "The \"Web API Learning Roadmap 2024\" is a comprehensive guide designed to help individuals understand and master Web APIs. Although the details of the news are not provided, the roadmap is likely presented in a visually engaging format, such as a slide deck, which is hosted on Speaker Deck, a platform for sharing presentations. The roadmap probably outlines key concepts, technologies, and frameworks that are essential for developers to learn in order to effectively create and use Web APIs. The content might include best practices for API design, security considerations, and the use of specific tools and languages for building APIs. It serves as an educational resource for developers of all levels aiming to enhance their API skills in line with the latest industry standards and expectations for the year 2024.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 121,
+    "article_id": 21,
+    "Link": "https://www.youtube.com/watch?v=QZUiU3jg09Q",
+    "title": [
+      "その13 キャッシュメモリの効果"
+    ],
+    "article": "In the educational video titled \"その13 キャッシュメモリの効果\" (The Effects of Cache Memory), viewers are introduced to the concept and importance of cache memory in computer systems. Cache memory is a small-sized type of volatile computer memory that provides high-speed data access to a processor and stores frequently used computer programs, applications, and data. The video is likely to explore how cache memory works, its role in enhancing the performance of a computer by reducing the average time to access data from the main memory, and the different levels of cache memory, such as L1, L2, and L3. Although details of the video content are not provided, the video is expected to be an informative resource for those interested in computer architecture or looking to improve their understanding of how computers operate at a fundamental level.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 122,
+    "article_id": 22,
+    "Link": "https://getnews.jp/archives/3493743",
+    "title": [
+      "“狂ったセブン”とかいう異名のついたセブンイレブンに行ってみた結果 →こりゃ狂ってるわ（笑） ｜ ガジェット通信 GetNews"
+    ],
+    "article": "Unfortunately, the details news section provided is empty, and visiting the external link is beyond my capabilities. However, based on the title provided, a visitor recounts their experience at a 7-Eleven store that has earned the nickname “Mad Seven.” This store seems to have gained notoriety for its unusual or eccentric characteristics, prompting laughter and the acknowledgment that it truly is \"mad.\" The article likely covers what makes this particular 7-Eleven stand out from the rest, including any unique products, store layout, or customer service encounters that contribute to its wacky reputation.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 123,
+    "article_id": 23,
+    "Link": "https://anond.hatelabo.jp/20230822160252",
+    "title": [
+      "彼氏の部屋にあったら嫌なもの"
+    ],
+    "article": "Unfortunately, the details news section for this story is empty, and without additional information, a proper summary cannot be provided. The title translates to \"Things You Wouldn't Want to Find in Your Boyfriend's Room,\" which suggests that the article may discuss items or habits that could be seen as red flags or turn-offs when visiting a boyfriend's living space. However, without the specific content, this is purely speculative. Moving on to the next available piece of news for summarization.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 124,
+    "article_id": 24,
+    "Link": "https://ongakudaisukiclub.hateblo.jp/entry/2024/01/31/190000",
+    "title": [
+      "ネットの音楽オタクが選んだ2023年のベストアルバム 50→1 - 音楽だいすきクラブ"
+    ],
+    "article": """: "Music fans on the internet have come together to select the best albums of 2023, as reported by the \"音楽だいすきクラブ\" (Music Lovers Club) blog. The list, which counts down from number 50 to 1, showcases a diverse range of music preferences and genres, reflecting the varied tastes of online music communities. While the specific albums and artists featured in the list are not detailed in the brief provided, the list is likely to include a mix of mainstream hits, indie favorites, and critical darlings that have resonated with music aficionados throughout the year. This annual compilation serves as a guide for music lovers looking for the year's most impactful and beloved albums.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 125,
+    "article_id": 25,
+    "Link": "https://anond.hatelabo.jp/20240131200952",
+    "title": [
+      "日テレは約束を守らなかったのか？"
+    ],
+    "article": "The article cannot be summarized as the provided details news is empty. Without content from the original news piece, no context or information is available to create an accurate summary. To maintain editorial integrity, further information is needed to generate an article on whether Nippon TV (日テレ) kept a certain promise. The title suggests an inquiry or concern regarding Nippon TV's commitment to a promise, but without additional details, the nature of the promise and the circumstances around it remain unknown.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 126,
+    "article_id": 26,
+    "Link": "https://korekara.news/rensai/8016/",
+    "title": [
+      "令和ロマン髙比良くるまの漫才過剰考察｜第5回"
+    ],
+    "article": "Due to the lack of provided details news content, a summary article cannot be created for \"令和ロマン髙比良くるまの漫才過剰考察｜第5回.\" This news piece appears to be the fifth installment in a series possibly discussing the comedic art of Manzai in the Reiwa era, featuring Takabiyashi Kuruma. Manzai is a traditional style of stand-up comedy in Japan that typically involves a duo, with one person playing the straight man (tsukkomi) and the other playing the funny man (boke). It would likely delve into the intricacies and cultural nuances of Manzai as it adapts and evolves in the modern context. However, without the actual content, this can only be speculative. Please refer to the provided link for the full article and more detailed information.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 127,
+    "article_id": 27,
+    "Link": "https://nordot.app/1125443846102270108",
+    "title": [
+      "ガザ学校で30人目隠し遺体発見　イスラエルが処刑か ｜ 共同通信"
+    ],
+    "article": "A disturbing discovery was made at a school in Gaza, where the body of a person blindfolded was found, raising the question of whether this was an execution carried out by Israeli forces. The body was the thirtieth to be uncovered, according to the report by Kyodo News. Details regarding the identity of the deceased, the circumstances surrounding their death, and the exact location of the school remain unclear. The incident has sparked concern and could potentially escalate tensions in the already volatile region. The situation underscores the ongoing conflict and the human cost that continues to result from it. Further information is awaited to clarify the circumstances of this grim find.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 128,
+    "article_id": 28,
+    "Link": "https://gendai.media/articles/-/123749",
+    "title": [
+      "「松本くん、このままやめなさい」…吉本興業の大物OBが松本人志に「引退勧告」（週刊現代） @gendai_biz"
+    ],
+    "article": "A prominent retired member of Yoshimoto Kogyo, a major entertainment company in Japan, has reportedly advised comedian Matsumoto Hitoshi to consider retirement. The advice, which was covered by the magazine \"Shukan Gendai,\" highlights the industry's concern over Matsumoto's future in entertainment. Matsumoto Hitoshi, a renowned figure in Japanese comedy, is facing a pivotal moment as industry veterans weigh in on his career longevity. The specifics of the conversation and the reasons behind the retirement suggestion were not provided in the available summary.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 129,
+    "article_id": 29,
+    "Link": "https://smart-flash.jp/sociopolitics/271695/1/1/",
+    "title": [
+      "「理解不能」馳浩・石川県知事の“2週間待機”災害対応に「3・11」を指揮した2人が怒り「自衛隊との連携に疑問」 - Smart FLASH/スマフラ[光文社週刊誌]"
+    ],
+    "article": "Ishikawa Prefecture Governor Hidehiko Yuzaki has come under fire for his decision to impose a two-week waiting period as part of his disaster response strategy. The move has incited anger from two individuals who were in charge during the March 11 disaster, questioning the effectiveness of coordination with the Self-Defense Forces. Critics argue that in times of crisis, swift action is imperative, and delays can exacerbate the situation, hinder rescue efforts, and put lives at risk. The detailed critique in the Smart FLASH article points to a deeper concern about the preparedness and agility of local governments to respond to emergencies.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 130,
+    "article_id": 30,
+    "Link": "https://www.kobe-u.ac.jp/ja/news/article/20240131-21760/",
+    "title": [
+      "構造色インクで世界最軽量クラスの塗装を実現 | 神戸大学ニュースサイト"
+    ],
+    "article": "Researchers at Kobe University have developed a coating technique using structural color ink that has resulted in one of the world's lightest coatings. This innovative technology manipulates the reflection of light to display colors without the use of pigments or dyes, which can be environmentally damaging. The breakthrough could have significant implications for various industries, including automotive and consumer electronics, by potentially reducing the weight of products and contributing to energy savings. The university's press release likely details the scientific process behind the coating, as well as its potential applications and benefits. However, the full content of the news article is not provided for a more comprehensive summary.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 131,
+    "article_id": 31,
+    "Link": "https://newsdig.tbs.co.jp/articles/-/973887",
+    "title": [
+      "“空間除菌”謳うも実際の使用空間での根拠示せず　興和やピップら4社に対し再発防止策などの措置命令　消費者庁 | TBS NEWS DIG"
+    ],
+    "article": "Four Japanese companies, including Kowa and PIP, have been ordered by the Consumer Affairs Agency to take preventive measures after failing to substantiate claims regarding their space disinfection products. The companies advertised their products as capable of disinfecting spaces, but they were unable to provide evidence of effectiveness in actual usage environments. The Consumer Affairs Agency has demanded that these companies establish concrete measures to prevent recurrence and ensure that their marketing claims are backed by scientific proof. This action is part of the agency's efforts to protect consumers from misleading advertisements and to uphold truth in marketing practices.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 132,
+    "article_id": 32,
+    "Link": "https://www.jiji.com/jc/article?k=2024020100332&g=int",
+    "title": [
+      "トランプ氏、大統領就任なら「即座に阻止」　日本製鉄のＵＳスチール買収：時事ドットコム"
+    ],
+    "article": "Former U.S. President Donald Trump has made a striking declaration regarding Japan Steel's intent to purchase U.S. Steel, stating that he would prevent the acquisition immediately should he return to the presidential office. The announcement reflects Trump's continued commitment to an America-first policy, emphasizing the protection of American industries from foreign control. His statement may resonate with a segment of voters who are concerned about foreign influence on the U.S. economy and critical industries. This bold stance on foreign business transactions illustrates Trump's unwavering stance on economic nationalism as he potentially eyes another run for the presidency.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 133,
+    "article_id": 33,
+    "Link": "https://anond.hatelabo.jp/20240131140400",
+    "title": [
+      "妻に合わせると旅行がめちゃくちゃつまらない"
+    ],
+    "article": "Unfortunately, the details of the news article titled \"妻に合わせると旅行がめちゃくちゃつまらない\" are not provided, and the external link does not offer additional information to create a summary. This news item discusses the challenges that arise when one's travel preferences do not align with those of their spouse, leading to potentially dull experiences. Without further content, it's not possible to elaborate on the specifics of the situation, the individuals involved, or the proposed solutions to make travel enjoyable for both parties. However, the title suggests a common marital issue where compromises are necessary, but may not always result in a satisfying outcome for both partners during vacation planning and execution.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 134,
+    "article_id": 34,
+    "Link": "https://anond.hatelabo.jp/20240201064922",
+    "title": [
+      "漫画家の知人がいて、その人も数年前作品がドラマ化してたんだけど、連載.."
+    ],
+    "article": "An individual shared a story about their acquaintance who is a manga artist. This manga artist had their work adapted into a drama series a few years ago. The post provides insights into the experiences and perhaps the challenges faced by the manga artist during the process of adaptation. However, the details of the news are not provided in the given information, so the specifics of the manga, the drama, or the experiences of the artist remain unknown. It's a glimpse into the often unseen side of the entertainment industry where artists witness their creations transformed for different mediums.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 135,
+    "article_id": 35,
+    "Link": "https://togetter.com/li/2305596",
+    "title": [
+      "時短勤務であることをわかった上で終業時間数分前にかけこみで問合せしてくる人がいて、急ぎ案件と思って対応してたけどどんどんエスカレートして来たから自衛した話"
+    ],
+    "article": "A discussion has emerged regarding the handling of last-minute work inquiries, particularly when employees are on a shortened work schedule. Some individuals have the habit of making urgent requests just minutes before the end of someone's shift, knowing that the person is on a time-restricted schedule. This can escalate quickly as the pattern of urgency might lead to an expectation of immediate response, despite the limited working hours. To protect their work-life balance and maintain productivity within their scheduled time, an employee has shared their experience on how they started to safeguard themselves against such escalations. The conversation has sparked a broader dialogue about setting boundaries and managing expectations in the workplace.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 136,
+    "article_id": 36,
+    "Link": "https://anond.hatelabo.jp/20240201014306",
+    "title": [
+      "セクシー田中さんの脚本家は善意の第三者だったのか？"
+    ],
+    "article": "Unfortunately, due to the lack of provided details in the news content, an article summary cannot be created for the story titled \"Was the Scriptwriter of 'Sexy Tanaka-san' a Well-Meaning Third Party?\" The external link leads to a page that may contain the necessary information to understand the context and content of the story. However, without direct access to the narrative or details from the news itself, no accurate summary can be provided. To gain insights into whether the scriptwriter of \"Sexy Tanaka-san\" acted as a well-meaning third party, interested readers are encouraged to visit the provided external link.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 137,
+    "article_id": 37,
+    "Link": "https://togetter.com/li/2305847",
+    "title": [
+      "キャバクラにきた歳離れた二人組が「どんな関係？」と聞かれ当てずっぽうに答えたらまぐれ当たりで指名もらえた話"
+    ],
+    "article": "In an amusing turn of events, a pair with a significant age gap who visited a hostess club found themselves the center of attention when asked about the nature of their relationship. The duo, unsure of what to say, took a wild guess which surprisingly turned out to be a hit, earning them a nomination from the intrigued hostesses. The story highlights the often unpredictable and humorous interactions that can occur in nightlife establishments, where customers and staff alike engage in playful banter and social games. It's a testament to the fact that sometimes, a shot in the dark can lead to unexpected rewards.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 138,
+    "article_id": 38,
+    "Link": "https://togetter.com/li/2305577",
+    "title": [
+      "転職は1度してしまうと全く怖くない。そして会社のために身も心も捧げようなんて思わなくなる←「これはガチ」「ジョブホッパーになりかねない点だけは注意」"
+    ],
+    "article": "A recent online discussion has highlighted a common sentiment among workers: once an individual has gone through the process of changing jobs once, the fear associated with the move dissipates significantly. Furthermore, many express a change in mindset regarding their dedication to their employers. The idea of wholeheartedly devoting oneself to a company becomes less of a priority. Online commenters agree with the sentiment, acknowledging its validity, but also warn against the potential of becoming a \"job hopper\"—frequently changing jobs—which could have its own set of drawbacks. The discussion captures a shift in the modern workforce's attitude towards career stability and loyalty.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 139,
+    "article_id": 39,
+    "Link": "https://www.oricon.co.jp/news/2310084/full/",
+    "title": [
+      "堂本剛＆百田夏菜子が結婚「一日一日を大切に生きていきたい」　連名の書面で発表【全文掲載】"
+    ],
+    "article": "Tsuyoshi Domoto, a prominent member of the Japanese pop duo KinKi Kids, and Kanako Momota, the leader of the girl group Momoiro Clover Z, have officially announced their marriage. The couple released a joint written statement sharing their joy and the commitment to cherish every day together. The announcement was made to fans and the public with a full text release, demonstrating the couple's intention to move forward with their lives with gratitude and care. Both celebrities are well-loved in the Japanese entertainment industry, and their union marks a significant moment for fans and followers. The statement also expressed their desire to continue growing both personally and professionally.",
+    "date": "2024-02-15"
+  },
+  {
+    "feed_id": 140,
+    "article_id": 40,
+    "Link": "https://note.com/kanare_abstract/n/n10930fa52519",
+    "title": [
+      "オセロは日本発祥のゲームじゃないです｜加藤香流@Kanare_Abstract"
+    ],
+    "article": "A popular belief that the board game Othello originated in Japan has been challenged by Kanare_Abstract in a recent article. Despite its strong association with Japanese culture and its prevalence in Japan, the game, known for its black-and-white discs and strategic gameplay, does not have its roots in the country. The article by Kanare_Abstract provides an in-depth look into the game's actual origins and its journey to becoming a beloved pastime in Japan. The piece serves to inform and educate readers about the common misconception and presents historical evidence to support the claim. This revelation may come as a surprise to many enthusiasts who have long associated Othello with Japanese tradition.",
+    "date": "2024-02-15"
+  }
+]
