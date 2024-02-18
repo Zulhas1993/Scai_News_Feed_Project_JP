@@ -44,41 +44,49 @@ def getLinksWithTitle(content):
     return linkWithTitle
 
 def fillDictionaryWithData():
-    for category in categories:
-        content = urlopen(url + category).read()
-        linksWithTitle = getLinksWithTitle(content)
-        allLinksByCategoryDict[category] = linksWithTitle
-
-def get_all_links():
-    all_links_list = []
+    allLinksByCategoryDict = {}
 
     try:
-        # Print debugging statement to check if allLinksByCategoryDict is not empty
-        print("allLinksByCategoryDict:", allLinksByCategoryDict)
-
-        # Iterate over keys of allLinksByCategoryDict
-        for category in allLinksByCategoryDict.keys():
-            # Print debugging statement to check if linksWithTitle is not empty
-            print(f"Category: {category}, linksWithTitle: {allLinksByCategoryDict[category]}")
-
-            # Iterate over values of a specific category
-            for link_id, link_data in allLinksByCategoryDict[category].items():
-                if isinstance(link_data, dict):
-                    link_info = {
-                        'title': link_data.get('title', ''),
-                        'link': link_data.get('link', ''),
-                        'description': link_data.get('description', ''),
-                        'tags': link_data.get('tags', {})
-                    }
-                    all_links_list.append(link_info)
+        for category in categories:
+            content = urlopen(url + category).read()
+            linksWithTitle = getLinksWithTitle(content)
+            allLinksByCategoryDict[category] = linksWithTitle
 
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
-    # Convert the list to JSON format
-    all_links_json = json.dumps(all_links_list, ensure_ascii=False, indent=2)
-    return all_links_json
+    return allLinksByCategoryDict
 
-fillDictionaryWithData()
-response = get_all_links()
-print(response)
+
+def get_all_links(allLinksByCategoryDict):
+    all_links_list = []
+
+    try:
+        for key, value in allLinksByCategoryDict.items():
+            #print(f"Processing key: {key}")
+            if isinstance(value, dict):
+                for obj_id, obj in value.items():
+                    if isinstance(obj, str):
+                        try:
+                            obj_dict = json.loads(obj)
+                            if isinstance(obj_dict, dict):
+                                all_links_list.append(obj_dict)
+                        except json.JSONDecodeError:
+                            print(f"Unable to decode JSON for key {key}, obj_id {obj_id}: {obj}")
+                    else:
+                        print(f"Value for key {key} and obj_id {obj_id} is not a string")
+
+            else:
+                print(f"Value for key {key} is not a dictionary")
+
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+    return all_links_list
+
+allLinksByCategoryDict = fillDictionaryWithData()
+all_links_list = get_all_links(allLinksByCategoryDict)
+
+# Now 'all_links_list' contains a list of dictionaries
+print(all_links_list)
+
