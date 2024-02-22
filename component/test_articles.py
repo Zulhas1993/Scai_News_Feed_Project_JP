@@ -32,37 +32,40 @@ class NewsFeed:
 def generate_article_details_chunked(news_entries, initial_feed_id):
     # Convert the NewsFeed objects to dictionaries
     news_dicts = [news_entry.__dict__ for news_entry in news_entries]
-    chunk_size = 20
+    chunk_size = 1
     articles_list = []
     print(f"loop:")
+    count=1
     for i in range(0, len(news_dicts), chunk_size):
+        if count>10:
+            break
+        else:
+            count=+1
         chunk = news_dicts[i:i + chunk_size]
         tem_count = 0  # Reset tem_count for each chunk
         print(i)
-        # Initialize request_messages for the Chat AI
-        request_messages = [SystemMessage(content="Please answer in English")]
-
-        # Filter out sensitive content from chunk
-        sanitized_chunk = [{'title': news_dict['title']} for news_dict in chunk]
-
-        # Extend request_messages to include a message about creating an article
-        request_messages.extend([
-            HumanMessage(f"Create Summary article for each news entry within 150 words:\n{json.dumps(sanitized_chunk, ensure_ascii=False)}")
-        ])
-
-        # print(request_messages)
-        try:
-            response_summary = __call_chat_api(request_messages)
-            response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
-        except ValueError as e:
-            # Handle Azure content filter triggering error
-            print(f"Azure Content Filter Triggered: {e}")
-            response_summary_str = ""
-
-        request_messages.clear()
-
         # Process each news entry in the chunk
         for news_dict in chunk:
+            # Initialize request_messages for the Chat AI
+            request_messages = [SystemMessage(content="Please answer in English")]
+
+            # Filter out sensitive content from individual news entry
+            sanitized_news_entry = {'title': news_dict['title']}
+            
+            # Extend request_messages to include a message about creating an article
+            request_messages.extend([
+                HumanMessage(f"Create Summary article for the news entry within 150 words:\n{json.dumps(sanitized_news_entry, ensure_ascii=False)}")
+            ])
+
+            # print(request_messages)
+            try:
+                response_summary = __call_chat_api(request_messages)
+                response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
+            except ValueError as e:
+                # Handle Azure content filter triggering error
+                print(f"Azure Content Filter Triggered: {e}")
+                response_summary_str = ""
+
             # Extract the 'Article' part from response_summary_str
             article_text = response_summary_str.strip()
 
