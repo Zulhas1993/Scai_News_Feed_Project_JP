@@ -1,0 +1,82 @@
+[
+  {
+    "feed_id": 1,
+    "article_id": 1,
+    "Link": "https://speakerdeck.com/ryurock/saas-akitekutiyagai-yao",
+    "title": "SaaS アーキテクチャ概要",
+    "article": "The article discusses the concept that gaining practical experience with Ruby's Abstract Syntax Tree (AST) is more beneficial than simply learning its theoretical aspects. The title suggests that immersion and hands-on practice with Ruby AST will lead to a deeper understanding and proficiency than traditional study methods. The article likely delves into the complexities of Ruby AST and emphasizes the importance of practical application in mastering it.",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 2,
+    "article_id": 2,
+    "Link": "https://news.denfaminicogamer.jp/news/240221r",
+    "title": "コーヒーチェーン経営シミュレーション『Coffee Inc 2』の\"ビジネス度\"が本気すぎて「ためになる」とSNS上で話題に。実際のビジネスに近いクオリティの高さと挑戦的な難易度がプレイヤーを魅了",
+    "article": "Side Lab's game \"Coffee Inc 2,\" currently available on the App Store, is garnering attention on social media. In the game, players become CEOs of a coffee chain business, tasked with growing it into a large corporation. Starting from selecting store locations, players handle various aspects of business management, including procurement, product development, hiring, marketing strategies, and financial management. The game stands out for its realism and detailed design, challenging players to create sophisticated business plans that take into account macroeconomic factors such as interest rates and inflation. \"Coffee Inc 2\" features realistic financial documents like income statements, balance sheets, and cash flow statements, as well as market analysis and strategies for differentiation and customer satisfaction. It has sparked discussions on social media for its realistic management experience, with comments praising its depth and educational value, despite being priced at just 300 yen. At the time of writing, it has",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 3,
+    "article_id": 3,
+    "Link": "https://courrier.jp/news/archives/355237/",
+    "title": "エマニュエル・トッド「いま私たちは西洋の敗北を目の当たりにしている」 | 西側諸国は「何も見えていない」",
+    "article": "In an article by Alexandre Devcchio, the decline of Western power is attributed to three main factors. The first is the weakening industrial strength of the United States, with its inflated GDP concealing a decrease in actual productive capacity. The lack of sufficient engineering talent since 1965 and a general decline in educational standards contribute to this. The second factor is the erosion of Protestant culture in the U.S., which historically has been central to Western prosperity, as noted by sociologist Max Weber before World War I. Protestant nations, including the UK, the U.S., Germany, and Nordic countries, had unprecedented levels of education and literacy due to the religious imperative for individuals to read the Bible. However, the downside of Protestant culture includes severe racial discrimination, as seen in American racism against Black people and German anti-Semitism. The once strong Protestant work ethic and moral standards have diminished, leading to",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 4,
+    "article_id": 4,
+    "Link": "https://kyoko-np.net/2024022201.html",
+    "title": "次の首相、１位は「ネコ」　９割超える支持　世論調査",
+    "article": "A recent survey conducted in December of last year revealed that cats have become an increasingly popular choice for leadership roles, with their approval rating climbing 8 points to 92%. The primary reason for choosing cats is their independent nature and strong leadership qualities, which many feel would allow them to maintain their autonomy and make decisions without being influenced by others. Cats are also seen as more forgivable when they make mistakes, possibly influenced by the recent trend of cats wearing helmets at construction sites. Following cats, dogs, dolphins, and monkeys were chosen for their intelligence, with most people believing these animals to be smarter than humans. Human leaders, on the other hand, only received 0.2% of the vote, a significant drop from the previous survey's 5%, marking the lowest record in the surveys to date. Political analyst Sakamoto Gidayu suggests that the rapid decline in expectations for humans",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 5,
+    "article_id": 5,
+    "Link": "https://www.nikkei.com/article/DGXZQOUB205T80Q4A220C2000000/",
+    "title": "日経平均株価、取引時間中の最高値上回る　一時3万9000円台 - 日本経済新聞",
+    "article": "In a significant market rebound, the Nikkei Stock Average surged past its peak from the bubble economy era on December 22nd, momentarily exceeding 39,000 yen for the first time since December 29, 1989. This rise reflects increased earnings power among listed companies, governance improvements, and hopes for an exit from deflation. The Nikkei's jump of over 700 points was partly fueled by strong earnings from U.S. semiconductor giant Nvidia, which boosted semiconductor-related stocks such as Tokyo Electron and SoftBank Group. By the end of the year, the Nikkei had climbed over 5,000 yen, a 17% increase, outperforming major Western indices like the S&P 500. The total market capitalization of the Tokyo Stock Exchange Prime Market also grew by approximately 90 trillion yen since the start of the year. Strong corporate earnings and enhanced shareholder return measures, such as stock buybacks, have been driving the stock market's momentum. The trend was",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 6,
+    "article_id": 6,
+    "Link": "https://www.bengo4.com/c_18/n_17227/",
+    "title": "「人権意識が強くなると番組がつまらなくなる」フジテレビ番審委員の発言が炎上、有識者「メディアの役割を理解していない」 - 弁護士ドットコムニュース",
+    "article": "A controversy has emerged over the minutes of Fuji TV's \"Program Deliberation Council,\" which discussed \"Television and Human Rights\" in January. Comments from members suggested that an excessive focus on human rights could lead to less creative expression and dull programs. The discussion sparked criticism on social media, with users questioning how human rights protection could make shows uninteresting. Kimura Kyoko, a former professional wrestler and mother of the late wrestler Hana Kimura, criticized the council on Twitter, implying that such attitudes could lead to loss of life. Human rights lawyer Ryutaro Ogawa commented on the issue, criticizing council members for their apparent disconnect with societal expectations. He emphasized the media's role in upholding human rights and democracy and warned against content that fosters bullying or discrimination. Ogawa urged the council to consider the media's societal role and to ensure that programs respect stakeholder rights and provide valuable information independent",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 7,
+    "article_id": 7,
+    "Link": "https://anond.hatelabo.jp/20240221213147",
+    "title": "むしろ全くオススメ出来ないアニメを教えて欲しい",
+    "article": "The article criticizes the anime \"Serial experiments lain\" for various reasons, marking it as not recommendable. The main character is described as stereotypically appealing to introverted otaku, with a behavior that changes from quiet to assertive when discussing familiar topics. The anime is also criticized for its overt attempt to cater to otaku culture, especially with the main character's bear kigurumi pajamas. Additionally, the storytelling that incorporates the history of the internet and dark parallel worlds is seen as pretentious and difficult to recommend. The anime's retro-futuristic feel and its depiction of a character's internet addiction leading to a disconnect from reality further add to the reasons why the author advises against it. The article also disapproves of the anime's opening and ending themes, which, while reflective of the era's sentiments, do not resonate with the digital space and instead evoke a sense of drifting through emotional highs and lows.",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 8,
+    "article_id": 8,
+    "Link": "https://orangestar2.hatenadiary.com/entry/2024/02/22/145556",
+    "title": "なんでAIやロボットが進歩しても働かなくては生きていけないのか、そして少しの未来予測 - orangestar2",
+    "article": "A sense of vagueness and a lack of words prevailed in the statement. The difficulty of predicting the future was acknowledged, with a hope expressed to verify the accuracy of such predictions about a decade from now. The statement also included a mention of drawing and selling manga, inviting readers to take a look if interested.",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 9,
+    "article_id": 9,
+    "Link": "https://anond.hatelabo.jp/20240221143216",
+    "title": "「避難所では男性も炊事するべき」　←これしんどい",
+    "article": "Concerns have been raised about the gender disparity in roles at evacuation centers, particularly in cooking responsibilities. A common scene unfolds where women, from grandmothers to mothers and sisters, swiftly prepare meals while chatting, leaving men feeling unable to contribute despite their willingness to help. This dynamic often results in men being told to sit aside without participating in the tasks. The article suggests that, while men don’t typically share the same level of domestic experience as older women, there is a belief that if only men were present, they would manage to run things, albeit perhaps not to the same standard. The writer reflects on personal experiences, noting that even in mixed-gender situations, the effectiveness of contribution seems to depend on the ratio of men to women. A single man amongst a dozen experienced women might work well, but the more the balance shifts towards men, the more likely",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 10,
+    "article_id": 10,
+    "Link": "https://www.a-tm.co.jp/top/securities/survey/column-11/",
+    "title": "任天堂が好き過ぎて株を購入。「任天堂株主総会レポート」中の人が語る、“推し”企業に投資する魅力",
+    "article": "The launch of the new NISA (Nippon Individual Savings Account) system has sparked interest in stock investing as a form of asset management. For beginners, investing can seem daunting and selecting the right company to invest in can be challenging. Alex, a dedicated fan of Nintendo, was drawn to the idea of attending shareholder meetings after purchasing a certain number of shares. This decision was bolstered by his affection for the company, which grew after attending a meeting in person. Alex has been a Nintendo fan since childhood and has run the fan site \"N-Styles\" for over 20 years. His investment in Nintendo was driven by a desire for deeper involvement with the company and a growing interest in investing. Despite high stock prices during the Wii and Nintendo DS era, he seized the opportunity to buy shares when prices dropped following the less successful Wii U launch. Attending Nintendo’s",
+    "date": "2024-02-22"
+  }
+]

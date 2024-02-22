@@ -1,0 +1,82 @@
+[
+  {
+    "feed_id": 1,
+    "article_id": 1,
+    "Link": "https://speakerdeck.com/ryurock/saas-akitekutiyagai-yao",
+    "title": "SaaS アーキテクチャ概要",
+    "article": "The article titled \"What’s in a name? Adding method to the madness\" likely explores the significance and process behind naming conventions, whether it be for brands, products, projects, or scientific phenomena. The phrase \"adding method to the madness\" suggests that the article may delve into how a systematic approach can be applied to the often chaotic and seemingly arbitrary task of naming. It could discuss the importance of a good name, the steps involved in selecting an appropriate and effective name, and the impact that a name can have on perception and success. The content may also touch upon the challenges faced during the naming process and offer insights or strategies for overcoming them.",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 2,
+    "article_id": 2,
+    "Link": "https://news.denfaminicogamer.jp/news/240221r",
+    "title": "コーヒーチェーン経営シミュレーション『Coffee Inc 2』の\"ビジネス度\"が本気すぎて「ためになる」とSNS上で話題に。実際のビジネスに近いクオリティの高さと挑戦的な難易度がプレイヤーを魅了",
+    "article": "The game \"Coffee Inc 2,\" distributed on the App Store by SideLab, is garnering attention on social media. In this simulation game, players take on the role of a coffee chain CEO aiming to grow their business into a large corporation. Players manage nearly all aspects of business operations, including location selection, procurement, product development, hiring, marketing strategies, and financial management. The game is noted for its realism and detailed game design, requiring players to craft complex business plans that take into account basic management principles, macroeconomic factors such as interest rates and inflation. \"Coffee Inc 2\" features practical-level business documents like income statements, balance sheets, and cash flow statements, along with market analysis, competitor differentiation strategies, and customer satisfaction improvements. The game's realistic management experience has sparked discussions on social media, with comments about its challenging nature and educational value. At the time of writing, it topped the App",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 3,
+    "article_id": 3,
+    "Link": "https://courrier.jp/news/archives/355237/",
+    "title": "エマニュエル・トッド「いま私たちは西洋の敗北を目の当たりにしている」 | 西側諸国は「何も見えていない」",
+    "article": "In an article by Alexandre Devcchio, the decline of Western dominance is attributed to three main factors. The first factor highlighted is the weakening of the United States' industrial power, with indications that the US GDP is inflated and does not reflect true industrial strength. The US has failed to adequately train engineers since 1965 and has experienced a general decline in education standards. The second factor is the disappearance of Protestant culture in the US, which historically fostered high literacy rates and strong moral standards due to the religious imperative for individuals to read the Bible and the desire to demonstrate one's chosen status by God through diligent work. This culture was key in advancing the economy and industrial power of Protestant nations. However, the article also acknowledges the negative aspects of Protestant culture, such as racial discrimination seen in the US and Germany. Currently, the erosion of Protestant",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 4,
+    "article_id": 4,
+    "Link": "https://kyoko-np.net/2024022201.html",
+    "title": "次の首相、１位は「ネコ」　９割超える支持　世論調査",
+    "article": "A recent survey showed an increase in the popularity of cats as a preferred choice for leadership, rising 8 points to 92% since the previous December's survey. The main reason given for favoring cats is their independence and strong leadership qualities, with people expressing a willingness to forgive a cat's mistakes. This sentiment has seemingly grown due to an increase in images of cats wearing helmets and engaging in reckless activities at construction sites. Following cats in popularity were dogs, dolphins, and monkeys—all intelligent animals—with most people choosing them over humans for their perceived greater intelligence. Humans ranked at a record low 0.2% in fifth place, a drastic drop from the 5% in previous surveys. Political analyst Sakamoto Gidayu suggests that the rise of generative AI and continuous political corruption scandals have led to a perception that humans are inferior not only in intelligence but also in character. While the",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 5,
+    "article_id": 5,
+    "Link": "https://www.nikkei.com/article/DGXZQOUB205T80Q4A220C2000000/",
+    "title": "日経平均株価、取引時間中の最高値上回る　一時3万9000円台 - 日本経済新聞",
+    "article": "On the 22nd, the Nikkei Stock Average rebounded in the Tokyo stock market, temporarily exceeding the 39,000 yen mark for the first time since the peak of Japan's bubble economy on December 29, 1989, when it reached its highest value during trading hours at 38,957 yen. The surge was driven by improved earnings power of listed companies, governance reforms, and expectations of exiting deflation, prompting a reassessment of Japanese stocks and continued inflow of funds from overseas investors. The Nikkei average rose by more than 700 yen from the previous day, buoyed by a strong earnings report from U.S. semiconductor giant Nvidia, which led to purchases of semiconductor-related stocks. Stocks related to semiconductors and artificial intelligence, such as Tokyo Electron and SoftBank Group, have been leading the market since the beginning of the year. By the end of 2023, the Nikkei had risen by more than 5,000 yen, with an",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 6,
+    "article_id": 6,
+    "Link": "https://www.bengo4.com/c_18/n_17227/",
+    "title": "「人権意識が強くなると番組がつまらなくなる」フジテレビ番審委員の発言が炎上、有識者「メディアの役割を理解していない」 - 弁護士ドットコムニュース",
+    "article": "A controversy has arisen from the minutes of Fuji TV's \"Program Deliberation Council\" meeting held in January this year, themed \"Television and Human Rights.\" A member's comment suggested that too strong a focus on human rights could hamper creative expression and make programs dull. This sparked criticism on social media, with users questioning the disregard for performers' rights and asserting that entertainment and human rights are unrelated. Former professional wrestler Kyoko Kimura, mother of the late Hana Kimura who died while appearing on a Fuji TV program, criticized the council's stance on her social media account, implying that such attitudes can lead to loss of life. Lawyer Ryutaro Ogawa, Secretary-General of Human Rights Now, criticized certain council members for being out of touch with media's role in society, emphasizing media's duty to respect human rights and democracy beyond just profit-making. He asserted that media should not promote bullying or discrimination",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 7,
+    "article_id": 7,
+    "Link": "https://orangestar2.hatenadiary.com/entry/2024/02/22/145556",
+    "title": "なんでAIやロボットが進歩しても働かなくては生きていけないのか、そして少しの未来予測 - orangestar2",
+    "article": "The news entry conveys a sense of uncertainty and inadequacy in expressing thoughts, possibly indicating the author's contemplation of the future and its unpredictability. The author expresses a desire to check in ten years to see if their predictions or expectations align with reality. Additionally, they mention that they create and sell manga and invite readers to take a look at their work.",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 8,
+    "article_id": 8,
+    "Link": "https://anond.hatelabo.jp/20240221213147",
+    "title": "むしろ全くオススメ出来ないアニメを教えて欲しい",
+    "article": "In a critique of the anime \"Serial experiments lain,\" the author expresses a strong disapproval, highlighting various aspects they find unappealing. They criticize the main character for being small, introverted, and seemingly designed to appeal to a certain otaku demographic. The character's behavior is described as concerning, with excessive internet use and a bear kigurumi costume that the author feels is pandering to fans. The storytelling, which intertwines internet history and urban legends, is also found to be pretentious and difficult to recommend. The anime's unique portrayal of a retro-futuristic world, which fails to fit neatly into any specific time period, is considered another negative point. The plot, which revolves around the protagonist's increasing detachment from reality due to internet dependency, is not seen as commendable. The author also finds fault with the way the story is woven, suggesting it lacks the satisfaction found in other similar narratives. Additionally, the",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 9,
+    "article_id": 9,
+    "Link": "https://bunshun.jp/articles/-/69133",
+    "title": "《説明会音声入手》日テレドラマ「たーたん」スタッフに伝えられた“制作中止の理由”と、プロデューサーが滲ませていた“不信感”「普通じゃない状況のことを出版社の小学館さんに言われて」「悔しい気持ちでいっぱいで」 | 文春オンライン",
+    "article": "The production of the drama \"Tātan,\" scheduled to be broadcast on the Nippon Television Network from April this year, has been canceled. The show was based on the ongoing comic of the same name by Saiko Nishi, serialized in \"Big Comic Original\" by Shogakukan. The story follows the protagonist, Atsushi Ueda, an unremarkable virgin man who became the father to a baby girl named Suzu 15 years ago, after his friend, who committed murder and was imprisoned, entrusted her to him. The drama was set to portray the growth of a virgin man who becomes a father and his daughter's search for her biological parents. However, after the death of popular manga artist Hina Ashihara, the creator of \"Sexy Tanaka-san,\" another Shogakukan comic adapted by Nippon TV, was reported on January 29th, production of \"Tātan\" faced uncertainty. The drama's production team, which was the same as that of \"Sexy Tanaka-san,\"",
+    "date": "2024-02-22"
+  },
+  {
+    "feed_id": 10,
+    "article_id": 10,
+    "Link": "https://www.a-tm.co.jp/top/securities/survey/column-11/",
+    "title": "任天堂が好き過ぎて株を購入。「任天堂株主総会レポート」中の人が語る、“推し”企業に投資する魅力",
+    "article": "The launch of the new NISA investment system has sparked interest in stock investments, especially in well-loved companies like Nintendo. A Nintendo fan named Alex decided to buy Nintendo shares, drawn by the appeal of attending shareholder meetings. Alex's encounter with the Famicom as a child led to a lifelong passion for Nintendo, culminating in the creation of a fan site, N-Styles. When the stock price dipped following the less successful Wii U launch, Alex saw an opportunity and purchased shares in 2012, which allowed participation in the coveted Nintendo shareholder meetings. These meetings, usually held in Kyoto, have provided Alex with a deeper connection to the company. While recent years saw the cessation of souvenir distribution and the switch from physical to digital CSR reports, the meetings remain a source of excitement for Alex. Direct interaction with company executives and like-minded investors has enriched Alex's experience as a Nintendo",
+    "date": "2024-02-22"
+  }
+]

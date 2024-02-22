@@ -29,86 +29,93 @@ class NewsFeed:
         self.ex_link = ex_link
         self.details_news = details_news
 
+def generate_article_details(news_entry, current_article_id, current_feed_id):
+    request_messages = [
+        SystemMessage(content="Please answer in English"),
+        HumanMessage(f"Create Summary article for the news entry within 150 words And Title text will be remove from the Article text:\n{json.dumps(news_entry.__dict__, ensure_ascii=False)}")
+    ]
+
+    response_summary = __call_chat_api(request_messages)
+    response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
+
+    article_start_index = response_summary_str.find('Article:')
+    article_text = response_summary_str[article_start_index + len('Article:'):].strip() if article_start_index != -1 else ""
+
+    current_date = datetime.now().strftime("%Y-%m-%d")
+    
+    article_details = {
+        'feed_id': current_feed_id,
+        'article_id': current_article_id,
+        'Link': news_entry.ex_link,
+        'title': news_entry.title,
+        'article': article_text,
+        'date': current_date
+    }
+
+    return article_details
+
 def generate_article_details_chunked(news_entries, initial_feed_id):
-    # Convert the NewsFeed objects to dictionaries
-    news_dicts = [news_entry.__dict__ for news_entry in news_entries]
-    chunk_size = 5
     articles_list = []
-    print(f"loop:")
-    for i in range(0, len(news_dicts), chunk_size):
-        chunk = news_dicts[i:i + chunk_size]
-        tem_count = 0  # Reset tem_count for each chunk
-        print(i)
-        # Initialize request_messages for the Chat AI
-        request_messages = [SystemMessage(content="Please answer in English")]
+    count = 1
 
-        # Filter out sensitive content from chunk
-        sanitized_chunk = [{'title': news_dict['title']} for news_dict in chunk]
+    for news_entry in news_entries:
+        if count > 10:
+            break
 
-        # Extend request_messages to include a message about creating an article
-        request_messages.extend([
-            HumanMessage(f"Create Summary article for each news entry within 150 words:\n{json.dumps(sanitized_chunk, ensure_ascii=False)}")
-        ])
+        # Process each news entry
+        article_details = generate_article_details(news_entry, initial_feed_id, initial_feed_id)
+        articles_list.append(article_details)
 
-        # print(request_messages)
-        try:
-            response_summary = __call_chat_api(request_messages)
-            response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(response_summary)
-        except ValueError as e:
-            # Handle Azure content filter triggering error
-            print(f"Azure Content Filter Triggered: {e}")
-            response_summary_str = ""
-
-        request_messages.clear()
-
-        # Process each news entry in the chunk
-        for news_dict in chunk:
-            # Extract the 'Article' part from response_summary_str
-            article_text = response_summary_str.strip()
-
-            # Add Link, Title, Article, and Article ID to the list
-            current_date = datetime.now().strftime("%Y-%m-%d")
-
-            current_article_id = initial_feed_id + tem_count
-            article_details = {
-                'feed_id': news_dict['feed_id'],
-                'article_id': current_article_id,
-                'Link': news_dict['ex_link'], 
-                'title': news_dict['title'],  
-                'article': article_text,
-                'date': current_date
-            }
-            articles_list.append(article_details)
-
-            tem_count += 1  # Increment the counter for each news entry
+        # Increment the counter and overall counter for each news entry
+        initial_feed_id += 1
+        count += 1
 
     return articles_list
 
 def get_articles_list():
-    # Get news details list using the 'get_news_details_list' function
     news_details_list = get_news_details_list()
-    #print(f"details_list :{news_details_list}")
-    #print('details complete')
-    # Starting Id for articles
     initial_feed_id = 0
 
-    # Convert news details to NewsFeed objects
     news_entries = [NewsFeed(
         feed_id=details_feed.get('feed_id', 0),
         title=details_feed.get('title', ''),
         ex_link=details_feed.get('link', ''),
         details_news=details_feed.get('content', '')
     ) for details_feed in news_details_list.get('details_list', []) if isinstance(details_feed, dict)]
-    #print(f"news entries{news_entries}")
-    # Process news entries in chunks
-    generated_articles_list = generate_article_details_chunked(news_entries, initial_feed_id)
-    print(f"articles_list{generated_articles_list}")
-    # Save generated_articles_list to a text file
-    file_name = "articles_list.txt"
+
+    total_links = len(news_entries)
+    print(f"Total Links: {total_links}")
+
+    generated_articles_list = []
+    links_cannot_create_article = []
+
+    # Limit the loop to create only 10 articles for testing
+    # for i, news_entry in enumerate(news_entries, start=1):
+    for i, news_entry in enumerate(news_entries[:10], start=1):
+        try:
+            article_details = generate_article_details(news_entry, initial_feed_id + i, initial_feed_id)
+            generated_articles_list.append(article_details)
+            print(f"Article created for Link {i}/{10}")  # Displaying progress for the first 10 articles
+        except Exception as e:
+            # Handle any exceptions during article creation
+            links_cannot_create_article.append(news_entry.ex_link)
+            print(f"Error creating article for Link {i}/{10}: {e}")
+
+    file_name = "articles_list_test.txt"
     with open(file_name, 'w', encoding='utf-8') as file:
-        file.write(json.dumps(generated_articles_list, ensure_ascii=False, indent=2))
+        for article_details in generated_articles_list:
+            # Remove "Title" and "Summary" parts
+            article_details.pop('title', None)
+            article_details.pop('summary', None)
+            file.write(json.dumps(article_details, ensure_ascii=False, indent=2))
+            file.write("\n")
 
     print("Articles list saved to:", file_name)
 
-# Call the function to generate articles and save to a text file
+    if links_cannot_create_article:
+        print("\nLinks for which articles could not be created:")
+        for link in links_cannot_create_article:
+            print(link)
+
 get_articles_list()
+
