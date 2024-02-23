@@ -1,6 +1,7 @@
 import os
 import json
 import time
+import re
 from datetime import datetime
 from langchain.callbacks.manager import get_openai_callback
 from langchain_openai import AzureChatOpenAI
@@ -34,10 +35,30 @@ class NewsFeed:
 current_feed_id = 0
 current_article_id = 0
 
+# def truncate_text(text, max_words):
+#     words = text.split()
+#     truncated_text = ' '.join(words[:max_words])
+#     return truncated_text
+
+
+
+
 def truncate_text(text, max_words):
     words = text.split()
-    truncated_text = ' '.join(words[:max_words])
-    return truncated_text
+    truncated_words = words[:max_words]
+    truncated_text = ' '.join(truncated_words)
+
+    # Remove incomplete last sentence if it exceeds the word limit
+    sentence_endings = re.compile(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s')
+    sentences = re.split(sentence_endings, truncated_text)
+
+    if len(sentences) > 1 and len(' '.join(sentences[:-1])) > max_words:
+        sentences.pop()
+
+    return ' '.join(sentences)
+
+
+
 
 def generate_article_details(news_entry):
     global current_feed_id
@@ -51,7 +72,7 @@ def generate_article_details(news_entry):
     news_entry_content = {'content': news_entry.details_news}
 
     request_messages.extend([
-        HumanMessage(f"Create Summary article for the news entry within 150 words "
+        HumanMessage(f"Create Summary article for the news entry within 150 words And Remove the word 'Article' and also remove '\' from the Summary article "
                      f"and in the Summary article there will be only article text :\n"
                      f"{json.dumps(news_entry_content, ensure_ascii=False)}")
     ])
@@ -63,7 +84,8 @@ def generate_article_details(news_entry):
     except ValueError as e:
         print(f"Azure Content Filter Triggered: {e}")
         response_summary_str = ""
-
+        
+    # Extracting the article text and removing the title
     article_text = truncate_text(response_summary_str.strip(), 150)
 
     current_date = datetime.now().strftime("%Y-%m-%d")
@@ -73,16 +95,22 @@ def generate_article_details(news_entry):
         'article_id': current_article_id,
         'Link': news_entry.ex_link,
         'title': news_entry.title,
-        'article': article_text,
+        'article': {
+            "title": news_entry.title,
+            "Summary": article_text
+
+            
+        },
         'date': current_date
     }
 
-    return article_details
+    return current_article_id, article_details
+
 
 def generate_article_details_chunked(news_entries):
     news_dicts = [news_entry.__dict__ for news_entry in news_entries]
     chunk_size = 1
-    articles_list = []
+    articles_dict = {}
 
     print("Loop:")
     count = 1
@@ -97,7 +125,7 @@ def generate_article_details_chunked(news_entries):
         tem_count = 0
 
         for news_dict in chunk:
-            article_details = generate_article_details(
+            article_id, article_details = generate_article_details(
                 NewsFeed(
                     feed_id=news_dict['feed_id'],
                     title=news_dict['title'],
@@ -106,10 +134,10 @@ def generate_article_details_chunked(news_entries):
                 ),
             )
 
-            articles_list.append(article_details)
+            articles_dict[article_id] = article_details
             tem_count += 1
 
-    return articles_list
+    return articles_dict
 
 def get_articles_list():
     news_details_list = get_news_details_list()
@@ -123,15 +151,19 @@ def get_articles_list():
     total_links = len(news_entries)
     print(f"Total Links: {total_links}")
 
-    generated_articles_list = generate_article_details_chunked(news_entries)
-    print(f"articles_list{generated_articles_list}")
+    generated_articles_dict = generate_article_details_chunked(news_entries)
 
-    # Save generated_articles_list to a text file
-    file_name = "articles_list.txt"
+    # Save generated_articles_dict to a text file
+    file_name = "articles_dict.txt"
     with open(file_name, 'w', encoding='utf-8') as file:
-        file.write(json.dumps(generated_articles_list, ensure_ascii=False, indent=2))
+        file.write(json.dumps(generated_articles_dict, ensure_ascii=False, indent=2))
 
-    print("Articles list saved to:", file_name)
+    print("Articles dictionary saved to:", file_name)
+
+    return generated_articles_dict
 
 # Call the function to generate articles and save to a text file
-get_articles_list()
+articles_data = get_articles_list()
+
+# Print the result
+print(f"articles_dict {articles_data}")

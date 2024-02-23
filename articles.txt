@@ -1,0 +1,112 @@
+{
+  "1": {
+    "feed_id": 1,
+    "article_id": 1,
+    "Link": "https://bookplus.nikkei.com/atcl/column/011000181/021600009/",
+    "title": "管理職必読　順番に読むと理解が深まる「マネジメントの名著」11冊",
+    "article": {
+      "title": "管理職必読　順番に読むと理解が深まる「マネジメントの名著」11冊",
+      "Summary": "As individuals progress into their 30s and beyond, they often find themselves in managerial roles, overseeing others. However, maintaining a player mindset can hinder effective management. It is crucial to shift the mindset from doing tasks oneself to getting things done through others. This article introduces books that meticulously explain the basics to advanced concepts of management, structured to gradually improve skills. The authors featured have impressive credentials, such as Jun Takeno, who while being a top-performing manager at Mitsui Sumitomo Insurance, ensured no subordinates left over an eight-year period. Other notable authors include Masayasu Iba, who received top national awards at Recruit Group, and Junichi Seko, who contributed to VOYAGE GROUP's top rankings and explored 1-on-1 meeting know-how in Silicon Valley."
+    },
+    "date": "2024-02-23"
+  },
+  "2": {
+    "feed_id": 2,
+    "article_id": 2,
+    "Link": "https://konifar-zatsu.hatenadiary.jp/entry/2024/02/22/230933",
+    "title": "マネジメント半年くらいの自分へ - Konifar's ZATSU",
+    "article": {
+      "title": "マネジメント半年くらいの自分へ - Konifar's ZATSU",
+      "Summary": "Reflecting on past experiences, the writer offers advice to their younger self about personal and professional growth. They stress the importance of reading books to harness the wisdom of predecessors and to learn from history. They advocate for networking with managers from other companies to broaden one's perspective and find solutions to problems. The writer encourages increasing one's 'management drawers'—the different methods and approaches to managing—to handle uncertainty. They recommend defining where to focus efforts and clarifying what to do and what not to do to manage expectations and responsibilities. Emphasizing the significance of a strong start, they also remind that it's never too late to make a change or improvement. The advice includes not holding onto work (WIP limit) that others can do and ensuring to align expectations with others. They discourage chasing short-term results exclusively and suggest planning for long-term outcomes."
+    },
+    "date": "2024-02-23"
+  },
+  "3": {
+    "feed_id": 3,
+    "article_id": 3,
+    "Link": "https://diamond.jp/articles/-/337770",
+    "title": "ものすごく仕事の成果があがる「ドラッカーの時間術」とは？",
+    "article": {
+      "title": "ものすごく仕事の成果があがる「ドラッカーの時間術」とは？",
+      "Summary": "In an era flooded with information, the universal value of long-supported classic books is more significant than ever. The editorial department behind \"Book Online\" and \"DIAMOND Favorite Reader's Club\" introduces messages from best-selling books that are worth reading today across various genres such as management, economics, business skills, self-improvement, money, health, women's practical use, parenting, and science. One such classic is Peter F. Drucker's \"The Effective Executive,\" widely read not only by managers but also by business professionals, artists, creators, athletes, students, and even homemakers. Drucker's book, first published in 1966, is a testament to the enduring relevance of its teachings on achieving results. While it is seen as an introduction to Drucker's work, its practical content on managing one's time and focusing on essential tasks remains invaluable. Drucker emphasizes that effective results start with understanding how one spends their time."
+    },
+    "date": "2024-02-23"
+  },
+  "4": {
+    "feed_id": 4,
+    "article_id": 4,
+    "Link": "https://togetter.com/li/2319304",
+    "title": "父親が死んだときお坊さんに「いくら払えばいいか？」何度聞いても教えてくれないから5万円しか包まなかったら、戒名が一文字だった",
+    "article": {
+      "title": "父親が死んだときお坊さんに「いくら払えばいいか？」何度聞いても教えてくれないから5万円しか包まなかったら、戒名が一文字だった",
+      "Summary": "The news entry discusses an issue regarding a Buddhist dharma name, which appears to be causing some discomfort or frustration. The term \"もやもやする\" suggests a feeling of unease or being troubled, implying that there is some sort of problem or dissatisfaction related to the dharma name."
+    },
+    "date": "2024-02-23"
+  },
+  "5": {
+    "feed_id": 5,
+    "article_id": 5,
+    "Link": "https://togetter.com/li/2319274",
+    "title": "「やる気のない優秀な人」と「やる気がある凡人」どちらを採用しますか？→その場にいた偉い人たちは即答で「やる気がある凡人」を選んでビビり散らかした話",
+    "article": {
+      "title": "「やる気のない優秀な人」と「やる気がある凡人」どちらを採用しますか？→その場にいた偉い人たちは即答で「やる気がある凡人」を選んでビビり散らかした話",
+      "Summary": "In the news entry titled \"The Reason for Choosing an 'Eager Ordinary Person,'\" the focus is on the value of selecting individuals who may not possess exceptional talent but are highly motivated. This perspective emphasizes the potential of those who have a strong drive and willingness to work hard, suggesting that they can achieve significant levels of success through their dedication and perseverance."
+    },
+    "date": "2024-02-23"
+  },
+  "6": {
+    "feed_id": 6,
+    "article_id": 6,
+    "Link": "https://anond.hatelabo.jp/20240223144855",
+    "title": "パーソナルカラーにしろ骨格診断にしろ 「イエベ秋」や「骨格ストレート」..",
+    "article": {
+      "title": "パーソナルカラーにしろ骨格診断にしろ 「イエベ秋」や「骨格ストレート」..",
+      "Summary": "The concept of personal color analysis and body type assessments, such as \"Warm Autumn\" or \"Straight body type,\" is criticized for perpetuating discrimination and establishing a hierarchy among women. The primary goal of these systems is not merely to help women find suitable fashion and makeup but to insult and establish dominance over certain individuals. Standards of beauty are predetermined, and those who do not fit the ideal are placed in a lower \"caste.\" For some, being told that a certain style suits them is like being branded a slave."
+    },
+    "date": "2024-02-23"
+  },
+  "7": {
+    "feed_id": 7,
+    "article_id": 7,
+    "Link": "http://www.gadget2ch.com/archives/post-226445.html",
+    "title": "【悲報】運転免許証、いつの間にか最強身分証明書の座から転落してしまっていたと判明",
+    "article": {
+      "title": "【悲報】運転免許証、いつの間にか最強身分証明書の座から転落してしまっていたと判明",
+      "Summary": "The driving license, once considered the strongest form of identification, has seemingly lost its place to the My Number card in Japan. Discussions online reveal that the My Number card is now seen as the most powerful ID due to its requirement for certain financial transactions like opening an investment account. Some users have doubts about its omnipotence, while others suggest that it should consolidate multiple forms of ID into one to simplify processes. There is also talk about the possibility of integrating passport functions into the My Number card, and the convenience of having its functions on smartphones, despite potential risks."
+    },
+    "date": "2024-02-23"
+  },
+  "8": {
+    "feed_id": 8,
+    "article_id": 8,
+    "Link": "https://anond.hatelabo.jp/20240223083830",
+    "title": "貨幣は人間が作り出した。経済も人間が形作っている。では、なぜだれにも..",
+    "article": {
+      "title": "貨幣は人間が作り出した。経済も人間が形作っている。では、なぜだれにも..",
+      "Summary": "Currency and economies are human constructs, yet they often defy prediction. This might be due to their motivational properties. The U.S. military's Challenge Coin system is an example of non-monetary value that inspires and rewards service members for commendable, but not award-level, achievements. These tokens of appreciation bring joy despite their limited financial worth. Even if currency and economies were to disappear, systems of recognition and exchangeable tokens would likely emerge."
+    },
+    "date": "2024-02-23"
+  },
+  "9": {
+    "feed_id": 9,
+    "article_id": 9,
+    "Link": "https://gendai.media/articles/-/124782",
+    "title": "『不適切にもほどがある』の視聴を脱落する若者がいる理由は「昭和ネタがわからない」からではない（田幸 和歌子）",
+    "article": {
+      "title": "『不適切にもほどがある』の視聴を脱落する若者がいる理由は「昭和ネタがわからない」からではない（田幸 和歌子）",
+      "Summary": "The current drama season has audiences talking, particularly about the show \"Futehodo,\" which is catching attention for its engaging content. The series, written by Kankuro Kudo, produced by Akira Isoyama, and starring Sadawo Abe, is a time-travel dramedy set in 1986. The protagonist, a middle school PE teacher and baseball team advisor named Ichiro Ogawa, played by Abe, is a single father who inadvertently travels from 1986 to 2024 via a time-traveling bus. He discovers a way to travel between the Showa period and the Reiwa period through a Kyon Kyon (Kyoko Koizumi) poster in a familiar coffee shop. While the show is praised for its nostalgia-inducing elements from the Showa era, including various cultural references and a playful musical aspect, it has not been without controversy."
+    },
+    "date": "2024-02-23"
+  },
+  "10": {
+    "feed_id": 10,
+    "article_id": 10,
+    "Link": "https://www.moderntimes.tv/articles/20240202-01Laos/",
+    "title": "「水牛がおぼれて死んだので、今日は欠席します」。ラオスで学んだ、他者の合理性を透かして見る方法",
+    "article": {
+      "title": "「水牛がおぼれて死んだので、今日は欠席します」。ラオスで学んだ、他者の合理性を透かして見る方法",
+      "Summary": "In an unexpected message one morning, a couple in Laos informed their JICA grassroots technical cooperation project that they would be absent due to a water buffalo drowning. This incident was bewildering to the Japanese project coordinators who were working on improving food security through insect farming techniques. In Laos, water buffaloes are not just farm animals but assets critical for the livelihood of rural residents. A water buffalo's death signifies a significant financial loss, equivalent to a month's income or more for local farmers. The project team had to comprehend that the grieving couple had lost an asset that could be readily converted to cash at the market, a situation that demanded immediate attention and action, far outweighing the importance of attending the NGO's activity."
+    },
+    "date": "2024-02-23"
+  }
+}

@@ -1,5 +1,5 @@
 import os
-import json
+import json,re
 import time
 from datetime import datetime
 from langchain.callbacks.manager import get_openai_callback
@@ -34,32 +34,43 @@ class NewsFeed:
 current_feed_id = 0
 current_article_id = 0
 
+# def truncate_text(text, max_words):
+#     words = text.split()
+#     truncated_text = ' '.join(words[:max_words])
+#     return truncated_text
+
+
 def truncate_text(text, max_words):
     words = text.split()
-    truncated_text = ' '.join(words[:max_words])
-    return truncated_text
+    truncated_words = words[:max_words]
+    truncated_text = ' '.join(truncated_words)
+
+    # Remove incomplete last sentence if it exceeds the word limit
+    sentence_endings = re.compile(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s')
+    sentences = re.split(sentence_endings, truncated_text)
+
+    if len(sentences) > 1 and len(' '.join(sentences[:-1])) > max_words:
+        sentences.pop()
+
+    return ' '.join(sentences)
+
 
 created_articles = []
 not_created_articles = []
 
 def generate_article_details(news_entry):
-    # Use global keyword to modify global variables
     global current_feed_id
     global current_article_id
 
-    # Increment feed_id for each news entry
     current_feed_id += 1
     current_article_id += 1
 
-    # Initialize request_messages for the Chat AI
     request_messages = [SystemMessage(content="Please answer in English")]
 
-    # Filter out sensitive content from individual news entry
     news_entry_content = {'content': news_entry.details_news}
 
-    # Extend request_messages to include a message about creating an article
     request_messages.extend([
-        HumanMessage(f"Create Summary article for the news entry within 150 words "
+        HumanMessage(f"Create Summary article for the news entry within 150 words And Remove the word 'Article' and also remove '\' from the Summary article "
                      f"and in the Summary article there will be only article text :\n"
                      f"{json.dumps(news_entry_content, ensure_ascii=False)}")
     ])
@@ -69,15 +80,13 @@ def generate_article_details(news_entry):
         response_summary_str = response_summary.content if isinstance(response_summary, AIMessage) else str(
             response_summary)
     except ValueError as e:
-        # Handle Azure content filter triggering error
         print(f"Azure Content Filter Triggered: {e}")
         response_summary_str = ""
-
-    # Extract the 'Article' part from response_summary_str
-    #article_text = response_summary_str.strip()
+        
+    # Extracting the article text and removing the title
+    #article_text = response_summary_str.strip().replace(news_entry.title, '')
     article_text = truncate_text(response_summary_str.strip(), 150)
 
-    # Add Link, Title, Article, and Article ID to the list
     current_date = datetime.now().strftime("%Y-%m-%d")
 
     article_details = {
@@ -85,7 +94,10 @@ def generate_article_details(news_entry):
         'article_id': current_article_id,
         'Link': news_entry.ex_link,
         'title': news_entry.title,
-        'article': article_text,
+        'article': {
+            "title": news_entry.title,
+            "Summary": article_text
+        },
         'date': current_date
     }
     if article_text:
@@ -94,28 +106,28 @@ def generate_article_details(news_entry):
     else:
         # Article was not created
         not_created_articles.append(news_entry.ex_link)  # Store the link instead
-
-    return article_details
+    return current_article_id, article_details
 
 def generate_article_details_chunked(news_entries):
-    # Convert the NewsFeed objects to dictionaries
     news_dicts = [news_entry.__dict__ for news_entry in news_entries]
     chunk_size = 1
-    articles_list = []
+    articles_dict = {}
+    #articles_list = []
+
     print("Loop:")
     count = 1
+
     for i in range(0, len(news_dicts), chunk_size):
         if count > 10:
             break
         else:
             count += 1
+
         chunk = news_dicts[i:i + chunk_size]
-        tem_count = 0  # Reset tem_count for each chunk
-        print(i)
-        # Process each news entry in the chunk
+        tem_count = 0
+
         for news_dict in chunk:
-            
-            article_details = generate_article_details(
+            article_id, article_details = generate_article_details(
                 NewsFeed(
                     feed_id=news_dict['feed_id'],
                     title=news_dict['title'],
@@ -124,16 +136,13 @@ def generate_article_details_chunked(news_entries):
                 ),
             )
 
-            articles_list.append(article_details)
-            tem_count += 1  # Increment the counter for each news entry
+            articles_dict[article_id] = article_details
+            tem_count += 1
 
-    return articles_list
+    return articles_dict
 
 def get_articles_list():
-    # Get news details list using the 'get_news_details_list' function
     news_details_list = get_news_details_list()
-
-    # Convert news details to NewsFeed objects
     news_entries = [NewsFeed(
         feed_id=details_feed.get('feed_id', 0),
         title=details_feed.get('title', ''),
@@ -144,13 +153,13 @@ def get_articles_list():
     total_links = len(news_entries)
     print(f"Total Links: {total_links}")
 
-    generated_articles_list = generate_article_details_chunked(news_entries)
-    print(f"articles_list{generated_articles_list}")
+    generated_articles_dict = generate_article_details_chunked(news_entries)
+    print(f"articles_dict {generated_articles_dict}")
 
-    # Save generated_articles_list to a text file
-    file_name = "articles_list.txt"
+    # Save generated_articles_dict to a text file
+    file_name = "articles.txt"
     with open(file_name, 'w', encoding='utf-8') as file:
-        file.write(json.dumps(generated_articles_list, ensure_ascii=False, indent=2))
+        file.write(json.dumps(generated_articles_dict, ensure_ascii=False, indent=2))
 
     # Save links for which articles were not created to a separate file
     not_created_file_name = "not_created_articles.txt"
