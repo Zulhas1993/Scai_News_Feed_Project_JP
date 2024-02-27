@@ -111,36 +111,60 @@ def get_news_details(link):
         
 
 def get_news_details_list():
-    #print('Scrap start')
+   
+    #print('Scraping start')
+
     try:
+        # Retrieve data for scraping using the fillDictionaryWithData function
         Data = fillDictionaryWithData()
+
+        # Scrape all links using the get_all_links function
         scrapping_data = get_all_links(Data)
+
+        # Extract news information from the scraped data
         news_list = extract_news_info(scrapping_data)
+
+        # Initialize empty lists to store news details and error links
         news_details_list = []
         error_links = []
-        #print('data paici')
+
+        # Iterate through each news in the news_list
         for news in news_list:
+            # Extract link from the news
             link = news.get('link', '')
+
             try:
+                # Retrieve detailed news information using the get_news_details function
                 news_details = get_news_details(link)
-                #print(f"News details: {news_details}")
+
+                # If news_details is None, continue to the next iteration
                 if news_details is None:
                     continue
 
+                # Extract relevant details from news_details
                 details_content = news_details.get('content', '')
                 title = unescape(news.get('title', ''))
+                description = (news.get('description'), '')
 
+                # If details_content is not empty, add news details to the news_details_list
                 if details_content:
-                    news_details_list.append({'link': link, 'content': details_content, 'title': title})
-            except FetchDetailsError as e:
-                error_links.append(link)
-                continue  
+                    news_details_list.append({'link': link, 'content': details_content, 'title': title, 'description': description})
 
+            except FetchDetailsError as e:
+                # If an exception (FetchDetailsError) occurs, add the link to the error_links list
+                error_links.append(link)
+                continue
+
+        # Return a dictionary containing the details_list and error_links
         return {'details_list': news_details_list, 'error_links': error_links}
 
     except Exception as e:
+        # Handle any general exceptions and print an error message
         print(f"An exception occurred: {e}")
+
+        # Return a dictionary with None values if an exception occurs
         return {'details_list': None, 'error_links': None}
+
 
 # details_result = get_news_details_list()
 # details_list = details_result['details_list']

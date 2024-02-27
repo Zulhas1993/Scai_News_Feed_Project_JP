@@ -3,7 +3,7 @@ import os
 from langchain.callbacks.manager import get_openai_callback
 from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-from Open_AI_Article_Create_Chat_API import get_articles_list
+from Article_list import get_articles_list
 from QuestionList import GetquestionnaireList
 
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
@@ -16,6 +16,26 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
     )
     with get_openai_callback():
         return model(messages)
+
+def extract_key_and_content():
+    # Get the article information using the get_articles_list function
+    article_info = get_articles_list()
+
+    # Initialize an empty dictionary to store the extracted information
+    extracted_info = {}
+
+    # Iterate over each key-value pair in the article_info dictionary
+    for key, article in article_info.items():
+        # Extract relevant information (Link, title, and summary) for each article
+        extracted_info[key] = {
+            "Link": article["Link"],
+            "title": article["title"],
+            "summary": article["article"]["Summary"]
+        }
+
+    # Return the dictionary containing the extracted information for each article
+    return extracted_info
+
 
 def Match_Feed_Or_Article_With_User_Interest():
     request_messages = [
@@ -34,12 +54,7 @@ def Match_Feed_Or_Article_With_User_Interest():
         "designation": "senior software engineer"
     }
 
-    def extract_feed_id_and_content():
-        article_info = get_articles_list()
-        extracted_info = [{"Feed_id": article["feed_id"], "article": article["article"]} for article in article_info]
-        return extracted_info
-
-    details_feed = extract_feed_id_and_content()
+    details_feed = extract_key_and_content()
     personal_interest = GetquestionnaireList()
 
     # Request to analyze user interest using Chat API
@@ -56,7 +71,7 @@ def Match_Feed_Or_Article_With_User_Interest():
     request_messages.extend([
         AIMessage(content=f"{content_from_api}"),
         HumanMessage(content=f"""
-                     Match this below paragraph list according to the above user interest and categorize this list to best match, average match, and no match.if best_match is empty then find any keyword are match with the {details_feed} then it consider the best match. Return JSON format where the key will be match status and the value will be feed ids  and json format will be {{"Match_Status":{{"best_match":[],"average_match":[],"no_match":[]}}}} :
+                     Match this below paragraph list according to the above user interest and categorize this list to best match, average match, and no match. If best_match is empty, then find any keyword that matches with the {details_feed} then it considers the best match. Return JSON format where the key will be match status and the value will be feed ids and JSON format will be {{"Match_Status":{{"best_match":[],"average_match":[],"no_match":[]}}}} :
                      {details_feed}
                      Also exclude the paragraph which is not directly related to user interest and return only the id of the list.
                      """)

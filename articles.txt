@@ -2,111 +2,131 @@
   "1": {
     "feed_id": 1,
     "article_id": 1,
-    "Link": "https://bookplus.nikkei.com/atcl/column/011000181/021600009/",
-    "title": "管理職必読　順番に読むと理解が深まる「マネジメントの名著」11冊",
+    "Link": "https://www.hotpepper.jp/mesitsu/entry/tsujimeshi/24-00001",
+    "title": "味付け塩だけ、放置1時間、調理5分。「塩豆腐と塩挽肉の炒めもの」が新食感で美味い！【ツジメシの週末メシ】 - メシ通 | ホットペッパーグルメ",
+    "details_news": "こんにちは。プロダクトデザイナーときどき料理人、ツジメシこと辻村哲也です。「ツジメシの日常メシと週末メシ」シリーズ。\n\n\n\n豆腐と挽肉の料理といえば麻婆豆腐がメジャーですが、今回は、豆腐と挽肉、それぞれに塩をしておいて、あとはそのまま炒めるだけという、待ち時間はかかりますがとてもシンプルな作り方をご紹介します。\n\n\n\n豆腐に塩をしておくと、味が中まで浸透して水分が抜けてもっちりした食感になります。挽肉も同様に塩がなじみ、炒めたときのむっちりした食感が増し、あとから塩をするよりうま味も強く感じるように思います。馴染みのあるいつもの食材が、一手間でいつもと違った一品になりますよ。\n\n今回の工程は\n\n・豆腐と挽肉に塩をして1時間おく\n\n・炒める\n\nです。\n\nツジメシの「塩豆腐と塩挽き肉の炒めもの」\n\n材料（作りやすい量）\n\n豚挽肉 100g\n\n木綿豆腐 半丁（175g）\n\n塩 2g（小さじ1/3）塩の量について詳細後述\n\nサラダ油 小さじ1-2\n\n片栗粉 小さじ1/2\n\n水 大さじ１\n\n粉山椒 （和山椒または中華の花椒粉）適量\n\n挽肉はものによって赤身と脂の割合が違います。今回はこんな感じ。もう少し赤身が多いものでもよいと思います。\n\n\n\n\n\n作り方\n\n木綿豆腐はパックから出して水を捨て、キッチンペーパーを巻いて3~5分ほど置いて水を切ります。\n\nその後、1.5cm角程度に切り分け、まんべんなく塩をしておきます。\n\n豚挽肉は分量の塩をして全体を混ぜ合わせます。\n\n塩がまんべんなく行き渡ればいいので、ハンバーグのように練る必要はありません。\n\n\n\n塩の量は両方のぶん合わせて、豆腐と挽肉合計重量の1%弱。細かくいうと0.8%あたりを狙います。ここでは挽肉100gと豆腐175g（ペーパーで水切りした後の重量）なので、合わせて2g強、一般的に塩小さじ1は6gとされているので小さじ1/3ほどです。挽肉と豆腐それぞれに半量ずつの塩をしてください。豆腐に比べて挽肉の塩分がやや濃いめになり、そのほうが美味しく感じると思います。\n\n\n\n市販の豆腐1丁は350~400ほどで、半丁も150~200gと商品により差があります。\n\n塩の量はそれに合わせて計算すると間違いないです。また、塩はものによって体積と重さが違いますので、デジタルスケールで計量すると間違いないですが、気持ち少なめにしておいて、仕上げに味見をして調整するのもいいと思います。\n\n\n\nこの状態で、どちらも冷蔵庫に1時間入れておきます。\n\n1時間経ったのがこちら。見た目はほとんど変わっていません。でも食べると味と食感は違いますのでお楽しみに。\n\n\n\n\n\n炒める前に片栗粉を水に溶いておきましょう。\n\nフライパンにサラダ油（挽肉の脂の量によって加減してください。今回は脂多めなので小さじ１です）を中火で熱し、挽肉を広げて片面を焼きます。このとき、あまり細かくほぐさず、豆腐と同じくらいの大きさになるようにざっくりヘラなどで切り分けると、食べるときに食感がよりわかってよいです。\n\n\n\n\n\n挽肉のかたまりが周りから半分くらい白くなってきたらざっくり上下を返し、豆腐を加えます。\n\n豆腐が崩れないようにやさしく混ぜながら、豆腐に火が通るまで2分程度炒めます。\n\n\n\n\n\n\n\n写真で伝わるでしょうか？ 豆腐に熱が入ってぷりっと膨らんできたら、\n\n\n\n\n\n\n\n水溶き片栗粉を回し入れてさらにやさしく混ぜ合わせ、全体が沸騰したら火を止めます。\n\n器に盛り付け、粉山椒を振ったら出来上がりです。\n\n\n\n\n\n中まで味がしみてもっちりした食感の豆腐、むっちり弾力を増してしっかりうま味を感じる挽肉の組み合わせの、ありそうでなかった新食感炒めものです。最初にした塩だけなのにじゅうぶん満足できる味付けです（でも好みで辣油を少しかけても間違いなく美味しいです）。\n\n麻婆豆腐同様に、ご飯にかけてももちろん美味しいですよ。\n\n塩しておくだけでそんなに変わるの？ と思ったそこのあなた。お時間のあるときにぜひお試しください。",
+    "Short description": "こんにちは。プロダクトデザイナーときどき料理人、ツジメシこと辻村哲也です。「ツジメシの日常メシと週末メシ」シリーズ。 豆腐と挽肉の料理といえば麻婆豆腐がメジャーですが、今回は、豆腐と挽肉、それぞれに塩をしておいて、あとはそのまま炒めるだけという、待ち時間はかかりますがとてもシンプルな作り方をご紹介...\n",
     "article": {
-      "title": "管理職必読　順番に読むと理解が深まる「マネジメントの名著」11冊",
-      "Summary": "As individuals progress into their 30s and beyond, they often find themselves in managerial roles, overseeing others. However, maintaining a player mindset can hinder effective management. It is crucial to shift the mindset from doing tasks oneself to getting things done through others. This article introduces books that meticulously explain the basics to advanced concepts of management, structured to gradually improve skills. The authors featured have impressive credentials, such as Jun Takeno, who while being a top-performing manager at Mitsui Sumitomo Insurance, ensured no subordinates left over an eight-year period. Other notable authors include Masayasu Iba, who received top national awards at Recruit Group, and Junichi Seko, who contributed to VOYAGE GROUP's top rankings and explored 1-on-1 meeting know-how in Silicon Valley."
+      "title": "Tsujimeshi's Simple Salted Tofu and Ground Meat Stir-Fry",
+      "Summary": "Tetsuya Tsujimura, also known as Tsujimeshi, a product designer and occasional chef, introduces a unique and simple recipe that transforms everyday ingredients into a new dish. The process involves salting tofu and ground pork separately, letting them rest for an hour to enhance the flavors and textures, and then stir-frying them together. The salt allows the tofu to become firmer and the meat to become juicier. The resulting dish offers a satisfying taste and novel texture with just a hint of salt, which can be enjoyed over rice or enhanced with a touch of chili oil to taste."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "2": {
     "feed_id": 2,
     "article_id": 2,
-    "Link": "https://konifar-zatsu.hatenadiary.jp/entry/2024/02/22/230933",
-    "title": "マネジメント半年くらいの自分へ - Konifar's ZATSU",
+    "Link": "https://anond.hatelabo.jp/20240227071300",
+    "title": "子無しから選挙権を剥奪してはどうだろうか",
+    "details_news": "■ 子無しから選挙権を剥奪してはどうだろうか\n\n種の存続に背く個体が種の意思決定に関与するのは非合理的ではないか？\n\n子供を持たない人達も、日本人の今後の未来とかあんまり興味ないっしょ?選挙権なくてもいいんじゃない?\n\nツイートシェア",
+    "Short description": "種の存続に背く個体が種の意思決定に関与するのは非合理的ではないか？ 子供を持たない人達も、日本人の今後の未来とかあんまり興味ないっしょ?選挙権なくてもいいんじゃない?\n",
     "article": {
-      "title": "マネジメント半年くらいの自分へ - Konifar's ZATSU",
-      "Summary": "Reflecting on past experiences, the writer offers advice to their younger self about personal and professional growth. They stress the importance of reading books to harness the wisdom of predecessors and to learn from history. They advocate for networking with managers from other companies to broaden one's perspective and find solutions to problems. The writer encourages increasing one's 'management drawers'—the different methods and approaches to managing—to handle uncertainty. They recommend defining where to focus efforts and clarifying what to do and what not to do to manage expectations and responsibilities. Emphasizing the significance of a strong start, they also remind that it's never too late to make a change or improvement. The advice includes not holding onto work (WIP limit) that others can do and ensuring to align expectations with others. They discourage chasing short-term results exclusively and suggest planning for long-term outcomes."
+      "title": "Controversial Proposal to Revoke Voting Rights from Childless Individuals",
+      "Summary": "A provocative suggestion has emerged, questioning the rationality of allowing individuals without children to participate in electoral decisions that shape the future of the species. The argument implies that those who have chosen not to have children might be less invested in the long-term future of their nation, in this case, Japan, and therefore might not require the right to vote."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "3": {
     "feed_id": 3,
     "article_id": 3,
-    "Link": "https://diamond.jp/articles/-/337770",
-    "title": "ものすごく仕事の成果があがる「ドラッカーの時間術」とは？",
+    "Link": "https://www.tokyo-np.co.jp/article/311581",
+    "title": "「＃確定申告ボイコット」10万件に押され…鈴木俊一財務相が発言修正　「国民も議員も正しく申告を」：東京新聞 TOKYO Web",
+    "details_news": "自民党派閥の政治資金パーティーで受け取った裏金の税務処理を巡る自身の発言に批判が集まっていることを受け、鈴木俊一財務相は26日の衆院予算委員会で「国民であれ国会議員であれ、収入や経費を正しく計算し、所得が発生した場合には申告して頂く」と述べ、発言を修正した。\n\n◆「納税は個人の自由だったのか」と批判\n\n問題となっているのは鈴木氏が22日の衆院予算委で、裏金を受け取った議員は所得として納税することになるかを問われた際に「疑義が持たれた政治家が政治責任を果たす、そういう観点から（議員個人が納税をするかどうか）判断されるべきものであると思う」と述べた答弁。納税は憲法で国民の義務と明記されている。にもかかわらず、答弁は政治家だけが納税を個人の判断でできるともとれ、特別扱いだとして、交流サイト（SNS）で「納税は個人の自由だったのか」などと批判が広がった。\n\n26日の予算委では、立憲民主党の城井崇氏は裏金事件の中で始まった確定申告を巡り、SNS上では「#確定申告ボイコット」という投稿が一時10万件超に上ったと指摘。「政治家だけ特別扱いだとの強い憤りが起きている」とただした。\n\n◆岸田首相は「税務調査の指示は控える」\n\n関連キーワード 政治\n\n自民裏金問題\n\n主要ニュース",
+    "Short description": "自民党派閥の政治資金パーティーで受け取った裏金の税務処理を巡る自身の発言に批判が集まっていることを受け、鈴木俊一財務相は26日の衆院予算委員会で「国民であれ国会議員であれ、収入や経費を正しく計算し、所得が発生した場合には申告して頂く」と述べ、発言を修正した。 問題となっているのは鈴木氏が22日の衆院予...\n",
     "article": {
-      "title": "ものすごく仕事の成果があがる「ドラッカーの時間術」とは？",
-      "Summary": "In an era flooded with information, the universal value of long-supported classic books is more significant than ever. The editorial department behind \"Book Online\" and \"DIAMOND Favorite Reader's Club\" introduces messages from best-selling books that are worth reading today across various genres such as management, economics, business skills, self-improvement, money, health, women's practical use, parenting, and science. One such classic is Peter F. Drucker's \"The Effective Executive,\" widely read not only by managers but also by business professionals, artists, creators, athletes, students, and even homemakers. Drucker's book, first published in 1966, is a testament to the enduring relevance of its teachings on achieving results. While it is seen as an introduction to Drucker's work, its practical content on managing one's time and focusing on essential tasks remains invaluable. Drucker emphasizes that effective results start with understanding how one spends their time."
+      "title": "Japanese Finance Minister Suzuki Corrects Statement Amid Backlash Over Political Under-the-Table Money",
+      "Summary": "Finance Minister Toshio Suzuki faced criticism for his previous remarks on the tax handling of under-the-table money received at a Liberal Democratic Party faction's political fundraising party. On the 26th, during the House of Representatives Budget Committee, he clarified that everyone, including the public and Diet members, must accurately calculate income and expenses, and declare any earnings for taxation. His initial statement on the 22nd suggested that politicians might have discretion over their tax payments, sparking outrage on social media where users questioned if tax payment was a matter of personal freedom. The controversy also led to a hashtag on social media advocating for a boycott of tax declarations."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "4": {
     "feed_id": 4,
     "article_id": 4,
-    "Link": "https://togetter.com/li/2319304",
-    "title": "父親が死んだときお坊さんに「いくら払えばいいか？」何度聞いても教えてくれないから5万円しか包まなかったら、戒名が一文字だった",
+    "Link": "http://pandora11.com/blog-entry-4870.html",
+    "title": "海外「日本人は真面目過ぎるんだよ」 何で日本人は万能なのにこの分野だけは苦手なんだ？",
+    "details_news": "外国メディアの記事などに寄せられた、海外の方々の反応をお伝えします",
+    "Short description": "コンピューター分野において「ハードウェア」の対比語で、 何らかの処理を行うコンピュータ・プログラムや、 関連する文書などを指す言葉である「ソフトウェア」。 一般的にはワープロソフト等のアプリケーションソフトウェアや、 OSなどのシステムソフトウェアに分類されています。 今回の翻訳元では、そのソフトウェア...\n",
     "article": {
-      "title": "父親が死んだときお坊さんに「いくら払えばいいか？」何度聞いても教えてくれないから5万円しか包まなかったら、戒名が一文字だった",
-      "Summary": "The news entry discusses an issue regarding a Buddhist dharma name, which appears to be causing some discomfort or frustration. The term \"もやもやする\" suggests a feeling of unease or being troubled, implying that there is some sort of problem or dissatisfaction related to the dharma name."
+      "title": "International Responses to Japanese Media Reports",
+      "Summary": "The article discusses the reactions of international audiences to Japanese media reports, as captured through comments made on foreign media platforms. It highlights the perspectives of people from different countries, providing insight into how Japan's news and events are perceived globally."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "5": {
     "feed_id": 5,
     "article_id": 5,
-    "Link": "https://togetter.com/li/2319274",
-    "title": "「やる気のない優秀な人」と「やる気がある凡人」どちらを採用しますか？→その場にいた偉い人たちは即答で「やる気がある凡人」を選んでビビり散らかした話",
+    "Link": "https://anond.hatelabo.jp/20240227085257",
+    "title": "最低時給どんどんあげて生産性が高い社会を目指すのはいいと思うんだけど",
+    "details_news": "■ 最低時給どんどんあげて生産性が高い社会を目指すのはいいと思うんだけど\n\nその生産性に追いつけない真の弱者はどこで働くんや？\n\nうちは零細だから手帳持ってないだけの障碍者みたいな奴も最低賃金で雇ってるけど\n\n今の状態から最低時給200円上げろって言われたらさすがに切ること考える\n\n将来のことも考えてそいついなくてもなんとかなる環境の構築に力を入れるわ\n\nはっきり言って現状でも足引っ張ってるは引っ張ってるけど\n\nもっと時給安い時期から働いてもらってるし人間的に悪い奴じゃないから\n\nなんとかかんとか仕事も金も捻出してるけど、それだってどこかに限界があるわけじゃん\n\n当たり前だけど、時給が上がるってことは期待するパフォーマンスも上がるってことじゃん\n\nもろちん、発揮できるパフォーマンスが上がる環境を整えることも会社の仕事ではあるけど\n\nそれだってある程度は本人の能力があってのことじゃん\n\n底辺バイトを捌く仕事したことある奴だったらわかると思うけど、\n\n世の中にはどうやったって無理な奴いっぱいいる\n\nどんだけシステマチックにマニュアル通りやればいいってやってもそれすら無理な奴はいるじゃん\n\n最低時給を上げていけばうち以外でも間違いなく、こういう\n\nこの時給なら使ってやれるレベルの人間はどんどん排除されていくと思うんだけど\n\n最低時給上がって潰れる程度の会社は潰れろ派は同じように\n\n最低時給上がってクビになる程度の人間は死ねって思ってるってこと？\n\n【追記】\n\nいろいろ思い違いをしているのを指摘してくれてありがとう\n\n確かに俺みたいな零細経営者が社会福祉まで担おうとするのは間違いだった\n\n今最低賃金で残ってもらってる皆には順次、次回の更新はないことを伝えようと思う\n\n夜間警備やコンビニバイトすら落ちて親のツテで頼み込まれて雇った人たちだったけど\n\nブクマカのみんなが言う通り今は売り手市場だからきっと俺のところなんかよりいい働き口があるだろう\n\n俺は自分の会社の経営だけを考えて、今より少ない人数で今より多い利益を出して\n\n残った社員になるだけ多く還元できることを目指してやっていくよ\n\nアドバイスありがとう\n\nツイートシェア",
+    "Short description": "その生産性に追いつけない真の弱者はどこで働くんや？ うちは零細だから手帳持ってないだけの障碍者みたいな奴も最低賃金で雇ってるけど 今の状態から最低時給200円上げろって言われたらさすがに切ること考える 将来のことも考えてそいついなくてもなんとかなる環境の構築に力を入れるわ はっきり言って現状でも足引っ張...\n",
     "article": {
-      "title": "「やる気のない優秀な人」と「やる気がある凡人」どちらを採用しますか？→その場にいた偉い人たちは即答で「やる気がある凡人」を選んでビビり散らかした話",
-      "Summary": "In the news entry titled \"The Reason for Choosing an 'Eager Ordinary Person,'\" the focus is on the value of selecting individuals who may not possess exceptional talent but are highly motivated. This perspective emphasizes the potential of those who have a strong drive and willingness to work hard, suggesting that they can achieve significant levels of success through their dedication and perseverance."
+      "title": "The Dilemma of Small Businesses Facing Minimum Wage Increases",
+      "Summary": "A small business owner expresses concern over the impact of raising the minimum wage, highlighting the struggle to balance employee well-being with the company's financial stability. While acknowledging the importance of higher wages in creating a productive society, the owner points out the difficulties faced by \"true weaklings\" who may not keep up with the required productivity and could be excluded from the workforce. The rise in minimum wage could force the owner to consider layoffs, especially for workers who, despite their limitations, have been loyal employees. The owner recognizes the potential for a more profitable operation with fewer employees but is reminded by others that the current job market favors workers, suggesting they may find better opportunities elsewhere."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "6": {
     "feed_id": 6,
     "article_id": 6,
-    "Link": "https://anond.hatelabo.jp/20240223144855",
-    "title": "パーソナルカラーにしろ骨格診断にしろ 「イエベ秋」や「骨格ストレート」..",
+    "Link": "https://togetter.com/li/2321973",
+    "title": "テレビが故障して、検討もせず購入したら画質が酷く家族からも大不評。悶々としつつヨドバシのテレビ売り場でその話をしてみたらバッチリ解決してくれた",
+    "details_news": "ヨドバシの店員はsurfaceコーナーにいた俺に対して 「こんなの重いだけでオススメなんかできないですよ」 っていい放ったあと、事務処理だけでこんなスペックいらんでしょって言い出して、同ランクPC並べ出して全台一気に電源投入して起動速度に差があるんですとか説明し出したの最高に面白かった あと代替機ってことなので周辺機器はお勧めしません、欲しかったらポイント使ってくださいって言われてロックだなと思った もうそのノリだけで買ったんだけど、会計でなぜか俺の見た店頭価格より安かった これよりいい意味でヤバい店員は、ソフマップでノートpc探してた時に店員にどれおすすめか聞いたら、 「僕はこの中から買いませんね、絶対に」 とか雄山みたいなこと言い出した店員",
+    "Short description": "ttakahasi @ttakahasi うちのテレビが故障した時、同じメーカーなら別の量販店でも大丈夫かと思い、たいした検討もせず購入したら画質が酷く家族からも大不評。箱も捨てたしいまさら返品もできない。悶々としつつヨドバシのテレビ売り場でその話をしてみた。（続 x.com/hide3tu/status… 2024-02-26 12:58:33 いけさんζ*'...\n",
     "article": {
-      "title": "パーソナルカラーにしろ骨格診断にしろ 「イエベ秋」や「骨格ストレート」..",
-      "Summary": "The concept of personal color analysis and body type assessments, such as \"Warm Autumn\" or \"Straight body type,\" is criticized for perpetuating discrimination and establishing a hierarchy among women. The primary goal of these systems is not merely to help women find suitable fashion and makeup but to insult and establish dominance over certain individuals. Standards of beauty are predetermined, and those who do not fit the ideal are placed in a lower \"caste.\" For some, being told that a certain style suits them is like being branded a slave."
+      "title": "Candid Yodobashi Employee Gives Unfiltered Advice on Surface Devices",
+      "Summary": "A customer at Yodobashi Camera experienced a refreshingly honest interaction when an employee at the Surface section advised against purchasing the device, labeling it as unnecessarily heavy and over-specced for office work. The staffer then impressively demonstrated the startup speed differences among similar PCs and discouraged buying peripherals for what was meant to be a replacement machine, suggesting the use of points instead. The customer was so entertained by the employee's candor that they made the purchase, and were pleasantly surprised at the checkout to find the price lower than expected."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "7": {
     "feed_id": 7,
     "article_id": 7,
-    "Link": "http://www.gadget2ch.com/archives/post-226445.html",
-    "title": "【悲報】運転免許証、いつの間にか最強身分証明書の座から転落してしまっていたと判明",
+    "Link": "https://togetter.com/li/2321568",
+    "title": "「情報セキュリティの敗北史」が面白すぎる。だめだこれは寝れない、なんだこの死ぬほどワクワクする本は→賢者は歴史に学ぶ",
+    "details_news": "今日の情報セキュリティが抱える致命的な〈脆弱性〉は、どこから来たのか? コンピュータの誕生前夜から現代のハッキング戦争まで、半世紀以上にわたるサイバー空間の攻防を描いた、情報セキュリティ史の決定版。\n\n情報セキュリティの敗北史という本を今読んでいる。 セキュリティのことを物語形式で勉強できて面白いな。資格勉強だと辞書を読んでいるようで全然面白くないけど、この本はセキュリティの裏話を読んでいる気にさせられてる。面白い。",
+    "Short description": "もよもよ。 @yoppu1eg 情報セキュリティの敗北史が面白すぎる。だめだこれは寝れない、なんだこの死ぬほどワクワクする本は。まだ3章だぞ？これだこのことが私が生まれる少し前から起きてたのか？？なんで、3ヶ月くらい寝かしてたの？この本？？ pic.twitter.com/3vHXxg2W1h 2024-02-26 01:11:06\n",
     "article": {
-      "title": "【悲報】運転免許証、いつの間にか最強身分証明書の座から転落してしまっていたと判明",
-      "Summary": "The driving license, once considered the strongest form of identification, has seemingly lost its place to the My Number card in Japan. Discussions online reveal that the My Number card is now seen as the most powerful ID due to its requirement for certain financial transactions like opening an investment account. Some users have doubts about its omnipotence, while others suggest that it should consolidate multiple forms of ID into one to simplify processes. There is also talk about the possibility of integrating passport functions into the My Number card, and the convenience of having its functions on smartphones, despite potential risks."
+      "title": "Tracing the Origins of Cybersecurity Vulnerabilities: A Journey from the Dawn of Computers to Modern Hacking Wars",
+      "Summary": "The definitive history of cybersecurity is explored in a book that traces the critical vulnerabilities from the inception of computers to the ongoing cyber warfare spanning over half a century. The reader finds enjoyment in learning about security through a narrative format, contrasting the dull nature of studying for qualifications, which often feels like reading a dictionary."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "8": {
     "feed_id": 8,
     "article_id": 8,
-    "Link": "https://anond.hatelabo.jp/20240223083830",
-    "title": "貨幣は人間が作り出した。経済も人間が形作っている。では、なぜだれにも..",
+    "Link": "https://anond.hatelabo.jp/20231229231559",
+    "title": "みんなも、仮に今日死んでも悔いはないよな？",
+    "details_news": "いや、明日からも生きるんだけどさ\n\nもう色々経験したし、だいたい満足なんだよな\n\n恋愛して、結婚して、子供ができて。\n\n仕事も忙しいけどそれなりにできて、お金もあって\n\n趣味はそんなにないけど、見たい映画とかアニメとかたくさん見てきたし\n\n行きたい場所も大体行けたし、美味しいものも食べた\n\n後の楽しみって、子供の成長くらいなんだよな\n\n俺がいなくなったら家族は悲しむだろうし俺も嫌だけど、仮になんか不慮の事故で俺が死んだら、まあ悪くなかった人生だって思える\n\n昔は人生50ねんだったから、もう本来はカウントダウンは始まってるんだよ\n\n俺の場合仕事は公務員みたいな仕事だから目標もそんなにないし淡々とやるだけ\n\n家族と旅行行ったり、たまに友人とお酒飲んだり、そりゃ楽しいんだけどさ\n\nもうほとんど人生を味わったなって思うんだよ\n\nだから後はボーナスタイム、余生みたいなもんだよ\n\n映画で言えば、ハッピーエンドで終わった後、エンドロールでその後がダイジェストで描かれてるシーンみたいなもんなんだ\n\n本編じゃなくておまけなんだよ\n\nこんなこと妻とかには言えないけどさ、俺はもう十分幸せなんだよな\n\n明日からも生きるけどさ、やるだけやって諦めたこともあるけど、得たものも沢山あって、めでたしめでたしになってるんだ\n\n俺みたいな人間は少ないのかな\n\nもし結婚したりしてなくても、まあ満足して生きてきたって人も多いと思うんだよな\n\nなんていうか、やるだけやったから後悔はないというか\n\nそんな人、多くないのかな\n\nツイートシェア",
+    "Short description": "いや、明日からも生きるんだけどさ もう色々経験したし、だいたい満足なんだよな 恋愛して、結婚して、子供ができて。 仕事も忙しいけどそれなりにできて、お金もあって 趣味はそんなにないけど、見たい映画とかアニメとかたくさん見てきたし 行きたい場所も大体行けたし、美味しいものも食べた 後の楽しみって、子供の...\n",
     "article": {
-      "title": "貨幣は人間が作り出した。経済も人間が形作っている。では、なぜだれにも..",
-      "Summary": "Currency and economies are human constructs, yet they often defy prediction. This might be due to their motivational properties. The U.S. military's Challenge Coin system is an example of non-monetary value that inspires and rewards service members for commendable, but not award-level, achievements. These tokens of appreciation bring joy despite their limited financial worth. Even if currency and economies were to disappear, systems of recognition and exchangeable tokens would likely emerge."
+      "title": "Contented Reflections on a Life Well-Lived",
+      "Summary": "An individual reflects on their life with a sense of contentment, having experienced love, marriage, and parenthood, alongside a fulfilling career and financial stability. They've enjoyed hobbies like watching movies and anime, traveled to desired destinations, and savored good food. With most life goals achieved, they consider the rest of their life as 'bonus time', akin to a movie's post-credits scene detailing happily ever after."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "9": {
     "feed_id": 9,
     "article_id": 9,
-    "Link": "https://gendai.media/articles/-/124782",
-    "title": "『不適切にもほどがある』の視聴を脱落する若者がいる理由は「昭和ネタがわからない」からではない（田幸 和歌子）",
+    "Link": "https://anond.hatelabo.jp/20240227125513",
+    "title": "日本人はなぜ「生産性の高い社会」を理解できないふりをし続けるのか",
+    "details_news": "■ 日本人はなぜ「生産性の高い社会」を理解できないふりをし続けるのか\n\nhttps://anond.hatelabo.jp/20240227085257\n\nこの増田もトラバもほとんど完全に的外れで、今回に限ったことではなくいつも同じような流れで本当に不思議なんだけど。\n\n生産性の高い社会とは、個人の能力が高い社会のことではない。\n\n同一の投入能力あたりの生産量が高い社会のことだ。\n\n個人の能力が高まって生産量が上がるのは自明であって社会は何も進歩していない。\n\nそうではなく、設備投資、イノベーション、配置換え、何でもいいが\n\n効率を上げることで同じ投入能力でより多くのものを得られるように、システムを変更することが「生産性を上げる」ということだ。\n\nこれはしかし決して簡単なことではない。投資とリスクテイクを常に行い、市場に結果を評価される必要がある。\n\nそれが本来の経営者の仕事だ。\n\n\n\n\n\n\n\n\n\n零細企業の生産性が上がらないのはなぜか。\n\n経営者がもはや設備投資や取引先変更などのリスクテイクを行う気がないからだ。\n\n零細企業は長期的な利益の最大化ではなく、経営者のライフイベントによって動く。\n\n経営者がそれなりの報酬を得ている老人ならもはや設備投資もリスクテイクもやる気は起きないだろう。\n\n死ぬまで低賃金労働者をつかって現状維持し、資産を減らさずそれなりの年収を確保できればそれで満足してしまう。\n\nこれは個人の行動としては合理的で、だれかの能力の介在する余地はほぼない。\n\nだからそうなったらもう生産性を上げるには外圧で潰して資源を開放するしかない。\n\nストなどで賃金水準を上げていくのも重要だし\n\n政策レベルで強制的に最低賃金を徐々に上げていくことはこの一つの外圧だ。\n\n\n\n\n\n\n\n\n\n\n\nもちろんこの過程で失業率は上がるだろう。ストにもレイオフのリスクがあるし、企業が破綻するかもしれない。\n\nしかし単純に労働力分配という観点からみればそれはあくまで、ほかの効率のいい仕事へ移行する際の待機時間であり\n\n永久に労働市場から消えるなどというバカなことはない。\n\n「失業＝まともな人生からドロップアウト」のような日本の観念が意味不明なのだ。\n\nもちろん失業率が高すぎないに越したことはないが、それは単に待機時間が短いほうが効率がいいというだけの話だ。\n\n社会全体の生産性の向上を止めてまで失業率を下げるのは本末転倒ではないだろうか。\n\n経済効率だけから考えれば失業者の生活は社会保険でカバーすればいいだけの話だ。\n\n実際に最低賃金を上げていった国は徐々に生産性が上がっている。\n\n\n\n\n\n\n\n\n\n\n\nむろん、人間には感情というものがあり、労働に参加していないと社会的無力感を感じるし\n\nそれを抜きにしても人間関係などの社会資源から切り離され個人レベルの損失はあるから\n\nそういった部分には対処する必要があるだろう。\n\nしかし少なくとも経済学的には、雇用状態/失業状態は個人の能力を表すわけではなく、単に今労働力が市場に利用されているか否かを表すに過ぎないし\n\n最低賃金の水準は個人の能力とは関係ない。しいて言うなら社会の能力に関連している。\n\nもちろんただ最低賃金が上がればいいという話でもなく結局は生産性を上げることが重要だ。\n\nそしてそもそも、低賃金労働者＝能力が低い、というのは必ずしも正しくない。\n\n単に生産性の低いクソ環境で働いてるだけかもしれないからだ。\n\nほかの指標がないから「現在の賃金＝個人の能力の代表値」とすることが横行しているが、雇用の流動性が低いほどこれは不正確になる。\n\nもちろん能力評価による昇進や転職が機能している場合には個人の能力に相関はするだろうが、能力そのものではない。\n\nさらに言えば生産性が上がれば必ず賃金が上がるとも言えないので\n\n可能ならば労働者側もストなどをして労働者のパイを増やすことをやる必要がある。\n\n\n\n\n\n\n\n\n\nここまで書いてきたことは教科書レベルの話で、流石のはてな民といえど本気でこれを理解できないほどアホとは思えない。\n\nなぜここまで理解できないふりをし続けるかに興味がある。\n\n明らかに一部の世代の日本人が病的なまでに設備投資やリスクを嫌っており、それをしなくていいように逆算してロジックを組み上げているとしか思えないのだ。\n\nこっちにも仮説はあるのだが、本当のところはよくわからない。\n\nなぜ皆さんはここまで「生産性」を理解できないふりをし続けるのか？\n\nツイートシェア",
+    "Short description": "https://anond.hatelabo.jp/20240227085257 この増田もトラバもほとんど完全に的外れで、今回に限ったことではなくいつも同じような流れで本当に不思議なんだけど。 生産性の高い社会とは、個人の能力が高い社会のことではない。 同一の投入能力あたりの生産量が高い社会のことだ。 個人の能力が高まって生産量が上がる...\n",
     "article": {
-      "title": "『不適切にもほどがある』の視聴を脱落する若者がいる理由は「昭和ネタがわからない」からではない（田幸 和歌子）",
-      "Summary": "The current drama season has audiences talking, particularly about the show \"Futehodo,\" which is catching attention for its engaging content. The series, written by Kankuro Kudo, produced by Akira Isoyama, and starring Sadawo Abe, is a time-travel dramedy set in 1986. The protagonist, a middle school PE teacher and baseball team advisor named Ichiro Ogawa, played by Abe, is a single father who inadvertently travels from 1986 to 2024 via a time-traveling bus. He discovers a way to travel between the Showa period and the Reiwa period through a Kyon Kyon (Kyoko Koizumi) poster in a familiar coffee shop. While the show is praised for its nostalgia-inducing elements from the Showa era, including various cultural references and a playful musical aspect, it has not been without controversy."
+      "title": "The Misunderstanding of Productivity in Japanese Society",
+      "Summary": "A discussion on the Japanese perspective on productivity reveals a common misconception: productivity is often confused with individual ability rather than the actual output relative to input. The article emphasizes that real productivity gains come from systemic improvements like investment, innovation, and restructuring, not just increased individual skills. It critiques small business owners in Japan for avoiding risk and investment, leading to stagnant productivity. The author suggests that external pressures, such as raising minimum wages through policy or strikes, could force productivity improvements and redistribute resources, even at the risk of temporary unemployment. The article argues that employment status should not define one's worth and that social mechanisms should support the unemployed."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   },
   "10": {
     "feed_id": 10,
     "article_id": 10,
-    "Link": "https://www.moderntimes.tv/articles/20240202-01Laos/",
-    "title": "「水牛がおぼれて死んだので、今日は欠席します」。ラオスで学んだ、他者の合理性を透かして見る方法",
+    "Link": "https://rocketnews24.com/2024/02/26/2177104/",
+    "title": "【朗報】ほぼイオンモールと化した東京・立川駅前の「高島屋」、はま寿司も開店で完全に仕上がる / 巨大ガシャポンエリアも",
+    "details_news": "昨年11月にリニューアルオープンした東京・立川市にある「立川高島屋S.C.」の変貌ぶりは衝撃だった。いかにも百貨店らしい化粧品店やブティックは影を潜め、代わりに見慣れたスーパーやドラッグストアが大集結したのだ。\n\n『オーケー』『セリア』『シャトレーゼ』などなど、とても高島屋とは思えないラインナップには思わず驚愕したが、先日久しぶりに訪れたところ、前回を超える勢いで完全に仕上がっていたためお伝えしたい。\n\n・リニューアルした高島屋\n\n「立川高島屋S.C.」はJR立川駅の北口より歩いて約3分。「伊勢丹 立川店」のちょうど真向かいに位置する形で建っている。昨年の大規模リニューアルの結果、ほぼ別人のようになってしまったのは前回の記事でもお伝えした通りだ。\n\n1階のエントランスから入ると、まず目に飛び込んでくるのが『シャトレーゼ』。\n\nそのすぐ横には『セリア』と『サンドラッグ』が店を構えており……\n\nエスカレーターで地下に降りると、今度は『サブウェイ』と『おかしのまちおか』のお出迎えである。それだけではない。\n\nなんと激安スーパー『オーケー』まで。\n\nこの中だと『サブウェイ』が比較的高級店みたいな感じになっていて笑うが、ここに先月、新たに強力な仲間が加わったことをご存じだろうか？ そう……\n\n『はま寿司』である。\n\n・隙のない布陣\n\n1階『シャトレーゼ』の向かいに今年1月12日にオープンしたらしい。なるほど、ついに最後のピースがハマった形だが、それではここで「立川高島屋S.C.」のショップリストを改めてご覧いただこう。\n\n──庶民のサマソニかよ。ウチの最寄りのイオンモールよりもはるかに強力なメンツだぞ。この近所に住んでる人めっちゃ便利だな。\n\nせっかくなので『はま寿司』に入ってみたところ、もちろん店内は新しくキレイなのだが、それよりも印象的だったのが女性客の多さだった。\n\nたまたまかもしれないが、1人用カウンター席の7割くらいを女性が占めていたのである。もしかしたら高島屋の1階ということで、通常のロードサイド店舗よりも女性のソロ客が入りやすいのかもしれない。\n\nちなみに私（あひるねこ）の前に会計していた女子高生2人組は、店を出るとそのまますぐ近くの『セリア』へ吸い込まれていった。\n\nたしかに百貨店らしさは失われたかもしれないが、代わりに新しい客層が施設内で回遊していることを考えると、ひとまずこのリニューアルは成功だったと言えるのではないか。\n\n・もっとも高島屋らしくない場所\n\nさて、ここで3階に上がってみると、前回はまだ準備中だった巨大ガシャポンエリア『ガシャポンのデパート』がオープンしていた。\n\nこちらはバンダイナムコアミューズメントが企画・運営・プロデュースするカプセルトイ専門店で、とにもかくにも、その膨大な躯体の数にまずは圧倒される。\n\n公式サイトによれば、ガシャポンの設置数は驚きの1610面。クレーンゲームも360台以上設置されているという。前回も書いた通り、本当にただのゲーセンである。\n\nおそらくこの建物でもっともデパートらしくないフロアはここだろう（『ガシャポンのデパート』なのに）。学生が放課後の暇つぶしに寄るにはもってこいの場所ではないか。\n\n・真の完成\n\nただ、『はま寿司』とガシャポンエリアが完成したことで、「立川高島屋S.C.」は庶民のオアシスとして完全に仕上がったようにも思う。\n\nよく考えたら『ニトリ』に『ジュンク堂書店』まであるわけで（どちらも広い）、それらが駅前の施設にぎゅっと固まってくれているのは、純粋に使い勝手がいいのだ。\n\n前回来た時は、あまりにもイオンモール化しすぎていて少々面食らってしまったが、きっとこれが2024年における最適解なのだろう。\n\n去年はたしかにあったはずの『ポール・スミス』が閉店しているのを見たところで、特に驚きはなかった。しかしこうなると、9階のレストラン街も心配になってくるな。\n\nいつかあそこに『サイゼリヤ』が入ったりして……なんて冗談で言っていたら、本当に入りそうなのが今の「立川高島屋S.C.」である。\n\nとはいえ、個人的には以前よりも行く理由が圧倒的に増えた。今後も引き続き注目していきたい。\n\n参考リンク：立川高島屋 S.C.、バンダイナムコ\n\n執筆：あひるねこ\n\nPhoto：RocketNews24.",
+    "Short description": "» 【朗報】ほぼイオンモールと化した東京・立川駅前の「高島屋」、はま寿司も開店で完全に仕上がる / 巨大ガシャポンエリアも 特集 昨年11月にリニューアルオープンした東京・立川市にある「立川高島屋S.C.」の変貌ぶりは衝撃だった。いかにも百貨店らしい化粧品店やブティックは影を潜め、代わりに見慣れたスーパーやド...\n",
     "article": {
-      "title": "「水牛がおぼれて死んだので、今日は欠席します」。ラオスで学んだ、他者の合理性を透かして見る方法",
-      "Summary": "In an unexpected message one morning, a couple in Laos informed their JICA grassroots technical cooperation project that they would be absent due to a water buffalo drowning. This incident was bewildering to the Japanese project coordinators who were working on improving food security through insect farming techniques. In Laos, water buffaloes are not just farm animals but assets critical for the livelihood of rural residents. A water buffalo's death signifies a significant financial loss, equivalent to a month's income or more for local farmers. The project team had to comprehend that the grieving couple had lost an asset that could be readily converted to cash at the market, a situation that demanded immediate attention and action, far outweighing the importance of attending the NGO's activity."
+      "title": "Tachikawa Takashimaya S.C.'s Transformation into a Commoner's Paradise",
+      "Summary": "The Tachikawa Takashimaya Shopping Center in Tokyo has undergone a shocking transformation since its renovation last November, replacing traditional department store boutiques with more common retailers like supermarkets and drugstores. The lineup, now including \"OK\" supermarket, \"Seria\" 100-yen shop, \"Chatrese\" sweets store, and the recent addition of \"Hama Sushi,\" has surprised many with its focus on affordability and convenience. The third floor even features a massive \"Gashapon\" capsule toy department, managed by Bandai Namco Amusement. This shift caters to a new customer base, turning the facility into a community hub, seemingly perfect for 2024, despite moving away from traditional department store luxury."
     },
-    "date": "2024-02-23"
+    "date": "2024-02-27"
   }
 }

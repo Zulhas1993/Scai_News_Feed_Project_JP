@@ -1,5 +1,5 @@
 import os
-import json
+import json,re
 from datetime import datetime
 from langchain.callbacks.manager import get_openai_callback
 from langchain_openai import AzureChatOpenAI
@@ -28,6 +28,20 @@ class NewsFeed:
         self.title = title
         self.ex_link = ex_link
         self.details_news = details_news
+
+def truncate(text,max_words):
+    words=text.split()
+    trucate_word=words[:max_words]
+    truncate_text=''.join(trucate_word)
+    sentence_endings = re.compile(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s')
+    sentence=re.split(sentence_endings,truncate_text)
+    if len(sentence)>1 and len(''.join(sentence[:-1]))>max_words:
+        sentence.pop()
+
+    return  ' ' .join(sentence)
+    
+
+
 
 def generate_article_details(news_entry, current_article_id, current_feed_id):
     request_messages = [

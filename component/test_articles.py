@@ -97,9 +97,7 @@ def generate_article_details(news_entry):
         'title': news_entry.title,
         'article': {
             "title": news_entry.title,
-            "Summary": article_text
-
-            
+            "Summary": article_text           
         },
         'date': current_date
     }

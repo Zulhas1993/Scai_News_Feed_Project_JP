@@ -1,0 +1,132 @@
+{
+  "1": {
+    "feed_id": 1,
+    "article_id": 1,
+    "Link": "https://anond.hatelabo.jp/20240227071300",
+    "title": "子無しから選挙権を剥奪してはどうだろうか",
+    "details_news": "■ 子無しから選挙権を剥奪してはどうだろうか\n\n種の存続に背く個体が種の意思決定に関与するのは非合理的ではないか？\n\n子供を持たない人達も、日本人の今後の未来とかあんまり興味ないっしょ?選挙権なくてもいいんじゃない?\n\nツイートシェア",
+    "Short description": "種の存続に背く個体が種の意思決定に関与するのは非合理的ではないか？ 子供を持たない人達も、日本人の今後の未来とかあんまり興味ないっしょ?選挙権なくてもいいんじゃない?\n",
+    "article": {
+      "title": "Controversial Suggestion to Revoke Voting Rights from Childless Individuals",
+      "Summary": "A contentious opinion piece has sparked debate by proposing the revocation of voting rights for individuals who do not have children. The author argues that those who do not contribute to the continuation of the species should not have a say in the decision-making that affects the collective future. The suggestion implies that childless people might lack interest in the nation's long-term prospects, raising questions about the fairness and rationale behind such a policy."
+    },
+    "date": "2024-02-27"
+  },
+  "2": {
+    "feed_id": 2,
+    "article_id": 2,
+    "Link": "https://www.hotpepper.jp/mesitsu/entry/tsujimeshi/24-00001",
+    "title": "味付け塩だけ、放置1時間、調理5分。「塩豆腐と塩挽肉の炒めもの」が新食感で美味い！【ツジメシの週末メシ】 - メシ通 | ホットペッパーグルメ",
+    "details_news": "こんにちは。プロダクトデザイナーときどき料理人、ツジメシこと辻村哲也です。「ツジメシの日常メシと週末メシ」シリーズ。\n\n\n\n豆腐と挽肉の料理といえば麻婆豆腐がメジャーですが、今回は、豆腐と挽肉、それぞれに塩をしておいて、あとはそのまま炒めるだけという、待ち時間はかかりますがとてもシンプルな作り方をご紹介します。\n\n\n\n豆腐に塩をしておくと、味が中まで浸透して水分が抜けてもっちりした食感になります。挽肉も同様に塩がなじみ、炒めたときのむっちりした食感が増し、あとから塩をするよりうま味も強く感じるように思います。馴染みのあるいつもの食材が、一手間でいつもと違った一品になりますよ。\n\n今回の工程は\n\n・豆腐と挽肉に塩をして1時間おく\n\n・炒める\n\nです。\n\nツジメシの「塩豆腐と塩挽き肉の炒めもの」\n\n材料（作りやすい量）\n\n豚挽肉 100g\n\n木綿豆腐 半丁（175g）\n\n塩 2g（小さじ1/3）塩の量について詳細後述\n\nサラダ油 小さじ1-2\n\n片栗粉 小さじ1/2\n\n水 大さじ１\n\n粉山椒 （和山椒または中華の花椒粉）適量\n\n挽肉はものによって赤身と脂の割合が違います。今回はこんな感じ。もう少し赤身が多いものでもよいと思います。\n\n\n\n\n\n作り方\n\n木綿豆腐はパックから出して水を捨て、キッチンペーパーを巻いて3~5分ほど置いて水を切ります。\n\nその後、1.5cm角程度に切り分け、まんべんなく塩をしておきます。\n\n豚挽肉は分量の塩をして全体を混ぜ合わせます。\n\n塩がまんべんなく行き渡ればいいので、ハンバーグのように練る必要はありません。\n\n\n\n塩の量は両方のぶん合わせて、豆腐と挽肉合計重量の1%弱。細かくいうと0.8%あたりを狙います。ここでは挽肉100gと豆腐175g（ペーパーで水切りした後の重量）なので、合わせて2g強、一般的に塩小さじ1は6gとされているので小さじ1/3ほどです。挽肉と豆腐それぞれに半量ずつの塩をしてください。豆腐に比べて挽肉の塩分がやや濃いめになり、そのほうが美味しく感じると思います。\n\n\n\n市販の豆腐1丁は350~400ほどで、半丁も150~200gと商品により差があります。\n\n塩の量はそれに合わせて計算すると間違いないです。また、塩はものによって体積と重さが違いますので、デジタルスケールで計量すると間違いないですが、気持ち少なめにしておいて、仕上げに味見をして調整するのもいいと思います。\n\n\n\nこの状態で、どちらも冷蔵庫に1時間入れておきます。\n\n1時間経ったのがこちら。見た目はほとんど変わっていません。でも食べると味と食感は違いますのでお楽しみに。\n\n\n\n\n\n炒める前に片栗粉を水に溶いておきましょう。\n\nフライパンにサラダ油（挽肉の脂の量によって加減してください。今回は脂多めなので小さじ１です）を中火で熱し、挽肉を広げて片面を焼きます。このとき、あまり細かくほぐさず、豆腐と同じくらいの大きさになるようにざっくりヘラなどで切り分けると、食べるときに食感がよりわかってよいです。\n\n\n\n\n\n挽肉のかたまりが周りから半分くらい白くなってきたらざっくり上下を返し、豆腐を加えます。\n\n豆腐が崩れないようにやさしく混ぜながら、豆腐に火が通るまで2分程度炒めます。\n\n\n\n\n\n\n\n写真で伝わるでしょうか？ 豆腐に熱が入ってぷりっと膨らんできたら、\n\n\n\n\n\n\n\n水溶き片栗粉を回し入れてさらにやさしく混ぜ合わせ、全体が沸騰したら火を止めます。\n\n器に盛り付け、粉山椒を振ったら出来上がりです。\n\n\n\n\n\n中まで味がしみてもっちりした食感の豆腐、むっちり弾力を増してしっかりうま味を感じる挽肉の組み合わせの、ありそうでなかった新食感炒めものです。最初にした塩だけなのにじゅうぶん満足できる味付けです（でも好みで辣油を少しかけても間違いなく美味しいです）。\n\n麻婆豆腐同様に、ご飯にかけてももちろん美味しいですよ。\n\n塩しておくだけでそんなに変わるの？ と思ったそこのあなた。お時間のあるときにぜひお試しください。",
+    "Short description": "こんにちは。プロダクトデザイナーときどき料理人、ツジメシこと辻村哲也です。「ツジメシの日常メシと週末メシ」シリーズ。 豆腐と挽肉の料理といえば麻婆豆腐がメジャーですが、今回は、豆腐と挽肉、それぞれに塩をしておいて、あとはそのまま炒めるだけという、待ち時間はかかりますがとてもシンプルな作り方をご紹介...\n",
+    "article": {
+      "title": "Tetsuya Tsujimura's Simple Salted Tofu and Ground Meat Stir-Fry",
+      "Summary": "Tetsuya Tsujimura, a product designer and occasional cook, introduces a simple yet unique stir-fry recipe in his series \"Tsujimeshi's Everyday and Weekend Meals.\" Deviating from the popular Mapo Tofu, this dish involves salting tofu and ground meat before stir-frying, resulting in a deeper flavor penetration and a firmer texture. The process is straightforward: salt the tofu and meat, let them sit for an hour, and then stir-fry. Tsujimura's method transforms familiar ingredients into a dish with a new texture and flavor, using just the right amount of salt (about 0.8% of the total weight of the tofu and meat) to enhance the umami."
+    },
+    "date": "2024-02-27"
+  },
+  "3": {
+    "feed_id": 3,
+    "article_id": 3,
+    "Link": "https://www.tokyo-np.co.jp/article/311581",
+    "title": "「＃確定申告ボイコット」10万件に押され…鈴木俊一財務相が発言修正　「国民も議員も正しく申告を」：東京新聞 TOKYO Web",
+    "details_news": "自民党派閥の政治資金パーティーで受け取った裏金の税務処理を巡る自身の発言に批判が集まっていることを受け、鈴木俊一財務相は26日の衆院予算委員会で「国民であれ国会議員であれ、収入や経費を正しく計算し、所得が発生した場合には申告して頂く」と述べ、発言を修正した。\n\n◆「納税は個人の自由だったのか」と批判\n\n問題となっているのは鈴木氏が22日の衆院予算委で、裏金を受け取った議員は所得として納税することになるかを問われた際に「疑義が持たれた政治家が政治責任を果たす、そういう観点から（議員個人が納税をするかどうか）判断されるべきものであると思う」と述べた答弁。納税は憲法で国民の義務と明記されている。にもかかわらず、答弁は政治家だけが納税を個人の判断でできるともとれ、特別扱いだとして、交流サイト（SNS）で「納税は個人の自由だったのか」などと批判が広がった。\n\n26日の予算委では、立憲民主党の城井崇氏は裏金事件の中で始まった確定申告を巡り、SNS上では「#確定申告ボイコット」という投稿が一時10万件超に上ったと指摘。「政治家だけ特別扱いだとの強い憤りが起きている」とただした。\n\n◆岸田首相は「税務調査の指示は控える」\n\n関連キーワード 政治\n\n自民裏金問題\n\n主要ニュース",
+    "Short description": "自民党派閥の政治資金パーティーで受け取った裏金の税務処理を巡る自身の発言に批判が集まっていることを受け、鈴木俊一財務相は26日の衆院予算委員会で「国民であれ国会議員であれ、収入や経費を正しく計算し、所得が発生した場合には申告して頂く」と述べ、発言を修正した。 問題となっているのは鈴木氏が22日の衆院予...\n",
+    "article": {
+      "title": "Japan's Finance Minister Corrects Statement Amid Criticism Over Political Funds Tax Issue",
+      "Summary": "Finance Minister Toshimitsu Suzuki faced criticism for his previous remarks regarding tax declarations by politicians who received undeclared funds at Liberal Democratic Party faction's political fundraising parties. Initially suggesting that it was up to individual lawmakers to decide whether to declare such income for taxation, Suzuki corrected his statement on the 26th in the House of Representatives Budget Committee, emphasizing that everyone, including lawmakers, must accurately calculate their income and expenses and declare any resulting income. The controversy, fueled by criticism on social media and a significant online protest against tax declarations, highlighted public anger over perceived special treatment for politicians."
+    },
+    "date": "2024-02-27"
+  },
+  "4": {
+    "feed_id": 4,
+    "article_id": 4,
+    "Link": "http://pandora11.com/blog-entry-4870.html",
+    "title": "海外「日本人は真面目過ぎるんだよ」 何で日本人は万能なのにこの分野だけは苦手なんだ？",
+    "details_news": "外国メディアの記事などに寄せられた、海外の方々の反応をお伝えします",
+    "Short description": "コンピューター分野において「ハードウェア」の対比語で、 何らかの処理を行うコンピュータ・プログラムや、 関連する文書などを指す言葉である「ソフトウェア」。 一般的にはワープロソフト等のアプリケーションソフトウェアや、 OSなどのシステムソフトウェアに分類されています。 今回の翻訳元では、そのソフトウェア...\n",
+    "article": {
+      "title": "International Reactions to Foreign Media Articles",
+      "Summary": "This news entry reports on the various responses from international audiences to foreign media articles. The collection of perspectives and opinions reflects a diverse range of viewpoints, highlighting the global engagement with media content and the interest of people from different corners of the world in international reporting."
+    },
+    "date": "2024-02-27"
+  },
+  "5": {
+    "feed_id": 5,
+    "article_id": 5,
+    "Link": "https://anond.hatelabo.jp/20240227085257",
+    "title": "最低時給どんどんあげて生産性が高い社会を目指すのはいいと思うんだけど",
+    "details_news": "■ 最低時給どんどんあげて生産性が高い社会を目指すのはいいと思うんだけど\n\nその生産性に追いつけない真の弱者はどこで働くんや？\n\nうちは零細だから手帳持ってないだけの障碍者みたいな奴も最低賃金で雇ってるけど\n\n今の状態から最低時給200円上げろって言われたらさすがに切ること考える\n\n将来のことも考えてそいついなくてもなんとかなる環境の構築に力を入れるわ\n\nはっきり言って現状でも足引っ張ってるは引っ張ってるけど\n\nもっと時給安い時期から働いてもらってるし人間的に悪い奴じゃないから\n\nなんとかかんとか仕事も金も捻出してるけど、それだってどこかに限界があるわけじゃん\n\n当たり前だけど、時給が上がるってことは期待するパフォーマンスも上がるってことじゃん\n\nもろちん、発揮できるパフォーマンスが上がる環境を整えることも会社の仕事ではあるけど\n\nそれだってある程度は本人の能力があってのことじゃん\n\n底辺バイトを捌く仕事したことある奴だったらわかると思うけど、\n\n世の中にはどうやったって無理な奴いっぱいいる\n\nどんだけシステマチックにマニュアル通りやればいいってやってもそれすら無理な奴はいるじゃん\n\n最低時給を上げていけばうち以外でも間違いなく、こういう\n\nこの時給なら使ってやれるレベルの人間はどんどん排除されていくと思うんだけど\n\n最低時給上がって潰れる程度の会社は潰れろ派は同じように\n\n最低時給上がってクビになる程度の人間は死ねって思ってるってこと？\n\nツイートシェア",
+    "Short description": "その生産性に追いつけない真の弱者はどこで働くんや？ うちは零細だから手帳持ってないだけの障碍者みたいな奴も最低賃金で雇ってるけど 今の状態から最低時給200円上げろって言われたらさすがに切ること考える 将来のことも考えてそいついなくてもなんとかなる環境の構築に力を入れるわ はっきり言って現状でも足引っ張...\n",
+    "article": {
+      "title": "The Dilemma of Minimum Wage Increases and Vulnerable Workers",
+      "Summary": "The debate around raising the minimum wage is complex, especially for small businesses that employ individuals who may not keep up with the productivity demands such increases often imply. The author expresses concern for \"true weaklings\" who struggle to find employment as wages rise. They manage a small-scale business and hire disabled individuals not officially recognized due to lack of documentation, offering them minimum wage. If forced to raise wages by 200 yen, they would consider layoffs, despite efforts to construct an environment that could operate without these employees. Acknowledging that these workers, while not ideal in performance, are not bad people, the author highlights the financial and performance limits that businesses face."
+    },
+    "date": "2024-02-27"
+  },
+  "6": {
+    "feed_id": 6,
+    "article_id": 6,
+    "Link": "https://togetter.com/li/2321568",
+    "title": "「情報セキュリティの敗北史」が面白すぎる。だめだこれは寝れない、なんだこの死ぬほどワクワクする本は→賢者は歴史に学ぶ",
+    "details_news": "今日の情報セキュリティが抱える致命的な〈脆弱性〉は、どこから来たのか? コンピュータの誕生前夜から現代のハッキング戦争まで、半世紀以上にわたるサイバー空間の攻防を描いた、情報セキュリティ史の決定版。\n\n情報セキュリティの敗北史という本を今読んでいる。 セキュリティのことを物語形式で勉強できて面白いな。資格勉強だと辞書を読んでいるようで全然面白くないけど、この本はセキュリティの裏話を読んでいる気にさせられてる。面白い。",
+    "Short description": "もよもよ。 @yoppu1eg 情報セキュリティの敗北史が面白すぎる。だめだこれは寝れない、なんだこの死ぬほどワクワクする本は。まだ3章だぞ？これだこのことが私が生まれる少し前から起きてたのか？？なんで、3ヶ月くらい寝かしてたの？この本？？ pic.twitter.com/3vHXxg2W1h 2024-02-26 01:11:06\n",
+    "article": {
+      "title": "Tracing the Origins of Cybersecurity Vulnerabilities: A Historical Perspective",
+      "Summary": "The book \"Information Security's History of Defeat\" offers a compelling narrative on the evolution of cybersecurity. Spanning over half a century, from the dawn of computing to the modern era of hacking wars, it provides an in-depth look at the tug-of-war in cyberspace. Unlike dry, dictionary-like study materials for certification, this book engages readers with storytelling, delving into the behind-the-scenes tales of cybersecurity."
+    },
+    "date": "2024-02-27"
+  },
+  "7": {
+    "feed_id": 7,
+    "article_id": 7,
+    "Link": "https://togetter.com/li/2321973",
+    "title": "テレビが故障して、検討もせず購入したら画質が酷く家族からも大不評。悶々としつつヨドバシのテレビ売り場でその話をしてみたらバッチリ解決してくれた",
+    "details_news": "ヨドバシの店員はsurfaceコーナーにいた俺に対して 「こんなの重いだけでオススメなんかできないですよ」 っていい放ったあと、事務処理だけでこんなスペックいらんでしょって言い出して、同ランクPC並べ出して全台一気に電源投入して起動速度に差があるんですとか説明し出したの最高に面白かった あと代替機ってことなので周辺機器はお勧めしません、欲しかったらポイント使ってくださいって言われてロックだなと思った もうそのノリだけで買ったんだけど、会計でなぜか俺の見た店頭価格より安かった これよりいい意味でヤバい店員は、ソフマップでノートpc探してた時に店員にどれおすすめか聞いたら、 「僕はこの中から買いませんね、絶対に」 とか雄山みたいなこと言い出した店員",
+    "Short description": "ttakahasi @ttakahasi うちのテレビが故障した時、同じメーカーなら別の量販店でも大丈夫かと思い、たいした検討もせず購入したら画質が酷く家族からも大不評。箱も捨てたしいまさら返品もできない。悶々としつつヨドバシのテレビ売り場でその話をしてみた。（続 x.com/hide3tu/status… 2024-02-26 12:58:33 いけさんζ*'...\n",
+    "article": {
+      "title": "Unique Shopping Experience with Candid Tech Store Staff",
+      "Summary": "A customer shared an amusing encounter at a Yodobashi store where a salesperson candidly advised against purchasing a Surface device, deeming it unnecessarily heavy and over-specced for administrative tasks. Demonstrating the point, the salesperson compared startup speeds with similar devices, dissuading the customer from buying peripherals by suggesting the use of loyalty points instead. The customer found the honest approach refreshing and made the purchase, especially after discovering the price at checkout was unexpectedly lower."
+    },
+    "date": "2024-02-27"
+  },
+  "8": {
+    "feed_id": 8,
+    "article_id": 8,
+    "Link": "https://anond.hatelabo.jp/20231229231559",
+    "title": "みんなも、仮に今日死んでも悔いはないよな？",
+    "details_news": "いや、明日からも生きるんだけどさ\n\nもう色々経験したし、だいたい満足なんだよな\n\n恋愛して、結婚して、子供ができて。\n\n仕事も忙しいけどそれなりにできて、お金もあって\n\n趣味はそんなにないけど、見たい映画とかアニメとかたくさん見てきたし\n\n行きたい場所も大体行けたし、美味しいものも食べた\n\n後の楽しみって、子供の成長くらいなんだよな\n\n俺がいなくなったら家族は悲しむだろうし俺も嫌だけど、仮になんか不慮の事故で俺が死んだら、まあ悪くなかった人生だって思える\n\n昔は人生50ねんだったから、もう本来はカウントダウンは始まってるんだよ\n\n俺の場合仕事は公務員みたいな仕事だから目標もそんなにないし淡々とやるだけ\n\n家族と旅行行ったり、たまに友人とお酒飲んだり、そりゃ楽しいんだけどさ\n\nもうほとんど人生を味わったなって思うんだよ\n\nだから後はボーナスタイム、余生みたいなもんだよ\n\n映画で言えば、ハッピーエンドで終わった後、エンドロールでその後がダイジェストで描かれてるシーンみたいなもんなんだ\n\n本編じゃなくておまけなんだよ\n\nこんなこと妻とかには言えないけどさ、俺はもう十分幸せなんだよな\n\n明日からも生きるけどさ、やるだけやって諦めたこともあるけど、得たものも沢山あって、めでたしめでたしになってるんだ\n\n俺みたいな人間は少ないのかな\n\nもし結婚したりしてなくても、まあ満足して生きてきたって人も多いと思うんだよな\n\nなんていうか、やるだけやったから後悔はないというか\n\nそんな人、多くないのかな\n\nツイートシェア",
+    "Short description": "いや、明日からも生きるんだけどさ もう色々経験したし、だいたい満足なんだよな 恋愛して、結婚して、子供ができて。 仕事も忙しいけどそれなりにできて、お金もあって 趣味はそんなにないけど、見たい映画とかアニメとかたくさん見てきたし 行きたい場所も大体行けたし、美味しいものも食べた 後の楽しみって、子供の...\n",
+    "article": {
+      "title": "Reflecting on a Life Well Lived and Embracing the Bonus Time",
+      "Summary": "An individual reflects on their life, expressing contentment with their experiences, including love, marriage, and parenthood. Despite a busy career, financial stability, and various entertainment and travel experiences, they feel they have tasted most of what life offers. Looking ahead, they view the remaining years as a bonus, comparing it to a movie's epilogue following a happy ending. While they don't share these thoughts with their spouse, they harbor no regrets, feeling they've lived a fulfilling life."
+    },
+    "date": "2024-02-27"
+  },
+  "9": {
+    "feed_id": 9,
+    "article_id": 9,
+    "Link": "https://anond.hatelabo.jp/20240224234613",
+    "title": "まあハテブでは批判一辺倒だろうけどオレは同情する 特に今の環境は中小に..",
+    "details_news": "まあハテブでは批判一辺倒だろうけどオレは同情する\n\n特に今の環境は中小に厳しいだろどう考えても\n\n値上げは元請に断られ脅され、給与上げる原資はなくそもそも人材確保も難しい\n\n「無能な経営者は潰れてしまえ」って皆は言うけど、それって自己責任論なのでは？\n\nツイートシェア",
+    "Short description": "まあハテブでは批判一辺倒だろうけどオレは同情する 特に今の環境は中小に厳しいだろどう考えても 値上げは元請に断られ脅され、給与上げる原資はなくそもそも人材確保も難しい 「無能な経営者は潰れてしまえ」って皆は言うけど、それって自己責任論なのでは？\n",
+    "article": {
+      "title": "Empathy for Small Businesses in a Challenging Environment",
+      "Summary": "The conversation highlights the tough situation faced by small and medium-sized enterprises (SMEs) amidst current economic conditions. The speaker expresses sympathy, acknowledging the harsh reality where these businesses struggle to increase prices due to pushback from primary contractors and the threat of losing business. Moreover, they lack the funds to raise wages, making it difficult to attract and retain talent."
+    },
+    "date": "2024-02-27"
+  },
+  "10": {
+    "feed_id": 10,
+    "article_id": 10,
+    "Link": "https://logmi.jp/business/articles/330146",
+    "title": "働かずに儲ける人もいるのに、なぜこんなに働かなきゃいけないの？　堀内勉氏が投げかける“しぶとい資本主義”への問い",
+    "details_news": "終焉すると思われたものの、終わらない資本主義 堀内勉氏：法政大学の水野和夫さんが『資本主義の終焉と歴史の危機』という本を10年前に書かれて、大ベストセラーになっています。今でも非常に売れている本で、水野さんは「資本主義とは、利子率の低下とともに終焉していく。それで資本主義の死を迎えるのだ」と言われています。 それが一大センセーションを巻き起こしたんですが、資本主義が死んでいる感じはしなくて。金利が上がってきて、また「経済成長だ」と言ってみんなが騒いでる感じになっているかなと思います。 資本主義は、18世紀の後半、19世紀の前半ぐらいから百数十年、共産主義や全体主義と戦いながらしぶとく生き延びてきました。決定的だったのが、2013年にフランス語で発表された『21世紀の資本（LE CAPITAL）』。（著者の）トマ・ピケティさんはフランスの大学の経済の先生です。日本で翻訳が出たのは10年前ですね。 実はマルクスの『資本論』もドイツ語で「Das Kapital」なんです。それを『資本論』と訳してるので、トマ・ピケティのほうも意味的には「21世紀の資本論」なんですね。マルクスがドイツで『資本論』を書いて、それから百数十年経って、フランスでトマ・ピケティがまた『資本論』を書いた。 これは、過去200年ぐらいの経済統計を調べて出てきた非常にシンプルな結論です。歴史的に見ると「r（資産利益率）」のほうが「g（所得伸率）」よりだいたい大きい。 「r」というのは資産の利益率です。お金を投資して、その投資が戻ってくるリターンのほうが所得の伸び率を上回っている。要は「過去200年で見ると、働いているよりお金を投資していたほうがだいたい儲かってる」ということです。 所得がグンと伸びた第2次世界大戦直後ぐらいは少し逆転してる時があるんですが、「働かないでお金を投資してるほうが、ほとんどはお金持ちになるんだよ」という、身も蓋もない統計的な結論を出してしまって（笑）。この不都合な真実が暴かれたのが2013年だったんですね。 だんだんこの頃から、資本主義について「え？ そんな仕組みって本当にいいの？」という感じになってきてるということなんです。\n\n社会的共通資本はSDGsに通じるものがある 宇沢先生は2003年に『経済学と人間の心』という本を出されていて、それが新装改訂して『経済学は人びとを幸福にできるか』という本になっています。帯に池上彰さんが出ています。 「哲人経済学者はこう考える」。（表紙にある）「経済学は人びとを幸福にできるか」というタイトルは、私が個人的に思った疑問を、まさに正面から議論されている先生がいらっしゃったということです。 宇沢弘文先生は東大の経済学部で教えてらっしゃったんですが、残念ながら私はその時は法学部生だったので、直接教えを請うたことはないんです。後づけでいろんな本を読ませていただいて、非常に感銘を受けています。 みなさんご存じの「SDGs」というものがあると思います。持続可能な開発目標として、国連が2015年に発表した17項目ですが、宇沢弘文先生の社会的共通資本はこれに非常に通じるものがあるなと考えてます。 今、経済学は数理経済学や統計的な経済学が主流なので、「じゃあ経済は人間を幸せにするのか？」みたいな経済思想的・経済哲学的な話は主流ではないんですね。 宇沢弘文先生が亡くなられて、直接後を引き継いだ人はいなかったのですが、東大の経済学部長もされた岩井克人先生がいます。ICU（国際基督教大学）の元特別招聘教授で、『経済学の宇宙』という本を書かれてます。 岩井先生の本は「そもそも会社とは誰のものか」ということを（提起しています）。MIT（マサチューセッツ工科大学）に留学して、宇沢先生と同じように経済学の超主流にいらしたのですが、やはり途中で疑問を持って、人間に焦点を当てた経済を研究されている。こういう方もいらっしゃるということです。",
+    "Short description": "働かずに儲ける人もいるのに、なぜこんなに働かなきゃいけないの？ 堀内勉氏が投げかける“しぶとい資本主義”への問い ビジネスパーソンのための「人生をひらく読書力」とは？ #2/3 ベストセラーになった『読書大全』著者の堀内勉氏が、新刊書『人生を変える読書』を題材に、先行きが不透明な時代における読書の重要性や...\n",
+    "article": {
+      "title": "Reassessing the Endurance of Capitalism in the Face of Predicted Demise",
+      "Summary": "Despite predictions of its end, capitalism continues to persist, as observed by author Toshimitsu Horiuchi, referencing Kazuo Mizuno's bestseller \"The End of Capitalism and the Crisis of History.\" The book, written a decade ago, posited that capitalism would decline with falling interest rates. Contrary to this, current trends show rising interest rates and renewed enthusiasm for economic growth. Thomas Piketty's \"Capital in the Twenty-First Century,\" paralleling Marx's \"Das Kapital,\" highlighted the historical trend where return on capital (r) exceeds income growth (g), suggesting that investment yields more wealth than labor over the past 200 years. The book sparked a reconsideration of capitalism's mechanisms."
+    },
+    "date": "2024-02-27"
+  }
+}

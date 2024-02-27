@@ -24,34 +24,40 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
         return model(messages)
 
 class NewsFeed:
-    def __init__(self, feed_id, title, ex_link, details_news):
+    def __init__(self, feed_id, title, ex_link, details_news, description):
         self.feed_id = feed_id
         self.title = title
         self.ex_link = ex_link
         self.details_news = details_news
+        self.description = description
 
 # Initialize current IDs outside the functions
 current_feed_id = 0
 current_article_id = 0
 
-# def truncate_text(text, max_words):
-#     words = text.split()
-#     truncated_text = ' '.join(words[:max_words])
-#     return truncated_text
-
 
 def truncate_text(text, max_words):
+    # Split the input text into a list of words
     words = text.split()
+
+    # Take only the first 'max_words' words from the list
     truncated_words = words[:max_words]
+
+    # Join the truncated words back into a string
     truncated_text = ' '.join(truncated_words)
 
-    # Remove incomplete last sentence if it exceeds the word limit
+    # Define a regular expression pattern to identify sentence endings
     sentence_endings = re.compile(r'(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s')
+
+    # Split the truncated text into sentences using the sentence endings pattern
     sentences = re.split(sentence_endings, truncated_text)
 
+    # Check if there is more than one sentence and the length exceeds the word limit
     if len(sentences) > 1 and len(' '.join(sentences[:-1])) > max_words:
+        # Remove the last incomplete sentence if it exceeds the word limit
         sentences.pop()
 
+    # Join the remaining sentences into the final truncated text
     return ' '.join(sentences)
 
 
@@ -70,8 +76,8 @@ def generate_article_details(news_entry):
     news_entry_content = {'content': news_entry.details_news}
 
     request_messages.extend([
-        HumanMessage(f"Create Summary article for the news entry within 150 words And Remove the word 'Article' and also remove '\' from the Summary article "
-                     f"and in the Summary article there will be only article text :\n"
+        HumanMessage(f"Create Summary article for the news entry within 150 words"
+                     f"And There will be two part one is Title Of the Summary Article And another is Summary. Format is Title: ,Summary: :\n"
                      f"{json.dumps(news_entry_content, ensure_ascii=False)}")
     ])
 
@@ -87,6 +93,20 @@ def generate_article_details(news_entry):
     #article_text = response_summary_str.strip().replace(news_entry.title, '')
     article_text = truncate_text(response_summary_str.strip(), 150)
 
+    # title = article_text['article']['title']
+    # summary = article_text['article']['Summary']
+
+    # Find the indices of "Title:" and "Summary:" in the summary text
+    title_index = article_text.find("Title:")
+    summary_index = article_text.find("Summary:")
+
+# Extract the title and summary based on the indices
+    title = article_text[title_index + len("Title:"):summary_index].strip()
+    summary = article_text[summary_index + len("Summary:"):].strip()
+
+# Extract description from the list without brackets
+    description = '\n'.join(news_entry.description)
+
     current_date = datetime.now().strftime("%Y-%m-%d")
 
     article_details = {
@@ -94,9 +114,11 @@ def generate_article_details(news_entry):
         'article_id': current_article_id,
         'Link': news_entry.ex_link,
         'title': news_entry.title,
+        'details_news':news_entry.details_news,
+        'Short description':description,
         'article': {
-            "title": news_entry.title,
-            "Summary": article_text
+            "title": title,
+            "Summary": summary
         },
         'date': current_date
     }
@@ -113,12 +135,11 @@ def generate_article_details_chunked(news_entries):
     chunk_size = 1
     articles_dict = {}
     #articles_list = []
-
-    print("Loop:")
     count = 1
 
     for i in range(0, len(news_dicts), chunk_size):
-        if count > 10:
+        print(i)
+        if count > 5:
             break
         else:
             count += 1
@@ -132,7 +153,8 @@ def generate_article_details_chunked(news_entries):
                     feed_id=news_dict['feed_id'],
                     title=news_dict['title'],
                     ex_link=news_dict['ex_link'],
-                    details_news=news_dict['details_news']
+                    details_news=news_dict['details_news'],
+                    description=news_dict['description']
                 ),
             )
 
@@ -147,27 +169,33 @@ def get_articles_list():
         feed_id=details_feed.get('feed_id', 0),
         title=details_feed.get('title', ''),
         ex_link=details_feed.get('link', ''),
-        details_news=details_feed.get('content', '')
+        details_news=details_feed.get('content', ''),
+        description=details_feed.get('description', '')
     ) for details_feed in news_details_list.get('details_list', []) if isinstance(details_feed, dict)]
 
     total_links = len(news_entries)
     print(f"Total Links: {total_links}")
 
+
     generated_articles_dict = generate_article_details_chunked(news_entries)
-    print(f"articles_dict {generated_articles_dict}")
+   # print(f"articles_dict {generated_articles_dict}")
 
-    # Save generated_articles_dict to a text file
-    file_name = "articles.txt"
-    with open(file_name, 'w', encoding='utf-8') as file:
-        file.write(json.dumps(generated_articles_dict, ensure_ascii=False, indent=2))
+          # Save generated_articles_dict to a text file
+    
+    # file_name = "articles.txt"
+    # with open(file_name, 'w', encoding='utf-8') as file:
+    #     file.write(json.dumps(generated_articles_dict, ensure_ascii=False, indent=2))
 
-    # Save links for which articles were not created to a separate file
-    not_created_file_name = "not_created_articles.txt"
-    with open(not_created_file_name, 'w', encoding='utf-8') as not_created_file:
-        not_created_file.write(json.dumps(not_created_articles, ensure_ascii=False, indent=2))
+       # Save links for which articles were not created to a separate file
+    
+    # not_created_file_name = "not_created_articles.txt"
+    # with open(not_created_file_name, 'w', encoding='utf-8') as not_created_file:
+    #     not_created_file.write(json.dumps(not_created_articles, ensure_ascii=False, indent=2))
 
-    print("Articles list saved to:", file_name)
-    print("Not created articles list saved to:", not_created_file_name)
+    # print("Articles list saved to:", file_name)
+    # print("Not created articles list saved to:", not_created_file_name)
 
-# Call the function to generate articles and save to a text file
-get_articles_list()
+    return generated_articles_dict
+
+   # Call the function to generate articles and save to a text file
+#articles_list = get_articles_list()

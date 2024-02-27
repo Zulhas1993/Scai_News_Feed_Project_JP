@@ -48,8 +48,8 @@ def GetquestionnaireList(tag="Othello"):
 
     # Convert the dictionary to JSON format
     response_json = json.dumps(final_response, ensure_ascii=False, indent=2)
-    print(response_json)
+    #print(response_json)
     return response_json
 
 # Call the function and print the result
-GetquestionnaireList()
+#GetquestionnaireList()
