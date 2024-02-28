@@ -1,57 +1,38 @@
+import json
 from component.Details_News import get_news_details_list
+from component.Scrapping_Feeds import get_all_links
 
-def find_duplicate_links(link_list):
-    link_counts = {}
-    duplicate_links = set()
+# Function to read JSON data from a file
+def read_json(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-16') as file:
+            data = json.load(file)
+            print(f"Data loaded from {file_path}: {data}")
+        return data
+    except Exception as e:
+        print(f"Error reading JSON file: {e}")
+        return None
 
-    for entry in link_list:
-        link = entry.get('Link', '')
-        if link in link_counts:
-            link_counts[link] += 1
-            duplicate_links.add(link)
-        else:
-            link_counts[link] = 1
+# Get new scraping links
+new_scraping_links = get_all_links()
 
-    return link_counts
+# Read previous data from the file
+file_path = 'object_list.json'
+previous_data = read_json(file_path)
 
-link_lists = get_news_details_list()
+def filter_duplicate_links(new_links, existing_data):
+    existing_links = {entry.get('Link', '') for entry in existing_data}
 
-duplicate_link_counts = find_duplicate_links(link_lists)
+    # Filter out duplicate links from new scraping data
+    filtered_new_links = [entry for entry in new_links if entry.get('Link', '') not in existing_links]
 
-output_file_path = "duplicate_links.txt"
-with open(output_file_path, "w", encoding="utf-8") as output_file:
-    if duplicate_link_counts:
-        output_file.write("Duplicate Links found:\n")
-        for link, count in duplicate_link_counts.items():
-            output_file.write(f"Link: {link}, Count: {count}\n")
-    else:
-        output_file.write("No Duplicate Links found.\n")
+    return filtered_new_links
 
-print(f"Results saved to {output_file_path}")
+filtered_new_data = filter_duplicate_links(new_scraping_links, previous_data)
 
+# Write the filtered new data to a file
+output_file_path = "filtered_new_data.json"
+with open(output_file_path, 'w', encoding='utf-8') as output_file:
+    json.dump(filtered_new_data, output_file, ensure_ascii=False, indent=2)
 
-
-
-# def find_unique_links(link_list):
-#     unique_links = set()
-
-#     for entry in link_list:
-#         link = entry.get('Link', '')
-#         unique_links.add(link)
-
-#     return unique_links
-
-# link_lists = get_news_details_list()
-
-# unique_links_set = find_unique_links(link_lists)
-
-# output_file_path = "unique_links.txt"
-# with open(output_file_path, "w", encoding="utf-8") as output_file:
-#     if unique_links_set:
-#         output_file.write("Unique Links found:\n")
-#         for link in unique_links_set:
-#             output_file.write(f"{link}\n")
-#     else:
-#         output_file.write("No Unique Links found.\n")
-
-# print(f"Results saved to {output_file_path}")
+print(f"Filtered new data saved to {output_file_path}")

@@ -104,11 +104,12 @@ def generate_article_details(news_entry):
     title = article_text[title_index + len("Title:"):summary_index].strip()
     summary = article_text[summary_index + len("Summary:"):].strip()
 
+
 # Extract description from the list without brackets
     description = '\n'.join(news_entry.description)
 
     current_date = datetime.now().strftime("%Y-%m-%d")
-
+# Create a dictionary containing article details
     article_details = {
         'feed_id': current_feed_id,
         'article_id': current_article_id,
@@ -131,23 +132,38 @@ def generate_article_details(news_entry):
     return current_article_id, article_details
 
 def generate_article_details_chunked(news_entries):
+    # Convert each news entry object to a dictionary
     news_dicts = [news_entry.__dict__ for news_entry in news_entries]
+
+    # Set the chunk size to 1 (process one news entry at a time)
     chunk_size = 1
+
+    # Initialize an empty dictionary to store generated articles
     articles_dict = {}
-    #articles_list = []
+
+    # Counter for controlling the number of processed chunks
     count = 1
 
+    # Iterate through chunks of news_dicts
     for i in range(0, len(news_dicts), chunk_size):
         print(i)
-        if count > 5:
-            break
-        else:
-            count += 1
 
+        # Break the loop if the specified count is reached
+        
+        # if count > 5:
+        #     break
+        # else:
+        #     count += 1
+
+        # Extract a chunk of news_dicts
         chunk = news_dicts[i:i + chunk_size]
+
+        # Counter for tracking the number of processed news entries within the chunk
         tem_count = 0
 
+        # Iterate through each news_dict in the chunk
         for news_dict in chunk:
+            # Generate article details for the current news entry
             article_id, article_details = generate_article_details(
                 NewsFeed(
                     feed_id=news_dict['feed_id'],
@@ -158,13 +174,18 @@ def generate_article_details_chunked(news_entries):
                 ),
             )
 
+            # Add the generated article details to the articles_dict
             articles_dict[article_id] = article_details
             tem_count += 1
 
+    # Return the final dictionary containing generated articles
     return articles_dict
 
+
 def get_articles_list():
+     # Get the list of news details from the website
     news_details_list = get_news_details_list()
+    # Extract relevant information from the news details list and create a list of NewsFeed objects
     news_entries = [NewsFeed(
         feed_id=details_feed.get('feed_id', 0),
         title=details_feed.get('title', ''),

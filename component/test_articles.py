@@ -114,7 +114,7 @@ def generate_article_details_chunked(news_entries):
     count = 1
 
     for i in range(0, len(news_dicts), chunk_size):
-        if count > 10:
+        if count > 3:
             break
         else:
             count += 1

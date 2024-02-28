@@ -14,8 +14,9 @@ def __call_chat_api(messages: list) -> AzureChatOpenAI:
     )
     with get_openai_callback():
         return model(messages)
-
-def GetquestionnaireList(tag="Othello"):
+#Apple scraps EV development plan
+#Othello   
+def GetquestionnaireList(tag="Apple scraps EV development plan"):
     request_messages = [
         SystemMessage(content="Please answer in English"),
         HumanMessage(content=f"If you are looking for information about {tag}, please list 20 things you need")
@@ -48,7 +49,7 @@ def GetquestionnaireList(tag="Othello"):
 
     # Convert the dictionary to JSON format
     response_json = json.dumps(final_response, ensure_ascii=False, indent=2)
-    #print(response_json)
+    print(response_json)
     return response_json
 
 # Call the function and print the result

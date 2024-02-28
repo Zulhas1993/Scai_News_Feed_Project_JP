@@ -1,0 +1,35 @@
+{
+  "1": {
+    "feed_id": 1,
+    "article_id": 1,
+    "Link": "https://qiita.com/www-tacos/items/5614b61d3742d6db34b7",
+    "title": "「JavaScriptで要素をドラッグして移動する簡単な方法」という記事が初耳だらけだった件 - Qiita",
+    "article": {
+      "title": "「JavaScriptで要素をドラッグして移動する簡単な方法」という記事が初耳だらけだった件 - Qiita",
+      "Summary": "The author of this entry shares their experience with a technical article that contained several \"eh, what's this?\" techniques without much explanation. They decided to write their own commentary on the article, focusing on the parts they were unfamiliar with. The original code provided allowed elements to move dynamically, which intrigued the author. They discuss how HTML elements with IDs are stored as global variables—a fact they discovered from a 2014 article. They explain various parts of the code, such as the use of the PointerEvent property to detect mouse button states and how setPointerCapture ensures that elements continue to receive pointer events even when the pointer device contact goes beyond the element. The author also clarifies the use of draggable=false to override default browser behavior for dragging images."
+    },
+    "date": "2024-02-28"
+  },
+  "2": {
+    "feed_id": 2,
+    "article_id": 2,
+    "Link": "https://sonyinteractive.com/jp/news/blog/difficult-news-about-our-workforce/",
+    "title": "当社の人員に関するお知らせ ",
+    "article": {
+      "title": "当社の人員に関するお知らせ ",
+      "Summary": "SIE has announced a significant restructuring that will lead to job cuts affecting talented employees who have contributed to the company's success. After months of careful deliberation, the leadership team has decided that this reorganization is necessary for SIE's growth and to continue providing exceptional experiences to the gaming community. Approximately 900 staff members, about 8% of the workforce across all regions, including America, Europe, Japan, and Asia-Pacific, will be affected. Some PlayStation Studios will also see reductions. The restructuring aims to streamline management resources and sustain SIE's growth. Affected employees in the US will be notified immediately, while in the UK, proposed reductions include the dissolution of London Studio and staff cuts at Firesprite, alongside other reductions across SIE UK, pending collective labor consultations. In Japan, a 'Next Career Support Program' will be offered to assist employees transitioning out of SIE."
+    },
+    "date": "2024-02-28"
+  },
+  "3": {
+    "feed_id": 3,
+    "article_id": 3,
+    "Link": "https://www.bloomberg.co.jp/news/articles/2024-02-27/S9J3GPT0G1KW00",
+    "title": "アップル、ＥＶ開発計画ついに断念－生成ＡＩにリソースをシフト",
+    "article": {
+      "title": "アップル、ＥＶ開発計画ついに断念－生成ＡＩにリソースをシフト",
+      "Summary": "Apple has decided to halt its decade-long effort to develop an electric vehicle (EV), as revealed by several insiders familiar with the matter. The announcement was made internally on the 27th and was met with surprise by the approximately 2,000 employees involved in the project. The decision was communicated by COO Jeff Williams and VP Kevin Lynch, who explained that most of the project's staff would be moved to the AI division led by John Giannandrea to focus on generative AI projects, a growing area of importance for Apple. Some hardware engineers and designers from the EV team are expected to apply for other positions within the company, with layoffs anticipated, though the number affected is unknown. The news brought relief to some investors, causing Apple's stock to close 0.8% higher. Elon Musk praised the decision with a salute emoji on X (formerly Twitter)."
+    },
+    "date": "2024-02-28"
+  }
+}

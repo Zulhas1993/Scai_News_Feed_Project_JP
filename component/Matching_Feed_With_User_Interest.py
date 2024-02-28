@@ -5,6 +5,7 @@ from langchain.chat_models.azure_openai import AzureChatOpenAI
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from Article_list import get_articles_list
 from QuestionList import GetquestionnaireList
+from Details_News import read_json
 
 os.environ["AZURE_OPENAI_API_KEY"] = "5e1835fa2e784d549bb1b2f6bd6ed69f"
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://labo-azure-openai-swedencentral.openai.azure.com/"
@@ -41,6 +42,8 @@ def Match_Feed_Or_Article_With_User_Interest():
     request_messages = [
         SystemMessage(content="Please answer in English"),
     ]
+    # file_path = 'object_list.json'
+    # data = read_json(file_path)
 
     personal_information = {
         "name": "adnan",
